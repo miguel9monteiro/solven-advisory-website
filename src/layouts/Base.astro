@@ -1,0 +1,168 @@
+---
+// src/layouts/Base.astro — reference layout for every page
+// Drop-in template. Customise per-page via props.
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Solven Advisory",
+  description = "AI strategy for private equity in Portugal.",
+  ogImage = "/og-image.png",
+} = Astro.props;
+
+const fullTitle = title === "Solven Advisory" ? title : `${title} — Solven Advisory`;
+
+// Astro.site is unset until the production domain is configured in
+// astro.config.mjs. Until then, fall back to the relative path so the
+// layout doesn't throw and og:image still resolves locally.
+const ogImageUrl = Astro.site
+  ? new URL(ogImage, Astro.site).toString()
+  : ogImage;
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const navLinks = [
+  { href: "/approach", label: "Approach" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Design tokens — must be loaded first -->
+    <link rel="stylesheet" href="/design/tokens.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+      <a href="/" class="site-header-mark" aria-label="Solven Advisory home">
+        <img
+          src="/logos/03_solven_horizontal_lockup.svg"
+          alt="Solven Advisory"
+          width="380"
+          height="70"
+        />
+      </a>
+      <nav aria-label="Primary">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-current={path === link.href ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <img
+        src="/logos/02_solven_reversed_lockup.svg"
+        alt="Solven Advisory"
+        width="240"
+        height="64"
+      />
+      <p class="footer-meta">
+        Lisbon · {new Date().getFullYear()}
+      </p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) var(--space-2xl);
+    border-bottom: var(--rule-thin);
+  }
+
+  .site-header nav {
+    display: flex;
+    gap: var(--space-xl);
+  }
+
+  .site-header-mark {
+    line-height: 0;
+  }
+
+  .site-header nav a {
+    text-decoration: none;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .site-header nav a:hover {
+    color: var(--color-text);
+  }
+
+  .site-header nav a[aria-current="page"] {
+    color: var(--color-text);
+  }
+
+  main {
+    min-height: 70vh;
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  .site-footer {
+    background-color: var(--color-bg-dark);
+    padding: var(--space-2xl);
+    text-align: center;
+  }
+
+  .footer-meta {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      padding: var(--space-md) var(--space-lg);
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    main {
+      padding: var(--space-2xl) var(--space-lg);
+    }
+  }
+</style>

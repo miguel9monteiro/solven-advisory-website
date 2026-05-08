@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Solven Advisory">
+  <title>Solven Advisory — Social Card</title>
+
+  <!-- Bone background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#F4F2EB"/>
+
+  <!-- Wordmark, larger and centred -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-weight="400" fill="#2A2A28">
+    <text x="368" y="320" font-size="160">S</text>
+    <text x="463" y="320" font-size="160">o</text>
+    <text x="548" y="320" font-size="160">l</text>
+    <!-- Sage v notch — proportionally scaled -->
+    <path d="M 599 230 L 649 320 L 699 230 L 684 230 L 649 295 L 614 230 Z" fill="#6B8068"/>
+    <text x="704" y="320" font-size="160">e</text>
+    <text x="797" y="320" font-size="160">n</text>
+  </g>
+
+  <!-- ADVISORY designator centred beneath -->
+  <text x="600" y="385"
+        text-anchor="middle"
+        font-family="Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="22"
+        fill="#6B8068"
+        letter-spacing="7.04">A D V I S O R Y</text>
+
+  <!-- Hairline rule, centred -->
+  <line x1="450" y1="430" x2="750" y2="430" stroke="#6B8068" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Subtitle / context -->
+  <text x="600" y="465"
+        text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="22"
+        font-style="italic"
+        fill="#6B6B68">AI strategy for Private Equity</text>
+</svg>

@@ -1,0 +1,109 @@
+---
+// src/pages/approach.astro
+// The "augmentation without cognitive atrophy" thesis, three short sections.
+// All prose below is placeholder — Miguel will rewrite in his own voice.
+// The section structure (risk → principle → practice) is the bone we expect
+// to keep. Edit the copy freely; keep the structure unless rethinking it
+// deliberately.
+
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Approach"
+  description="Augmentation without cognitive atrophy. How Solven helps PE firms deploy AI inside analyst workflows without losing the judgment that makes their work defensible."
+>
+  <article class="approach">
+    <header class="approach-header">
+      <h1>Augmentation without cognitive atrophy.</h1>
+      <p class="lead">
+        The risk in enterprise AI is not adoption failure. It is what happens
+        to analytical judgment when adoption succeeds.
+      </p>
+    </header>
+
+    <section class="approach-section">
+      <h3>The risk</h3>
+      <h2>Cognitive offloading.</h2>
+      <p>
+        When an analyst can produce a polished draft in a single prompt, the
+        formative work — sitting with the data, building a position from
+        first principles, defending a number under pressure — quietly stops
+        happening. The analyst becomes a passive editor of model output.
+        Quality looks the same on the page; the underlying judgment thins
+        out. This is the failure mode firms should be designing against.
+      </p>
+    </section>
+
+    <section class="approach-section">
+      <h3>The principle</h3>
+      <h2>AI as adversary, not author.</h2>
+      <p>
+        We treat the model as a stress-tester of the analyst's reasoning,
+        not a generator of it. The analyst forms a position first; the model
+        challenges it. The analyst defends the work; the model probes for
+        weakness. Used this way, AI sharpens the same skills that
+        unconstrained use erodes.
+      </p>
+    </section>
+
+    <section class="approach-section">
+      <h3>The practice</h3>
+      <h2>Workflow constraints that hold under pressure.</h2>
+      <p>
+        We design four kinds of constraint into client workflows:
+        analyst-first sequencing, where the analyst produces a defensible
+        first pass before engaging the model; show-your-work appendices that
+        make the human contribution legible to senior reviewers; AI-free
+        training rotations that keep the underlying skills alive; and
+        senior-led calibration reviews that surface drift before it
+        compounds. The shape varies by firm. The principle does not.
+      </p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .approach {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+  }
+
+  .approach-header {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .approach-header h1 {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+    max-width: 18ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .approach-header .lead {
+    max-width: 44ch;
+    margin: 0;
+  }
+
+  .approach-section {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: var(--rule-thin);
+  }
+
+  .approach-section h3 {
+    margin-bottom: var(--space-md);
+  }
+
+  .approach-section h2 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-tight);
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .approach-section p {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+  }
+</style>

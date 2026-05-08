@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Solven">
+  <title>Solven — Favicon</title>
+  <desc>Solven chevron in sage-deep on a white square. For browser tabs and app icons on light backgrounds.</desc>
+
+  <!-- White background square -->
+  <rect x="0" y="0" width="64" height="64" rx="8" fill="#FFFFFF"/>
+
+  <!-- Sage-deep v notch, scaled and centred -->
+  <path d="M 18 22 L 32 44 L 46 22 L 42 22 L 32 39 L 22 22 Z" fill="#6B8068"/>
+</svg>

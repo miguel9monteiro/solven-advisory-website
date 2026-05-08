@@ -1,0 +1,51 @@
+---
+// src/pages/about.astro
+// Two short paragraphs. Who Miguel and Bruno are. Where the firm is based.
+// No team grid, no headshots. The prose below is placeholder — Miguel
+// will rewrite in his own voice.
+
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="About"
+  description="Solven Advisory is an AI strategy consultancy for private equity firms, founded by Bruno Mota and Miguel Monteiro and based in Lisbon."
+>
+  <article class="about">
+    <h1>About Solven</h1>
+
+    <p>
+      Solven Advisory was founded by Bruno Mota and Miguel Monteiro to help
+      private equity firms in Iberia work with AI in ways their analysts can
+      still defend. The firm is based in Lisbon and works with clients across
+      Portugal and Spain.
+    </p>
+
+    <p>
+      Bruno and Miguel split their time between client engagements and
+      research into how AI changes the texture of analytical work. The thesis
+      that drives the firm — augmentation without cognitive atrophy — sits
+      behind every recommendation they make.
+    </p>
+  </article>
+</Base>
+
+<style>
+  .about {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+  }
+
+  .about h1 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .about p {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+  }
+
+  .about p + p {
+    margin-top: var(--space-md);
+  }
+</style>

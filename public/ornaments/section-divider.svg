@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 24" role="img" aria-label="Section divider">
+  <title>Section divider with chevron</title>
+  <desc>A thin horizontal rule with the Solven chevron centred on top — use to separate major sections.</desc>
+
+  <!-- Hairline rule -->
+  <line x1="0" y1="12" x2="270" y2="12" stroke="#D8D6CF" stroke-width="0.5"/>
+  <line x1="330" y1="12" x2="600" y2="12" stroke="#D8D6CF" stroke-width="0.5"/>
+
+  <!-- Centred chevron -->
+  <g transform="translate(283, 6)">
+    <path d="M 0 0 L 17 12 L 34 0 L 28 0 L 17 8 L 6 0 Z" fill="#6B8068"/>
+  </g>
+</svg>

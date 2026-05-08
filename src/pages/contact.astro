@@ -1,0 +1,88 @@
+---
+// src/pages/contact.astro
+// Email addresses. That's it. No form in v1.
+
+import Base from "../layouts/Base.astro";
+
+const partners = [
+  { name: "Miguel Monteiro", email: "miguelmonteiro@solvenadvisory.ai" },
+  { name: "Bruno Mota", email: "brunomota@solvenadvisory.ai" },
+];
+---
+
+<Base
+  title="Contact"
+  description="Get in touch with Solven Advisory. Based in Lisbon."
+>
+  <section class="contact">
+    <h1>Contact</h1>
+
+    <p class="contact-intro">
+      The fastest way to reach us is by email.
+    </p>
+
+    <dl class="contact-people">
+      {partners.map((p) => (
+        <div class="contact-person">
+          <dt>{p.name}</dt>
+          <dd>
+            <a href={`mailto:${p.email}`}>{p.email}</a>
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    <p class="contact-meta">
+      Lisbon, Portugal.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .contact {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+  }
+
+  .contact h1 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-intro {
+    font-size: var(--text-base);
+    margin: 0 0 var(--space-2xl);
+  }
+
+  .contact-people {
+    margin: 0 0 var(--space-2xl);
+  }
+
+  .contact-person + .contact-person {
+    margin-top: var(--space-xl);
+  }
+
+  .contact-person dt {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact-person dd {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+  }
+
+  .contact-person dd a {
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 0.25em;
+  }
+
+  .contact-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+</style>

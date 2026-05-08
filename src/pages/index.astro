@@ -1,0 +1,74 @@
+---
+// src/pages/index.astro — reference homepage
+// One screen on desktop. Wordmark, one sentence, contact link. That's it.
+
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Solven Advisory"
+  description="AI strategy for private equity in Portugal. Augmentation without cognitive atrophy."
+>
+  <section class="hero">
+    <h1 class="hero-mark">
+      <img
+        src="/logos/01_solven_primary_lockup.svg"
+        alt="Solven Advisory"
+        width="520"
+        height="139"
+      />
+    </h1>
+
+    <p class="hero-statement">
+      We help private equity firms in Portugal adopt AI without losing the
+      analytical judgment that makes their work defensible.
+    </p>
+
+    <a href="/contact" class="hero-cta">
+      Get in touch
+    </a>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-3xl) 0;
+  }
+
+  .hero-mark {
+    margin: 0 0 var(--space-2xl);
+    line-height: 0;
+  }
+
+  .hero-mark img {
+    margin: 0 auto;
+  }
+
+  .hero-statement {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+    margin: 0 auto var(--space-xl);
+    max-width: 42ch;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    text-decoration: none;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    padding: var(--space-md) var(--space-xl);
+    border: var(--rule-thin);
+    border-color: var(--charcoal);
+    transition: all var(--transition-fast);
+  }
+
+  .hero-cta:hover {
+    background-color: var(--charcoal);
+    color: var(--color-bg);
+  }
+</style>
