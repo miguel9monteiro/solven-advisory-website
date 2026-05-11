@@ -1,0 +1,64 @@
+---
+// src/pages/404.astro
+// Branded 404. Short, calm, gives the visitor a way out.
+
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Page not found — Solven Advisory"
+  description="The page you're looking for isn't here. Return to Solven Advisory's home page."
+>
+  <section class="not-found">
+    <p class="designator">404</p>
+    <h1>Page not found.</h1>
+    <p class="lead">
+      The page you're looking for isn't here. It may have moved, or the
+      link may be wrong.
+    </p>
+    <ul class="not-found-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/approach">Approach</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .not-found {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+  }
+
+  .not-found .designator {
+    margin: 0 0 var(--space-md);
+  }
+
+  .not-found h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .not-found .lead {
+    margin: 0 0 var(--space-2xl);
+    max-width: 44ch;
+  }
+
+  .not-found-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: var(--rule-thin);
+  }
+
+  .not-found-links li {
+    padding: var(--space-sm) 0;
+    border-bottom: var(--rule-thin);
+  }
+
+  .not-found-links a {
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+  }
+</style>

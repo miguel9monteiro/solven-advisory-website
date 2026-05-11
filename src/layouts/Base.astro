@@ -34,52 +34,113 @@ const canonicalUrl = Astro.site
   ? new URL(Astro.url.pathname, Astro.site).toString().replace(/\/$/, "") || Astro.site.toString().replace(/\/$/, "")
   : Astro.url.toString();
 
-// Schema.org structured data. Inlined as JSON-LD so Google can parse
-// firm metadata (founders, location, service area) for knowledge-panel
-// eligibility and richer search results.
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Solven Advisory",
-  alternateName: "Solven",
-  description:
-    "AI strategy consultancy for private equity firms in Iberia. Helps PE firms deploy AI inside analyst workflows without losing the analytical judgment that makes their work defensible.",
-  url: "https://www.solvenadvisory.ai",
-  logo: "https://www.solvenadvisory.ai/og-image.png",
-  image: "https://www.solvenadvisory.ai/og-image.png",
-  email: "hello@solvenadvisory.ai",
-  sameAs: [
-    "https://www.linkedin.com/company/solven-advisory",
-  ],
-  founder: [
-    {
-      "@type": "Person",
-      name: "Miguel Monteiro",
-      sameAs: ["https://www.linkedin.com/in/miguel-monteiro-50a1ab163"],
-    },
-    {
-      "@type": "Person",
-      name: "Bruno Mota",
-      sameAs: ["https://www.linkedin.com/in/bmota"],
-    },
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Lisbon",
-    addressCountry: "PT",
+// Schema.org structured data. Uses @graph to declare three linked
+// entity types — the firm (ProfessionalService), the site (WebSite),
+// and the four service offerings (Service) — so Google can build a
+// coherent entity graph for knowledge-panel eligibility, richer search
+// results, and service-level ranking.
+const siteUrl = "https://www.solvenadvisory.ai";
+const orgId = `${siteUrl}/#organization`;
+const websiteId = `${siteUrl}/#website`;
+
+const services = [
+  {
+    slug: "diligence-and-deal-flow",
+    name: "Diligence & deal flow",
+    description:
+      "AI-assisted first-pass diligence, comparables and benchmarking pulls, data room synthesis, and sourcing screens — defensible at investment committee.",
+    audience: "Private equity deal teams",
   },
-  areaServed: [
-    { "@type": "Country", name: "Portugal" },
-    { "@type": "Country", name: "Spain" },
-  ],
-  knowsAbout: [
-    "Private equity",
-    "Artificial intelligence",
-    "AI strategy",
-    "Investment workflows",
-    "LP communications",
-    "Due diligence",
-    "Portfolio operations",
+  {
+    slug: "portfolio-operations",
+    name: "Portfolio operations",
+    description:
+      "Continuous KPI monitoring, board pack drafts, value-creation plan tracking, and portfolio-wide thematic synthesis for asset management teams.",
+    audience: "Private equity portfolio teams",
+  },
+  {
+    slug: "investor-relations-and-compliance",
+    name: "Investor relations & compliance",
+    description:
+      "Multilingual LP letters, capital call narratives, and SFDR / CSRD / ESG reporting workflows with a full audit trail.",
+    audience: "Private equity CFO and IR teams",
+  },
+  {
+    slug: "knowledge-and-methodology",
+    name: "Knowledge & methodology",
+    description:
+      "Internal memo and post-mortem ingestion, searchable institutional memory, workflow design, and analyst training in the AI-as-adversary methodology.",
+    audience: "Private equity managing partners",
+  },
+];
+
+const jsonLdGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": orgId,
+      name: "Solven Advisory",
+      alternateName: "Solven",
+      description:
+        "AI strategy consultancy for private equity firms in Iberia. Helps PE firms deploy AI inside analyst workflows without losing the analytical judgment that makes their work defensible.",
+      url: siteUrl,
+      logo: `${siteUrl}/og-image.png`,
+      image: `${siteUrl}/og-image.png`,
+      email: "hello@solvenadvisory.ai",
+      sameAs: ["https://www.linkedin.com/company/solven-advisory"],
+      founder: [
+        {
+          "@type": "Person",
+          name: "Miguel Monteiro",
+          sameAs: ["https://www.linkedin.com/in/miguel-monteiro-50a1ab163"],
+        },
+        {
+          "@type": "Person",
+          name: "Bruno Mota",
+          sameAs: ["https://www.linkedin.com/in/bmota"],
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lisbon",
+        addressCountry: "PT",
+      },
+      areaServed: [
+        { "@type": "Country", name: "Portugal" },
+        { "@type": "Country", name: "Spain" },
+      ],
+      knowsAbout: [
+        "Private equity",
+        "Artificial intelligence",
+        "AI strategy",
+        "Investment workflows",
+        "LP communications",
+        "Due diligence",
+        "Portfolio operations",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      name: "Solven Advisory",
+      url: siteUrl,
+      publisher: { "@id": orgId },
+      inLanguage: "en",
+    },
+    ...services.map((s) => ({
+      "@type": "Service",
+      "@id": `${siteUrl}/#service-${s.slug}`,
+      name: s.name,
+      description: s.description,
+      provider: { "@id": orgId },
+      areaServed: [
+        { "@type": "Country", name: "Portugal" },
+        { "@type": "Country", name: "Spain" },
+      ],
+      audience: { "@type": "BusinessAudience", audienceType: s.audience },
+      serviceType: "AI strategy consulting",
+    })),
   ],
 };
 ---
@@ -90,6 +151,7 @@ const organizationJsonLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#F4F2EB" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -120,7 +182,7 @@ const organizationJsonLd = {
     <link rel="stylesheet" href="/styles/global.css" />
 
     <!-- Schema.org structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>

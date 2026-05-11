@@ -23,7 +23,7 @@ import Base from "../layouts/Base.astro";
     </header>
 
     <section class="approach-section">
-      <h3>The risk</h3>
+      <p class="designator">The risk</p>
       <h2>Cognitive offloading.</h2>
       <p>
         When an analyst can produce a polished draft in a single prompt, the
@@ -36,7 +36,7 @@ import Base from "../layouts/Base.astro";
     </section>
 
     <section class="approach-section">
-      <h3>The principle</h3>
+      <p class="designator">The principle</p>
       <h2>AI as adversary, not author.</h2>
       <p>
         We treat the model as a stress-tester of the analyst's reasoning,
@@ -48,7 +48,7 @@ import Base from "../layouts/Base.astro";
     </section>
 
     <section class="approach-section">
-      <h3>The practice</h3>
+      <p class="designator">The practice</p>
       <h2>Workflow constraints that hold under pressure.</h2>
       <p>
         We design four kinds of constraint into client workflows:
@@ -91,8 +91,8 @@ import Base from "../layouts/Base.astro";
     border-top: var(--rule-thin);
   }
 
-  .approach-section h3 {
-    margin-bottom: var(--space-md);
+  .approach-section .designator {
+    margin: 0 0 var(--space-md);
   }
 
   .approach-section h2 {
