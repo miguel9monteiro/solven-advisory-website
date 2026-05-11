@@ -21,8 +21,12 @@ give them a way to get in touch. That's the job. Anything beyond that is scope c
 
 ## Pages
 
-- `/` — Home. One screen on desktop. Wordmark, one sentence about what Solven does,
-  one link to contact. Nothing else.
+- `/` — Home. Hero (wordmark, one sentence about what Solven does, contact link)
+  above the fold, followed by the "Where we work" section: four service
+  pillars in a 2×2 grid mapping to different buyers inside a PE firm
+  (deal team, portfolio team, CFO, managing partner). Below-the-fold
+  scroll is intentional; visitors who care will scroll. Don't add a
+  third home section without a strong reason.
 - `/about` — Two short paragraphs. Who Miguel and Bruno are. Where the firm is based.
   No team grid, no headshots in v1.
 - `/approach` — The "augmentation without cognitive atrophy" thesis, three short sections.

@@ -1,0 +1,197 @@
+---
+// src/components/HowWeHelp.astro
+// Four service pillars below the home hero. Each pillar maps to a
+// different buyer inside a PE firm. Copy is intended to be final, not
+// placeholder — Miguel can rewrite freely but the structure should hold.
+
+interface Pillar {
+  audience: string;
+  title: string;
+  oneLiner: string;
+  body: string;
+  deliverables: string[];
+}
+
+const pillars: Pillar[] = [
+  {
+    audience: "For the deal team",
+    title: "Diligence & deal flow",
+    oneLiner: "First-pass diligence in days, not weeks — defensible at IC.",
+    body:
+      "The analyst spends their first hour in the data room with Claude, surfacing the questions worth asking, the comparables worth pulling, the inconsistencies worth chasing. The IC memo is still theirs to write and own. They simply walk in already knowing the shape of the deal.",
+    deliverables: [
+      "First-pass diligence question banks per sector",
+      "Comparables and benchmarking pulls with audit trail",
+      "Data room synthesis briefs for the IC",
+      "Sourcing screens against your investment criteria",
+    ],
+  },
+  {
+    audience: "For the portfolio team",
+    title: "Portfolio operations",
+    oneLiner: "Monitoring cycles that scale with your portfolio, not your headcount.",
+    body:
+      "Quarterly reporting, board pack assembly, and KPI monitoring become continuous rather than episodic. The portfolio team uses Claude to pull from each portco's data room, draft variance commentary, and flag the lines worth pushing on. Asset managers spend their time on the deal that's drifting — not on assembling the deck about it.",
+    deliverables: [
+      "Board pack and quarterly report drafts",
+      "Continuous KPI monitoring with variance flagging",
+      "Value-creation plan tracking",
+      "Portfolio-wide thematic synthesis",
+    ],
+  },
+  {
+    audience: "For the CFO",
+    title: "Investor relations & compliance",
+    oneLiner: "LP communications and regulatory reporting at the cadence your investors expect.",
+    body:
+      "LP letters, capital call narratives, and ad hoc investor queries, drafted in the language and cadence each LP expects. The CFO retains the final word on every line. SFDR, CSRD, and ESG reporting workflows compress from weeks to days without losing the audit trail.",
+    deliverables: [
+      "Multilingual LP letter drafts",
+      "Capital call narratives and investor follow-ups",
+      "SFDR and CSRD reporting workflows",
+      "ESG and impact narrative synthesis",
+    ],
+  },
+  {
+    audience: "For the managing partner",
+    title: "Knowledge & methodology",
+    oneLiner: "Your firm's accumulated judgment, captured and made queryable.",
+    body:
+      "Past memos, deal post-mortems, and partner correspondence become searchable institutional memory rather than archived PDFs. Claude is trained on how your firm actually thinks — sector theses, return thresholds, the deals you walked away from and why — so the analyst class queries that memory before reinventing it. The methodology itself is the deliverable: how AI gets used, where it doesn't, and what stays in human hands.",
+    deliverables: [
+      "Memo and post-mortem ingestion",
+      "Searchable institutional memory",
+      "Workflow design and rollout playbook",
+      "Analyst training in AI-as-adversary methodology",
+    ],
+  },
+];
+---
+
+<section class="how-we-help" aria-labelledby="how-we-help-title">
+  <header class="how-we-help-header">
+    <h2 id="how-we-help-title">Where we work</h2>
+    <p class="lead">
+      Four practices, four entry points into your firm. Each one designed
+      to sharpen judgment, not substitute for it.
+    </p>
+  </header>
+
+  <div class="pillar-grid">
+    {pillars.map((p) => (
+      <article class="pillar">
+        <p class="designator pillar-audience">{p.audience}</p>
+        <h3 class="pillar-title">{p.title}</h3>
+        <p class="lead pillar-oneliner">{p.oneLiner}</p>
+        <p class="pillar-body">{p.body}</p>
+        <ul class="pillar-deliverables">
+          {p.deliverables.map((d) => <li>{d}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .how-we-help {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: var(--space-2xl) 0 0;
+  }
+
+  .how-we-help-header {
+    margin: 0 0 var(--space-3xl);
+  }
+
+  .how-we-help-header h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .how-we-help-header .lead {
+    margin: 0;
+    max-width: 48ch;
+  }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2xl);
+  }
+
+  .pillar {
+    padding: var(--space-xl) var(--space-lg);
+    transition: background-color var(--transition-fast);
+  }
+
+  /* Editorial tick mark above the audience label —
+     short charcoal hairline, deliberately not sage. */
+  .pillar::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 1px;
+    background-color: var(--charcoal);
+    margin-bottom: var(--space-lg);
+  }
+
+  .pillar:hover {
+    background-color: rgba(42, 42, 40, 0.025);
+  }
+
+  .pillar-audience {
+    margin: 0 0 var(--space-lg);
+  }
+
+  /* Pillar names are proper subheadings — override the default H3
+     section-label treatment back to Georgia. */
+  .pillar-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-text);
+  }
+
+  .pillar-oneliner {
+    margin: 0 0 var(--space-lg);
+    max-width: none;
+  }
+
+  .pillar-body {
+    margin: 0 0 var(--space-lg);
+  }
+
+  .pillar-deliverables {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: var(--rule-thin);
+  }
+
+  .pillar-deliverables li {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    padding: var(--space-sm) 0;
+  }
+
+  .pillar-deliverables li + li {
+    border-top: var(--rule-thin);
+  }
+
+  @media (max-width: 768px) {
+    .pillar-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .pillar {
+      padding: var(--space-lg) 0;
+    }
+
+    .how-we-help-header {
+      margin-bottom: var(--space-2xl);
+    }
+  }
+</style>

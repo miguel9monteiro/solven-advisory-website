@@ -1,8 +1,10 @@
 ---
-// src/pages/index.astro — reference homepage
-// One screen on desktop. Wordmark, one sentence, contact link. That's it.
+// src/pages/index.astro — homepage
+// Hero (wordmark + one sentence + contact link) above the fold, then
+// "Where we work" with the four service pillars.
 
 import Base from "../layouts/Base.astro";
+import HowWeHelp from "../components/HowWeHelp.astro";
 ---
 
 <Base
@@ -28,6 +30,8 @@ import Base from "../layouts/Base.astro";
       Get in touch
     </a>
   </section>
+
+  <HowWeHelp />
 </Base>
 
 <style>
