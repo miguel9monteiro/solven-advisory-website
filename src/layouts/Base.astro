@@ -48,9 +48,20 @@ const organizationJsonLd = {
   logo: "https://www.solvenadvisory.ai/og-image.png",
   image: "https://www.solvenadvisory.ai/og-image.png",
   email: "hello@solvenadvisory.ai",
+  sameAs: [
+    "https://www.linkedin.com/company/solven-advisory",
+  ],
   founder: [
-    { "@type": "Person", name: "Miguel Monteiro" },
-    { "@type": "Person", name: "Bruno Mota" },
+    {
+      "@type": "Person",
+      name: "Miguel Monteiro",
+      sameAs: ["https://www.linkedin.com/in/miguel-monteiro-50a1ab163"],
+    },
+    {
+      "@type": "Person",
+      name: "Bruno Mota",
+      sameAs: ["https://www.linkedin.com/in/bmota"],
+    },
   ],
   address: {
     "@type": "PostalAddress",
