@@ -9,12 +9,10 @@ interface Props {
 }
 
 const {
-  title = "Solven Advisory",
-  description = "AI strategy for private equity in Portugal.",
+  title = "Solven Advisory — AI Strategy for Private Equity in Iberia",
+  description = "Solven Advisory helps private equity firms in Iberia adopt AI without losing the analytical judgment that makes their work defensible.",
   ogImage = "/og-image.png",
 } = Astro.props;
-
-const fullTitle = title === "Solven Advisory" ? title : `${title} — Solven Advisory`;
 
 // Astro.site is unset until the production domain is configured in
 // astro.config.mjs. Until then, fall back to the relative path so the
@@ -29,6 +27,50 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
+
+// Canonical URL — strips query strings and trailing slashes for the
+// crawler-facing reference. Falls back to Astro.url when site is unset.
+const canonicalUrl = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString().replace(/\/$/, "") || Astro.site.toString().replace(/\/$/, "")
+  : Astro.url.toString();
+
+// Schema.org structured data. Inlined as JSON-LD so Google can parse
+// firm metadata (founders, location, service area) for knowledge-panel
+// eligibility and richer search results.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Solven Advisory",
+  alternateName: "Solven",
+  description:
+    "AI strategy consultancy for private equity firms in Iberia. Helps PE firms deploy AI inside analyst workflows without losing the analytical judgment that makes their work defensible.",
+  url: "https://www.solvenadvisory.ai",
+  logo: "https://www.solvenadvisory.ai/og-image.png",
+  image: "https://www.solvenadvisory.ai/og-image.png",
+  email: "hello@solvenadvisory.ai",
+  founder: [
+    { "@type": "Person", name: "Miguel Monteiro" },
+    { "@type": "Person", name: "Bruno Mota" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lisbon",
+    addressCountry: "PT",
+  },
+  areaServed: [
+    { "@type": "Country", name: "Portugal" },
+    { "@type": "Country", name: "Spain" },
+  ],
+  knowsAbout: [
+    "Private equity",
+    "Artificial intelligence",
+    "AI strategy",
+    "Investment workflows",
+    "LP communications",
+    "Due diligence",
+    "Portfolio operations",
+  ],
+};
 ---
 
 <!doctype html>
@@ -38,8 +80,9 @@ const navLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{fullTitle}</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -50,20 +93,23 @@ const navLinks = [
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={fullTitle} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={Astro.url} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Design tokens — must be loaded first -->
     <link rel="stylesheet" href="/design/tokens.css" />
     <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
