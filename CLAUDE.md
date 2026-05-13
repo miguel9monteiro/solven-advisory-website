@@ -27,8 +27,10 @@ give them a way to get in touch. That's the job. Anything beyond that is scope c
   (deal team, portfolio team, CFO, managing partner). Below-the-fold
   scroll is intentional; visitors who care will scroll. Don't add a
   third home section without a strong reason.
-- `/about` — Two short paragraphs. Who Miguel and Bruno are. Where the firm is based.
-  No team grid, no headshots in v1.
+- `/about` — Two short paragraphs. Miguel Monteiro and his co-founder
+  (currently in stealth — do not name the second founder anywhere on
+  the site or in any structured data). Where the firm is based. No
+  team grid, no headshots in v1.
 - `/approach` — The "augmentation without cognitive atrophy" thesis, three short sections.
   This is the only page with substantive prose.
 - `/contact` — Email address. That's it. No form in v1.
