@@ -31,6 +31,14 @@ const offerings: Offering[] = [
     href: "/services#delivery",
     cta: "Where we work",
   },
+  {
+    label: "AI diligence",
+    title: "We test whether the AI is real.",
+    body:
+      "When a company pitches itself as AI-native, we sit in and tell you whether the technology and the business model hold up, or whether it's a story.",
+    href: "/services#diligence",
+    cta: "What we examine",
+  },
 ];
 ---
 
@@ -64,9 +72,9 @@ const offerings: Offering[] = [
 
   <section class="ways" aria-labelledby="ways-title">
     <header class="ways-header">
-      <h2 id="ways-title">Two ways we work with your firm.</h2>
+      <h2 id="ways-title">How we work with your firm.</h2>
       <p class="lead">
-        Enablement first, delivery when the team is ready. Both designed to
+        Enablement, delivery, and diligence. Three engagements, each designed to
         <a href="/approach">sharpen judgment, not substitute for it</a>.
       </p>
     </header>
@@ -148,8 +156,8 @@ const offerings: Offering[] = [
 
   .ways-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2xl) var(--space-xl);
   }
 
   .way {

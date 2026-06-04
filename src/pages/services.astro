@@ -172,6 +172,47 @@ const curriculum: Session[] = [
 
       <Pillars />
     </section>
+
+    <section id="diligence" class="service-line" aria-labelledby="diligence-title">
+      <p class="designator">AI diligence</p>
+      <h2 id="diligence-title">We tell you whether the AI is real.</h2>
+
+      <div class="prose">
+        <p>
+          More and more companies raising capital describe themselves as
+          AI-native. Sometimes the claim is exactly right. Often it is a thin
+          layer over someone else's model, a feature bolted onto a conventional
+          business, or language written for the pitch. From across the table,
+          in a single meeting, the difference is very hard to see.
+        </p>
+        <p>
+          We sit in alongside your team and stress-test the claim. We look at
+          what the technology actually does, where the model sits in the stack,
+          what is genuinely proprietary, and what would happen to the business
+          if the AI were removed. Whether it is a venture round or a
+          growth-stage acquisition, the question is the same, and you get a
+          clear read before you commit capital, in terms your investment
+          committee can act on.
+        </p>
+      </div>
+
+      <div class="subsection">
+        <h3>What we examine</h3>
+        <ul class="examine">
+          <li>Whether the product depends on AI or merely mentions it</li>
+          <li>What is proprietary, and what is a wrapper around a third-party model</li>
+          <li>How the business model changes if the AI is taken away</li>
+          <li>Whether the technical claims survive direct questioning</li>
+          <li>Defensibility: the data, the moat, and what a competitor could rebuild</li>
+        </ul>
+      </div>
+
+      <p class="engagement">
+        It is the same standard we bring to your own work, turned outward:
+        form the position, then test it to the point of failure.
+        <a href="/contact">Get in touch</a> to bring us into your next round.
+      </p>
+    </section>
   </article>
 </Base>
 
@@ -299,6 +340,23 @@ const curriculum: Session[] = [
     color: var(--color-text-secondary);
     margin: 0;
     max-width: 60ch;
+  }
+
+  /* ----- "What we examine" list ----- */
+  .examine {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: var(--rule-thin);
+    max-width: var(--container-prose);
+  }
+
+  .examine li {
+    font-size: var(--text-base);
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+    padding: var(--space-md) 0;
+    border-bottom: var(--rule-thin);
   }
 
   /* ----- Engagement note ----- */
