@@ -23,6 +23,7 @@ const ogImageUrl = Astro.site
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const navLinks = [
+  { href: "/services", label: "Services" },
   { href: "/approach", label: "Approach" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -44,6 +45,13 @@ const orgId = `${siteUrl}/#organization`;
 const websiteId = `${siteUrl}/#website`;
 
 const services = [
+  {
+    slug: "ai-enablement-training",
+    name: "AI enablement & training",
+    description:
+      "Hands-on training programmes that bring the full Claude toolkit into a private equity firm's workflows, teaching every level of the team from analyst to partner.",
+    audience: "Private equity firms",
+  },
   {
     slug: "diligence-and-deal-flow",
     name: "Diligence & deal flow",
@@ -275,6 +283,12 @@ const jsonLdGraph = {
       padding: var(--space-md) var(--space-lg);
       flex-direction: column;
       gap: var(--space-md);
+    }
+    /* Four nav items don't fit one row at 320px — wrap and tighten. */
+    .site-header nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md) var(--space-lg);
     }
     main {
       padding: var(--space-2xl) var(--space-lg);

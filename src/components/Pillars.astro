@@ -1,8 +1,8 @@
 ---
-// src/components/HowWeHelp.astro
-// Four service pillars below the home hero. Each pillar maps to a
-// different buyer inside a PE firm. Copy is intended to be final, not
-// placeholder — Miguel can rewrite freely but the structure should hold.
+// src/components/Pillars.astro
+// The four delivery practices, each mapping to a different buyer inside a PE
+// firm. Renders the grid only — the consuming page supplies the section
+// heading and intro. Copy is intended to be final, not placeholder.
 
 interface Pillar {
   audience: string;
@@ -68,50 +68,21 @@ const pillars: Pillar[] = [
 ];
 ---
 
-<section class="how-we-help" aria-labelledby="how-we-help-title">
-  <header class="how-we-help-header">
-    <h2 id="how-we-help-title">Where we work</h2>
-    <p class="lead">
-      Four practices, four entry points into your firm. Each one designed
-      to <a href="/approach">sharpen judgment, not substitute for it</a>.
-    </p>
-  </header>
-
-  <div class="pillar-grid">
-    {pillars.map((p) => (
-      <article class="pillar">
-        <p class="designator pillar-audience">{p.audience}</p>
-        <h3 class="pillar-title">{p.title}</h3>
-        <p class="lead pillar-oneliner">{p.oneLiner}</p>
-        <p class="pillar-body">{p.body}</p>
-        <ul class="pillar-deliverables">
-          {p.deliverables.map((d) => <li>{d}</li>)}
-        </ul>
-      </article>
-    ))}
-  </div>
-</section>
+<div class="pillar-grid">
+  {pillars.map((p) => (
+    <article class="pillar">
+      <p class="designator pillar-audience">{p.audience}</p>
+      <h3 class="pillar-title">{p.title}</h3>
+      <p class="lead pillar-oneliner">{p.oneLiner}</p>
+      <p class="pillar-body">{p.body}</p>
+      <ul class="pillar-deliverables">
+        {p.deliverables.map((d) => <li>{d}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>
 
 <style>
-  .how-we-help {
-    max-width: var(--container-wide);
-    margin: 0 auto;
-    padding: var(--space-2xl) 0 0;
-  }
-
-  .how-we-help-header {
-    margin: 0 0 var(--space-3xl);
-  }
-
-  .how-we-help-header h2 {
-    margin-bottom: var(--space-md);
-  }
-
-  .how-we-help-header .lead {
-    margin: 0;
-    max-width: 48ch;
-  }
-
   .pillar-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -188,10 +159,6 @@ const pillars: Pillar[] = [
 
     .pillar {
       padding: var(--space-lg) 0;
-    }
-
-    .how-we-help-header {
-      margin-bottom: var(--space-2xl);
     }
   }
 </style>

@@ -1,10 +1,37 @@
 ---
 // src/pages/index.astro — homepage
-// Hero (wordmark + one sentence + contact link) above the fold, then
-// "Where we work" with the four service pillars.
+// Hero (wordmark + one sentence + contact link) above the fold, then a short
+// "Two ways we work" overview that routes detail to /services. The home page
+// stays calm: one section below the hero, not the full offering.
 
 import Base from "../layouts/Base.astro";
-import HowWeHelp from "../components/HowWeHelp.astro";
+
+interface Offering {
+  label: string;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+}
+
+const offerings: Offering[] = [
+  {
+    label: "Enablement",
+    title: "We teach the team to use Claude well.",
+    body:
+      "Hands-on sessions for every level of the firm, from analyst to partner, on your own workflows and the full Claude toolkit.",
+    href: "/services#enablement",
+    cta: "How we teach",
+  },
+  {
+    label: "Delivery",
+    title: "We build alongside you on the work itself.",
+    body:
+      "Diligence, portfolio operations, and investor relations, plus the methodology that decides where AI is used and where it isn't.",
+    href: "/services#delivery",
+    cta: "Where we work",
+  },
+];
 ---
 
 <Base
@@ -35,7 +62,26 @@ import HowWeHelp from "../components/HowWeHelp.astro";
     </a>
   </section>
 
-  <HowWeHelp />
+  <section class="ways" aria-labelledby="ways-title">
+    <header class="ways-header">
+      <h2 id="ways-title">Two ways we work with your firm.</h2>
+      <p class="lead">
+        Enablement first, delivery when the team is ready. Both designed to
+        <a href="/approach">sharpen judgment, not substitute for it</a>.
+      </p>
+    </header>
+
+    <div class="ways-grid">
+      {offerings.map((o) => (
+        <article class="way">
+          <p class="designator">{o.label}</p>
+          <h3 class="way-title">{o.title}</h3>
+          <p class="way-body">{o.body}</p>
+          <a href={o.href} class="way-link">{o.cta}</a>
+        </article>
+      ))}
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -78,5 +124,81 @@ import HowWeHelp from "../components/HowWeHelp.astro";
   .hero-cta:hover {
     background-color: var(--charcoal);
     color: var(--color-bg);
+  }
+
+  /* ----- Two ways we work ----- */
+  .ways {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: var(--space-2xl) 0 0;
+  }
+
+  .ways-header {
+    margin: 0 0 var(--space-3xl);
+  }
+
+  .ways-header h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .ways-header .lead {
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .ways-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2xl);
+  }
+
+  .way {
+    padding-top: var(--space-md);
+    border-top: var(--rule-thin);
+  }
+
+  .way .designator {
+    margin: 0 0 var(--space-lg);
+  }
+
+  /* Georgia subhead — override the default tracked-uppercase h3 treatment. */
+  .way-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+    margin: 0 0 var(--space-md);
+  }
+
+  .way-body {
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-lg);
+  }
+
+  .way-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    border-bottom: var(--rule-thin);
+    border-color: var(--charcoal);
+    padding-bottom: var(--space-xs);
+  }
+
+  @media (max-width: 768px) {
+    .ways-header {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .ways-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
   }
 </style>

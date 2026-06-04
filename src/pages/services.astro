@@ -1,0 +1,334 @@
+---
+// src/pages/services.astro
+// The product offering, presented as two lines of work: Enablement (teaching
+// the firm to use Claude well) and Delivery (building alongside the team on
+// real workflows — the four pillars). No pricing on the public site; the
+// commercial detail lives in bespoke proposals.
+
+import Base from "../layouts/Base.astro";
+import Pillars from "../components/Pillars.astro";
+
+interface Tool {
+  name: string;
+  body: string;
+}
+
+const toolkit: Tool[] = [
+  {
+    name: "Claude.ai",
+    body:
+      "Research, drafting, and analysis in the browser, with projects, files, and web search in one place.",
+  },
+  {
+    name: "Claude Code",
+    body:
+      "The most capable tool in the suite, and far more than a developer tool: a working environment for organising files, automating recurring work, and building real systems.",
+  },
+  {
+    name: "Claude for Chrome",
+    body:
+      "Claude working alongside the pages and tools your team already uses, without leaving the browser.",
+  },
+  {
+    name: "Claude Cowork",
+    body:
+      "Claude that takes actions across the desktop — reorganising files, triaging documents, running a workflow end to end — rather than only generating text.",
+  },
+  {
+    name: "Claude for Excel",
+    body:
+      "Formula generation and audit, data cleaning, and model building, with Claude reasoning across the whole workbook.",
+  },
+  {
+    name: "Claude for PowerPoint",
+    body:
+      "Decks, charts, and IC-ready memos drawn from outlines, notes, or source documents, aligned to the house format.",
+  },
+];
+
+interface Session {
+  label: string;
+  title: string;
+  body: string;
+}
+
+const curriculum: Session[] = [
+  {
+    label: "Session one",
+    title: "Foundations — how AI thinks",
+    body:
+      "Where AI came from and how a model actually works, from tokens to attention, with the practical implications for trusting and verifying its output.",
+  },
+  {
+    label: "Session two",
+    title: "Conversation — Claude.ai",
+    body:
+      "The prompting craft that separates competent output from compelling, and the habit of using Claude as a critic rather than an author.",
+  },
+  {
+    label: "Session three",
+    title: "Production — Claude in the tools you already use",
+    body:
+      "Claude inside Excel and PowerPoint and across the desktop, where the team's deliverables actually live.",
+  },
+  {
+    label: "Session four",
+    title: "Construction — building with Claude Code",
+    body:
+      "The agentic loop, reusable skills that capture the team's expertise, and automation patterns that compound month over month.",
+  },
+];
+---
+
+<Base
+  title="Services — AI Enablement & Delivery for Private Equity | Solven Advisory"
+  description="How Solven Advisory works with private equity firms: hands-on Claude enablement for the whole team, from analyst to partner, and AI delivery built into diligence, portfolio, and investor relations workflows."
+>
+  <article class="services">
+    <header class="services-header">
+      <h1>What we do.</h1>
+      <p class="lead">
+        We work with private equity firms two ways: teaching the team to use
+        Claude well, then building alongside them on the work itself.
+      </p>
+    </header>
+
+    <section id="enablement" class="service-line" aria-labelledby="enablement-title">
+      <p class="designator">Enablement</p>
+      <h2 id="enablement-title">AI fluency, from analyst to partner.</h2>
+
+      <div class="prose">
+        <p>
+          We bring Claude into your firm's actual work and teach every level of
+          the team to use it well: the analyst pulling comparables, the CFO
+          drafting an LP letter, the partner reading the shape of a deal.
+          Sessions run on your own workflows, not generic demonstrations, so
+          each person leaves knowing where Claude belongs in their day.
+        </p>
+        <p>
+          The risk in any rollout is that capable people become editors of
+          drafts they cannot fully defend. We design every session the other
+          way round. The analyst produces the formative work first, then brings
+          Claude in as a critic and a verifier. That is
+          <a href="/approach">augmentation without cognitive atrophy</a>, and it
+          runs through everything we teach.
+        </p>
+      </div>
+
+      <div class="subsection">
+        <h3>The toolkit</h3>
+        <p class="subsection-intro">
+          We cover the full Claude toolkit, so each person knows which tool fits
+          which part of their work.
+        </p>
+        <div class="tool-grid">
+          {toolkit.map((t) => (
+            <article class="tool">
+              <h4 class="tool-name">{t.name}</h4>
+              <p class="tool-body">{t.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>The curriculum</h3>
+        <p class="subsection-intro">
+          The first month moves across the whole toolkit, from first principles
+          to building. From there, sessions go deeper into whatever each team
+          finds most useful.
+        </p>
+        <ol class="session-list">
+          {curriculum.map((s) => (
+            <li class="session">
+              <p class="designator session-label">{s.label}</p>
+              <p class="session-title">{s.title}</p>
+              <p class="session-body">{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <p class="engagement">
+        Programmes run month to month, with no long-term commitment, delivered
+        at your office in Lisbon or remotely. We scope each engagement to the
+        firm. <a href="/contact">Get in touch</a> to talk it through.
+      </p>
+
+      <p class="partner-note">Member of the Anthropic Partner Network.</p>
+    </section>
+
+    <section id="delivery" class="service-line" aria-labelledby="delivery-title">
+      <p class="designator">Delivery</p>
+      <h2 id="delivery-title">Built into the work itself.</h2>
+
+      <div class="prose">
+        <p>
+          When the team is ready, we build alongside them on real workflows.
+          Four practices, four entry points into the firm, each designed to
+          sharpen judgment rather than substitute for it.
+        </p>
+      </div>
+
+      <Pillars />
+    </section>
+  </article>
+</Base>
+
+<style>
+  .services {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+  }
+
+  .services-header {
+    max-width: var(--container-prose);
+    margin: 0 0 var(--space-4xl);
+  }
+
+  .services-header h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .services-header .lead {
+    max-width: 46ch;
+    margin: 0;
+  }
+
+  /* Each service line is separated by a hairline, not a heavier break. */
+  .service-line {
+    padding-top: var(--space-2xl);
+    border-top: var(--rule-thin);
+  }
+
+  .service-line + .service-line {
+    margin-top: var(--space-4xl);
+  }
+
+  .service-line .designator {
+    margin: 0 0 var(--space-md);
+  }
+
+  .service-line h2 {
+    max-width: 20ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .prose {
+    max-width: var(--container-prose);
+  }
+
+  .prose p {
+    font-size: var(--text-base);
+    line-height: var(--leading-loose);
+    margin: 0 0 var(--space-md);
+  }
+
+  /* ----- Subsections (toolkit, curriculum) ----- */
+  .subsection {
+    margin-top: var(--space-3xl);
+  }
+
+  .subsection h3 {
+    margin-bottom: var(--space-md);
+  }
+
+  .subsection-intro {
+    max-width: 56ch;
+    margin: 0 0 var(--space-2xl);
+    color: var(--color-text-secondary);
+  }
+
+  /* ----- Toolkit grid ----- */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2xl) var(--space-xl);
+  }
+
+  .tool {
+    padding-top: var(--space-md);
+    border-top: var(--rule-thin);
+  }
+
+  .tool-name {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .tool-body {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+    margin: 0;
+  }
+
+  /* ----- Curriculum list ----- */
+  .session-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: var(--rule-thin);
+  }
+
+  .session {
+    padding: var(--space-xl) 0;
+    border-bottom: var(--rule-thin);
+  }
+
+  .session-label {
+    margin: 0 0 var(--space-sm);
+  }
+
+  .session-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .session-body {
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--color-text-secondary);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ----- Engagement note ----- */
+  .engagement {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+    max-width: 48ch;
+    margin: var(--space-3xl) 0 0;
+  }
+
+  .partner-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: var(--space-lg) 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .services-header {
+      margin-bottom: var(--space-3xl);
+    }
+
+    .service-line + .service-line {
+      margin-top: var(--space-3xl);
+    }
+
+    .tool-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+</style>
