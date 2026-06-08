@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hero options — Solven Advisory</title>
+<link rel="icon" type="image/svg+xml" href="assets/logos/05_solven_favicon.svg" />
+<link rel="stylesheet" href="solven.css" />
+<style>
+  body { background: #D7D5CE; }
+  .canvas { max-width: 1320px; margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 3rem); }
+  .canvas__head { margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+  .canvas__head h1 { font-size: var(--t-xl); }
+  .canvas__head p { color: var(--grey-mid); max-width: 60ch; margin-top: var(--s-3); }
+  .opt { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+  .opt__label { display: flex; align-items: baseline; gap: var(--s-4); margin-bottom: var(--s-4); }
+  .opt__tag { font-family: var(--sans); font-size: var(--t-meta); font-weight: 700; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--charcoal); background: var(--bone); border: 1px solid var(--charcoal); padding: 0.35em 0.7em; }
+  .opt__name { font-family: var(--serif); font-size: var(--t-md); color: var(--charcoal); }
+  .opt__note { font-family: var(--sans); font-size: var(--t-sm); color: var(--grey-mid); margin-left: auto; max-width: 40ch; text-align: right; }
+  .frame { background: var(--bone); border: 1px solid rgba(42,42,40,0.18); box-shadow: 0 24px 60px -30px rgba(42,42,40,0.4); overflow: hidden; }
+  .frame__bar { display: flex; align-items: center; gap: var(--s-3); padding: 0.7rem 1rem; border-bottom: var(--rule-thin); background: color-mix(in srgb, var(--bone) 90%, white); }
+  .frame__bar .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--rule); }
+  .frame__bar .nav { margin-left: auto; display: flex; gap: 1.2rem; font-family: var(--sans); font-size: 0.8rem; color: var(--grey-mid); }
+  .stage { padding: clamp(1.75rem, 4vw, 3.5rem); }
+
+  /* shared hero bits */
+  .eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.5rem; }
+  .eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); }
+  .h-cta { display: flex; gap: var(--s-4); margin-top: 2rem; flex-wrap: wrap; }
+
+  /* OPTION A — two-part editorial */
+  .a { position: relative; overflow: hidden; }
+  .a__chev { position: absolute; right: -6%; top: -20%; width: 46%; opacity: 0.05; }
+  .a h2 { position: relative; z-index: 1; font-size: clamp(2.6rem, 5.2vw, 4.6rem); line-height: 1.02; letter-spacing: -0.022em; max-width: 18ch; }
+  .a h2 .em { font-style: italic; }
+  .a__beat { position: relative; z-index: 1; margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1.05fr; gap: 2.5rem; }
+  .a__beat .rt { border-top: 1px solid var(--charcoal); padding-top: 1rem; }
+  .a__beat .lead { margin: 0; max-width: 26ch; }
+  .a__beat .promise { color: var(--grey-mid); line-height: 1.6; margin: 0; max-width: 46ch; }
+  .a__beat .promise strong { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--charcoal); }
+
+  /* OPTION B — statement + dark currency bar */
+  .b__top h2 { font-size: clamp(2.4rem, 4.8vw, 4rem); line-height: 1.04; letter-spacing: -0.02em; max-width: 17ch; }
+  .b__top .lead { margin-top: 1.5rem; max-width: 38ch; }
+  .b__bar { margin-top: 2.5rem; background: var(--charcoal-deep); color: var(--bone); padding: clamp(1.5rem, 3vw, 2.5rem); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; position: relative; overflow: hidden; }
+  .b__bar .label { color: var(--sage); }
+  .b__bar h3 { font-family: var(--serif); font-weight: 400; color: var(--bone); font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.12; letter-spacing: -0.01em; margin-top: 0.6rem; max-width: 18ch; }
+  .b__bar p { color: var(--sage-pale); margin: 0; line-height: 1.6; max-width: 40ch; }
+  .b__bar .bchev { position: absolute; right: -3%; bottom: -40%; width: 30%; opacity: 0.1; }
+
+  /* OPTION C — asymmetric split with chevron */
+  .c { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .c h2 { font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 1.04; letter-spacing: -0.02em; max-width: 14ch; }
+  .c h2 .em { font-style: italic; }
+  .c .promise { color: var(--grey-mid); line-height: 1.6; margin-top: 1.5rem; max-width: 42ch; }
+  .c .promise strong { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--charcoal); }
+  .c__art { position: relative; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; border: 1px solid var(--rule); background: color-mix(in srgb, var(--sage-pale) 28%, var(--bone)); }
+  .c__art .bigchev { width: 52%; }
+  .c__ticks { position: absolute; left: 8%; right: 8%; bottom: 12%; display: flex; align-items: flex-end; gap: 6px; height: 40px; }
+  .c__ticks i { flex: 1; background: rgba(42,42,40,0.25); height: 30%; display: block; }
+  .c__ticks i.tall { background: var(--sage-deep); height: 100%; }
+  .c__cap { position: absolute; top: 9%; left: 9%; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-mid); }
+
+  @media (max-width: 820px) {
+    .a__beat, .b__bar, .c { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="canvas__head">
+    <h1>Hero treatments</h1>
+    <p>Three directions for the homepage hero, all within the brand and all pushing a little harder on scale and the chevron device. The live homepage currently uses Option A. Tell me which to lock in (or mix elements) and I will wire it through.</p>
+  </div>
+
+  <!-- OPTION A -->
+  <section class="opt">
+    <div class="opt__label">
+      <span class="opt__tag">Option A</span>
+      <span class="opt__name">Two-part editorial</span>
+      <span class="opt__note">Currently live. Calm Lazard register: one big line, the currency promise as a second beat.</span>
+    </div>
+    <div class="frame">
+      <div class="frame__bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="nav"><span>Programmes</span><span>Approach</span><span>Work</span></span></div>
+      <div class="stage a">
+        <svg class="a__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+        <div class="eyebrow"><span class="tick"></span><p class="label">AI Enablement &amp; Implementation · Private Equity</p></div>
+        <h2>AI implementation for firms where <span class="em">judgment</span> is the product.</h2>
+        <div class="a__beat">
+          <div class="rt"><p class="lead">We train entire investment teams on AI, then build AI systems on the workflows that matter.</p></div>
+          <div class="rt"><p class="promise">The technology changes weekly: new models, new tools, shifting best practice. <strong>Our programmes are monthly because the frontier is weekly</strong> — your team stays current as the market moves.</p></div>
+        </div>
+        <div class="h-cta"><a href="#" class="btn btn--solid">Explore the programmes <span class="arw">→</span></a><a href="#" class="btn">Start a conversation</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B -->
+  <section class="opt">
+    <div class="opt__label">
+      <span class="opt__tag">Option B</span>
+      <span class="opt__name">Statement + dark currency bar</span>
+      <span class="opt__note">More dramatic. The thesis line on bone, then a full-width charcoal bar that lands the weekly-frontier promise.</span>
+    </div>
+    <div class="frame">
+      <div class="frame__bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="nav"><span>Programmes</span><span>Approach</span><span>Work</span></span></div>
+      <div class="stage b">
+        <div class="b__top">
+          <div class="eyebrow"><span class="tick"></span><p class="label">AI Enablement &amp; Implementation · Private Equity</p></div>
+          <h2>AI implementation for firms where judgment is the product.</h2>
+          <p class="lead">We train entire investment teams on AI, then build AI systems on the workflows that matter.</p>
+        </div>
+        <div class="b__bar">
+          <svg class="bchev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+          <div>
+            <p class="label">The currency argument</p>
+            <h3>The frontier moves weekly. We keep your team on it.</h3>
+          </div>
+          <div>
+            <p>Most firms train once and fall behind quietly. Our programmes are monthly precisely because the technology is weekly — analyst to partner, always current.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION C -->
+  <section class="opt">
+    <div class="opt__label">
+      <span class="opt__tag">Option C</span>
+      <span class="opt__name">Asymmetric split + chevron device</span>
+      <span class="opt__note">The boldest. Copy left, the chevron used large as a graphic device on the right with the weekly cadence woven in.</span>
+    </div>
+    <div class="frame">
+      <div class="frame__bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="nav"><span>Programmes</span><span>Approach</span><span>Work</span></span></div>
+      <div class="stage">
+        <div class="c">
+          <div>
+            <div class="eyebrow"><span class="tick"></span><p class="label">AI Enablement · Private Equity</p></div>
+            <h2>AI for firms where <span class="em">judgment</span> is the product.</h2>
+            <p class="promise">We train entire investment teams on AI, then build on the workflows that matter. <strong>Monthly, because the frontier is weekly.</strong></p>
+            <div class="h-cta"><a href="#" class="btn btn--solid">Explore the programmes <span class="arw">→</span></a></div>
+          </div>
+          <div class="c__art">
+            <span class="c__cap">Weekly cadence</span>
+            <svg class="bigchev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+            <div class="c__ticks" aria-hidden="true">
+              <i></i><i class="tall"></i><i></i><i></i><i class="tall"></i><i></i><i></i><i></i><i class="tall"></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

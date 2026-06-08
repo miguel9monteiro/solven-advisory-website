@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Solven Advisory">
+  <title>Solven Advisory — Social Card</title>
+
+  
+  <rect x="0" y="0" width="1200" height="630" fill="#F4F2EB"></rect>
+
+  
+  <g font-family="Georgia, &#39;Times New Roman&#39;, serif" font-weight="400" fill="#2A2A28">
+    <text x="368" y="320" font-size="160">S</text>
+    <text x="463" y="320" font-size="160">o</text>
+    <text x="548" y="320" font-size="160">l</text>
+    
+    <path d="M 599 230 L 649 320 L 699 230 L 684 230 L 649 295 L 614 230 Z" fill="#6B8068"></path>
+    <text x="704" y="320" font-size="160">e</text>
+    <text x="797" y="320" font-size="160">n</text>
+  </g>
+
+  
+  <text x="600" y="385" text-anchor="middle" font-family="Calibri, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif" font-size="22" fill="#6B8068" letter-spacing="7.04">A D V I S O R Y</text>
+
+  
+  <line x1="450" y1="430" x2="750" y2="430" stroke="#6B8068" stroke-width="0.5" opacity="0.6"></line>
+
+  
+  <text x="600" y="465" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="22" font-style="italic" fill="#6B6B68">AI strategy for Private Equity</text>
+</svg>

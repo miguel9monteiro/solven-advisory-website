@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enablement Programmes — Claude training for private equity | Solven Advisory</title>
+<meta name="description" content="Solven's enablement programmes bring genuine AI fluency to every level of an investment firm, analyst to partner. A four-session arc from first principles to building with Claude Code. Monthly, because the frontier is weekly." />
+<link rel="icon" type="image/svg+xml" href="assets/logos/05_solven_favicon.svg" />
+<link rel="stylesheet" href="solven.css" />
+<style>
+  /* ===== PAGE HERO ===== */
+  .phero { position: relative; overflow: hidden; padding-block: clamp(3rem, 6vw, 6rem) clamp(2rem, 4vw, 4rem); }
+  .phero__chev { position: absolute; right: -10%; top: -20%; width: clamp(360px, 44vw, 680px); opacity: 0.05; }
+  .phero__inner { position: relative; z-index: 1; }
+  .phero .eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+  .phero .eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); }
+  .phero h1 { font-size: var(--t-2xl); line-height: 1.04; max-width: 17ch; }
+  .phero .lead { margin-top: clamp(1.5rem, 3vw, 2.25rem); max-width: 40ch; }
+  .phero__split { margin-top: clamp(2rem, 4vw, 3rem); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); }
+  .phero__split .rule-top { border-top: 1px solid var(--charcoal); padding-top: var(--s-4); }
+  .phero__split p { color: var(--text-2); line-height: 1.6; margin: 0; max-width: 46ch; }
+  .phero__split p strong { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--text); }
+  @media (max-width: 760px) { .phero__split { grid-template-columns: 1fr; gap: var(--s-5); } }
+
+  /* ===== HOW IT WORKS ===== */
+  .how__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); }
+  .how__grid h2 { font-size: var(--t-xl); max-width: 12ch; }
+  .how__points { list-style: none; margin: 0; padding: 0; }
+  .how__points li { padding: var(--s-5) 0; border-top: var(--rule-thin); display: grid; grid-template-columns: auto 1fr; gap: var(--s-5); align-items: baseline; }
+  .how__points li:last-child { border-bottom: var(--rule-thin); }
+  .how__points .n { font-family: var(--serif); color: var(--sage-deep); font-size: var(--t-md); }
+  .how__points .t strong { font-family: var(--serif); font-weight: 400; font-size: var(--t-md); display: block; margin-bottom: var(--s-2); color: var(--text); }
+  .how__points .t span { color: var(--text-2); line-height: 1.55; }
+  @media (max-width: 760px) { .how__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+  /* ===== TOOLKIT ===== */
+  .kit__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .kit__head h2 { font-size: var(--t-2xl); max-width: 14ch; }
+  .kit__head p { margin: 0; }
+  .kit__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .tool {
+    padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1rem, 2vw, 1.75rem);
+    border-top: 1px solid var(--charcoal);
+    position: relative;
+  }
+  .tool:nth-child(3n+1) { padding-left: 0; }
+  .tool__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-3); }
+  .tool__num { font-family: var(--sans); font-size: var(--t-meta); letter-spacing: var(--track-label); color: var(--text-3); font-weight: 600; }
+  .tool h3 { font-family: var(--serif); font-size: var(--t-lg); font-weight: 400; text-transform: none; letter-spacing: normal; color: var(--text); margin: 0; }
+  .tool p { color: var(--text-2); margin: 0; line-height: 1.5; font-size: var(--t-sm); max-width: 34ch; }
+  .tool__tag { display: inline-block; margin-top: var(--s-3); font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--sage-deep); }
+  @media (max-width: 860px) { .kit__grid { grid-template-columns: repeat(2, 1fr); } .tool:nth-child(3n+1) { padding-left: clamp(1rem,2vw,1.75rem); } .tool:nth-child(2n+1) { padding-left: 0; } }
+  @media (max-width: 560px) { .kit__head { grid-template-columns: 1fr; gap: var(--s-4); } .kit__grid { grid-template-columns: 1fr; } .tool { padding-inline: 0 !important; } }
+
+  /* ===== FRONTIER CADENCE (tweakable) ===== */
+  .fcad { position: relative; overflow: hidden; }
+  .fcad__chev { position: absolute; right: -5%; top: -30%; width: 36%; min-width: 280px; opacity: 0.06; }
+  .fcad .shell { position: relative; z-index: 1; }
+  .fcad h2 { font-size: var(--t-2xl); max-width: 18ch; line-height: 1.06; margin-top: 0.85rem; }
+  .fcad__sub { color: var(--sage-pale); margin-top: var(--s-4); max-width: 48ch; }
+  .fcad__viz { margin-top: clamp(2.5rem, 5vw, 4rem); }
+  .fcad__track { position: relative; height: 130px; }
+  .fcad__axis { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(244,242,235,0.22); }
+  .fcad__week { position: absolute; top: calc(50% - 6px); width: 1px; height: 12px; background: rgba(244,242,235,0.32); transform: translateX(-50%); }
+  .fcad__event { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--sage); transform: translate(-50%,-50%); }
+  .fcad__event::after { content: attr(data-l); position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--sans); font-size: 10px; letter-spacing: 0.04em; color: var(--sage); }
+  .fcad__session { position: absolute; top: 50%; width: 15px; height: 15px; background: var(--bone); transform: translate(-50%,-50%) rotate(45deg); }
+  .fcad__session::after { content: attr(data-l); position: absolute; top: 19px; left: 50%; transform: translateX(-50%) rotate(-45deg); white-space: nowrap; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bone); }
+  .fcad__playhead { position: absolute; top: calc(50% - 36px); width: 1px; height: 72px; background: var(--sage); box-shadow: 0 0 16px rgba(143,166,138,0.75); left: 4%; }
+  .fcad--animate .fcad__playhead { animation: fcadSweep 7s linear infinite; }
+  @keyframes fcadSweep { 0% { left: 4%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: 96%; opacity: 0; } }
+  .fcad__nolabels .fcad__event::after, .fcad__nolabels .fcad__session::after { display: none; }
+  .fcad__legend { display: flex; gap: var(--s-6); margin-top: var(--s-8); flex-wrap: wrap; font-family: var(--sans); font-size: var(--t-meta); color: var(--sage-pale); }
+  .fcad__legend span { display: inline-flex; align-items: center; gap: 0.5em; }
+  .fcad__legend .k1 { width: 9px; height: 9px; border-radius: 50%; background: var(--sage); }
+  .fcad__legend .k2 { width: 11px; height: 11px; background: var(--bone); transform: rotate(45deg); }
+  @media (prefers-reduced-motion: reduce) { .fcad--animate .fcad__playhead { animation: none; } }
+
+  /* ===== TWEAKS PANEL ===== */
+  .tweaks { position: fixed; right: clamp(12px, 2vw, 24px); bottom: clamp(12px, 2vw, 24px); width: 320px; max-width: calc(100vw - 24px); background: var(--bone); border: 1px solid var(--charcoal); box-shadow: 0 26px 64px -26px rgba(42,42,40,0.55); z-index: 1000; display: none; font-family: var(--sans); }
+  .tweaks.open { display: block; }
+  .tweaks__bar { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 1rem; border-bottom: 1px solid var(--charcoal); }
+  .tweaks__bar h3 { font-family: var(--sans); font-size: var(--t-meta); font-weight: 700; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--charcoal); margin: 0; }
+  .tweaks__close { background: none; border: 0; cursor: pointer; font-size: 0.95rem; line-height: 1; color: var(--grey-mid); padding: 0.2rem 0.3rem; }
+  .tweaks__close:hover { color: var(--charcoal); }
+  .tweaks__body { padding: 1rem; max-height: 72vh; overflow-y: auto; }
+  .tweaks__note { font-size: 0.7rem; color: var(--grey-mid); margin: 0 0 1rem; line-height: 1.45; }
+  .tw { margin-bottom: 1.05rem; }
+  .tw:last-child { margin-bottom: 0; }
+  .tw__label { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; white-space: nowrap; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.45rem; }
+  .tw__label > span:first-child { overflow: hidden; text-overflow: ellipsis; }
+  .tw__label .val { color: var(--sage-deep); }
+  .tw input[type=text] { width: 100%; font-family: var(--serif); font-size: var(--t-sm); color: var(--charcoal); background: var(--bone-deep); border: 1px solid var(--rule); padding: 0.5em 0.6em; }
+  .tw input[type=text]:focus { outline: none; border-color: var(--sage-deep); }
+  .tw input[type=range] { width: 100%; accent-color: var(--sage-deep); }
+  .tw__seg { display: flex; border: 1px solid var(--charcoal); }
+  .tw__seg button { flex: 1; background: transparent; border: 0; border-right: 1px solid var(--charcoal); padding: 0.55em 0.3em; font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.03em; color: var(--charcoal); cursor: pointer; transition: background var(--fast), color var(--fast); }
+  .tw__seg button:last-child { border-right: 0; }
+  .tw__seg button.active { background: var(--charcoal); color: var(--bone); }
+  .tw__toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+  .tw__toggle .tw__label { margin: 0; }
+  .tw__switch { width: 38px; height: 22px; border: 1px solid var(--charcoal); border-radius: 999px; position: relative; transition: background var(--fast), border-color var(--fast); flex: 0 0 auto; }
+  .tw__switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--charcoal); transition: transform var(--fast), background var(--fast); }
+  .tw__toggle.on .tw__switch { background: var(--sage-deep); border-color: var(--sage-deep); }
+  .tw__toggle.on .tw__switch::after { transform: translateX(16px); background: var(--bone); }
+
+  /* ===== ARC / SESSIONS ===== */
+  .arc__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .arc__head h2 { font-size: var(--t-2xl); max-width: 14ch; }
+  .arc__head p { margin: 0; }
+
+  .session {
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+    border-top: 1px solid var(--charcoal);
+  }
+  .session__top { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+  .session__idx { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 0.9; color: var(--sage-deep); }
+  .session__meta .label { margin-bottom: var(--s-3); }
+  .session__title { font-size: var(--t-xl); line-height: 1.08; margin: 0 0 var(--s-4); max-width: 20ch; }
+  .session__promise { font-family: var(--serif); font-style: italic; font-size: var(--t-md); color: var(--text-2); margin: 0; max-width: 44ch; line-height: 1.4; }
+
+  .session__body { margin-top: clamp(2rem, 4vw, 3rem); }
+  .session__topics { list-style: none; margin: 0 0 clamp(2rem, 4vw, 3rem); padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(2rem, 4vw, 3.5rem); border-top: var(--rule-thin); }
+  .session__topics li { padding: var(--s-3) 0 var(--s-3) var(--s-5); border-bottom: var(--rule-thin); position: relative; color: var(--text-2); line-height: 1.45; font-size: var(--t-base); }
+  .session__topics li::before { content: ""; position: absolute; left: 0; top: calc(var(--s-3) + 0.55em); width: 9px; height: 8px; background: var(--sage-pale); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+
+  /* flow diagram */
+  .flow-wrap { background: var(--bone-deep); border: var(--rule-thin); padding: clamp(1.5rem, 3vw, 2.5rem); }
+  .flow-wrap .flow-cap { font-family: var(--sans); font-size: var(--t-meta); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--text-2); font-weight: 700; margin: 0 0 var(--s-5); }
+  .flow { display: flex; align-items: stretch; gap: 0; }
+  .node {
+    font-family: var(--sans);
+    font-size: var(--t-sm);
+    color: var(--text);
+    background: var(--bone);
+    border: 1px solid var(--charcoal);
+    padding: 0.85em 0.7em;
+    text-align: center;
+    line-height: 1.15;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .node .sub { display: block; font-size: 0.72em; color: var(--text-2); margin-top: 0.25em; letter-spacing: 0.02em; }
+  .node--sage { background: var(--sage-deep); border-color: var(--sage-deep); color: var(--bone); }
+  .node--sage .sub { color: var(--sage-pale); }
+  .flow .arrow { flex: 0 0 auto; width: 28px; display: flex; align-items: center; justify-content: center; color: var(--grey-mid); }
+  .flow .arrow svg { width: 100%; height: 12px; }
+
+  /* hub diagram (session 3) */
+  .hub { display: grid; grid-template-columns: 1fr; gap: var(--s-4); }
+  .hub__row { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+  .hub__row .node { flex: 1 1 0; min-width: 0; }
+  .hub__center { display: flex; justify-content: center; }
+  .hub__center .node { min-width: 60%; }
+  .hub__stems { display: flex; justify-content: space-around; color: var(--grey-mid); }
+  .hub__stems svg { width: 14px; height: 18px; }
+
+  /* loop diagram (session 4) */
+  .loop { position: relative; }
+  .loop__return { display: flex; align-items: center; gap: 0.5rem; margin-top: var(--s-4); font-family: var(--sans); font-size: var(--t-meta); letter-spacing: 0.04em; color: var(--grey-mid); padding-top: var(--s-4); border-top: var(--rule-thin); }
+  .loop__return svg { width: 20px; height: 12px; }
+
+  @media (max-width: 820px) {
+    .session__top { grid-template-columns: 1fr; gap: var(--s-4); }
+  }
+  @media (max-width: 760px) {
+    .arc__head { grid-template-columns: 1fr; gap: var(--s-4); }
+    .session__topics { grid-template-columns: 1fr; }
+    .flow { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; }
+    .node { flex: 0 0 auto; min-width: 108px; font-size: var(--t-meta); padding: 0.7em 0.7em; }
+    .flow .arrow { width: 22px; }
+    .hub__row .node { flex: 1 1 0; min-width: 0; }
+  }
+
+  /* ===== THE THREAD (dark) ===== */
+  .thread { position: relative; overflow: hidden; }
+  .thread__chev { position: absolute; right: -4%; bottom: -32%; width: 36%; min-width: 280px; opacity: 0.06; }
+  .thread__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); position: relative; z-index: 1; align-items: center; }
+  .thread h2 { font-size: var(--t-2xl); max-width: 14ch; line-height: 1.05; }
+  .thread__body p { color: var(--sage-pale); line-height: 1.65; max-width: 46ch; }
+  .thread__body p strong { color: var(--bone); font-weight: 400; }
+  .thread__quote { font-family: var(--serif); font-style: italic; font-size: var(--t-lg); color: var(--bone); line-height: 1.35; margin: var(--s-6) 0 0; max-width: 30ch; }
+  @media (max-width: 760px) { .thread__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+  /* ===== STRUCTURE ===== */
+  .struct__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: clamp(2rem, 4vw, 3rem); }
+  .struct {
+    padding: clamp(1.5rem, 3vw, 2.25rem) clamp(0rem, 2vw, 2rem);
+    border-top: 1px solid var(--charcoal);
+  }
+  .struct:nth-child(odd) { padding-left: 0; }
+  .struct h3 { font-family: var(--serif); font-size: var(--t-lg); font-weight: 400; text-transform: none; letter-spacing: normal; color: var(--text); margin: 0 0 var(--s-3); }
+  .struct p { color: var(--text-2); margin: 0; line-height: 1.55; font-size: var(--t-base); max-width: 42ch; }
+  @media (max-width: 760px) { .struct__grid { grid-template-columns: 1fr; } .struct { padding-inline: 0 !important; } }
+
+  /* ===== CTA ===== */
+  .pcta { position: relative; overflow: hidden; }
+  .pcta__chev { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(160px, 20vw, 320px); opacity: 0.1; }
+  .pcta__inner { position: relative; z-index: 1; max-width: 42ch; }
+  .pcta h2 { font-size: var(--t-2xl); line-height: 1.05; }
+  .pcta p { color: var(--sage-pale); margin: var(--s-5) 0 var(--s-7); }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand" aria-label="Solven Advisory home">
+      <span class="brand__word">Sol<svg class="brand__v" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg>en</span>
+      <span class="brand__rule"></span>
+      <span class="brand__sub">Advisory</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="programmes.html" class="is-current">Programmes</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="phero">
+    <svg class="phero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <div class="shell phero__inner">
+      <div class="eyebrow">
+        <span class="tick"></span>
+        <p class="label">Enablement · The programmes</p>
+      </div>
+      <h1>Genuine AI fluency at every level of the firm, from analyst to partner.</h1>
+      <p class="lead">Hands-on Claude sessions that take an entire firm from first principles to building with the most advanced tools in the suite.</p>
+
+      <div class="phero__split">
+        <div class="rule-top">
+          <p>A team trained once is a team falling behind. The technology underneath this work shifts on a weekly cadence, so a firm that trained six months ago is already operating on stale knowledge.</p>
+        </div>
+        <div class="rule-top">
+          <p><strong>Our programmes are monthly precisely because the technology is weekly.</strong> Each person learns to recognise where Claude belongs in their own work, and stays current as the market keeps moving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALWAYS ON THE FRONTIER (tweakable) -->
+  <section class="band-dark section fcad" id="frontier" aria-labelledby="fcad-headline">
+    <svg class="fcad__chev" data-parallax="0.06" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell">
+      <p class="label reveal">Always on the frontier</p>
+      <h2 id="fcad-headline" class="reveal" style="--reveal-delay:80ms">The frontier moves weekly. We keep your team on it.</h2>
+      <p class="fcad__sub lead reveal" style="--reveal-delay:120ms">New models, tools, and capabilities arrive on a weekly cadence. Our sessions land at a steady rhythm so the team is never more than one step behind the edge.</p>
+      <div class="fcad__viz reveal" style="--reveal-delay:160ms">
+        <div class="fcad__track" id="fcad-track"></div>
+        <div class="fcad__legend">
+          <span><span class="k1"></span> Frontier shifts, weekly</span>
+          <span><span class="k2"></span> <span id="fcad-legend-session">Solven session, monthly</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="shell section">
+    <div class="how__grid">
+      <div>
+        <p class="label reveal">How it works</p>
+        <h2 class="reveal" style="margin-top:1rem">On your own workflows, not generic demonstrations.</h2>
+      </div>
+      <ol class="how__points reveal">
+        <li>
+          <span class="n">i</span>
+          <span class="t"><strong>Hands-on, on the real work.</strong><span>Sessions run on the firm's actual deals, models, memos, and reports, so each person leaves knowing where Claude fits their day.</span></span>
+        </li>
+        <li>
+          <span class="n">ii</span>
+          <span class="t"><strong>Month one is breadth.</strong><span>Orientation across the full Claude ecosystem, from first principles to building, so the whole team shares a map of what is possible.</span></span>
+        </li>
+        <li>
+          <span class="n">iii</span>
+          <span class="t"><strong>From month two, we go deep.</strong><span>Later sessions concentrate on the areas the team finds most valuable. The session's arc stays; the path adapts.</span></span>
+        </li>
+        <li>
+          <span class="n">iv</span>
+          <span class="t"><strong>Trainers read the room.</strong><span>The topics below are guidance, not a script. Pace and emphasis follow the people in the room, analyst to partner.</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="shell section--tight" aria-labelledby="kit-title">
+    <div class="kit__head">
+      <div>
+        <p class="label reveal">What we cover</p>
+        <h2 id="kit-title" class="reveal" style="--reveal-delay:80ms; margin-top:1rem">The full Claude toolkit.</h2>
+      </div>
+      <p class="lead reveal measure-sm" style="--reveal-delay:120ms">Each person learns which tool fits which part of their work, so the whole suite is in play, not just the chat box.</p>
+    </div>
+    <div class="kit__grid">
+      <article class="tool reveal">
+        <div class="tool__top"><h3>Claude.ai</h3><span class="tool__num">01</span></div>
+        <p>Research, drafting, and analysis in the browser, with Projects, files, and web search in one place.</p>
+      </article>
+      <article class="tool reveal" style="--reveal-delay:60ms">
+        <div class="tool__top"><h3>Claude Code</h3><span class="tool__num">02</span></div>
+        <p>The most capable tool in the suite, and far more than a developer tool: organising files, automating recurring work, building real systems.</p>
+        <span class="tool__tag">Session four</span>
+      </article>
+      <article class="tool reveal" style="--reveal-delay:120ms">
+        <div class="tool__top"><h3>Claude for Chrome</h3><span class="tool__num">03</span></div>
+        <p>Claude working alongside the pages and tools your team already uses, without leaving the browser.</p>
+      </article>
+      <article class="tool reveal">
+        <div class="tool__top"><h3>Claude Cowork</h3><span class="tool__num">04</span></div>
+        <p>Claude that takes actions across the desktop, running a workflow end to end rather than only generating text.</p>
+        <span class="tool__tag">Session three</span>
+      </article>
+      <article class="tool reveal" style="--reveal-delay:60ms">
+        <div class="tool__top"><h3>Claude for Excel</h3><span class="tool__num">05</span></div>
+        <p>Formula generation and audit, data cleaning, and model building, with Claude reasoning across the whole workbook.</p>
+        <span class="tool__tag">Session three</span>
+      </article>
+      <article class="tool reveal" style="--reveal-delay:120ms">
+        <div class="tool__top"><h3>Claude for PowerPoint</h3><span class="tool__num">06</span></div>
+        <p>Decks, charts, and IC-ready memos drawn from outlines, notes, or source documents, aligned to the house format.</p>
+        <span class="tool__tag">Session three</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- THE ARC -->
+  <section class="shell section--tight" aria-labelledby="arc-title">
+    <div class="arc__head">
+      <h2 id="arc-title" class="reveal">The four-session arc.</h2>
+      <p class="lead reveal measure-sm" style="--reveal-delay:100ms">From how a model actually thinks, through conversation and production, to building agentic systems with Claude Code.</p>
+    </div>
+
+    <!-- Session 1 -->
+    <article class="session reveal">
+      <div class="session__top">
+        <div class="session__idx">01</div>
+        <div class="session__meta">
+          <p class="label">Session one · Foundations</p>
+          <h3 class="session__title">How AI thinks.</h3>
+          <p class="session__promise">Understand what a model is doing well enough to know when to trust it, and when to push back.</p>
+        </div>
+      </div>
+      <div class="session__body">
+        <ul class="session__topics">
+          <li>The history of AI through the transformer breakthrough</li>
+          <li>Tokens, embeddings, vectors, and attention</li>
+          <li>How generation works: probability, sampling, run-to-run variance</li>
+          <li>Where Claude is sharpest, where it fails, and why hallucinations happen</li>
+          <li>The analyst-first principle and the habit of verification</li>
+        </ul>
+        <div class="flow-wrap">
+          <p class="flow-cap">How a model turns text into output</p>
+          <div class="flow">
+            <span class="node">Text<span class="sub">raw input</span></span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node">Tokens<span class="sub">computable units</span></span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node">Vectors<span class="sub">meaning as geometry</span></span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node">Attention<span class="sub">what matters</span></span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node node--sage">Output<span class="sub">probabilistic</span></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Session 2 -->
+    <article class="session reveal">
+      <div class="session__top">
+        <div class="session__idx">02</div>
+        <div class="session__meta">
+          <p class="label">Session two · Conversation</p>
+          <h3 class="session__title">Claude.ai.</h3>
+          <p class="session__promise">The prompting craft that separates competent output from compelling, and the devil's advocate pattern at its core.</p>
+        </div>
+      </div>
+      <div class="session__body">
+        <ul class="session__topics">
+          <li>The interface: chat, Projects, Memory, files, web search, Artifacts</li>
+          <li>Structured prompting: XML tagging, role framing, output specs</li>
+          <li>Few-shot prompting, chain-of-thought, and metaprompting</li>
+          <li>The devil's advocate pattern: Claude as critic, not author</li>
+          <li>Context-window management, token economics, knowing when to stop</li>
+        </ul>
+        <div class="flow-wrap">
+          <p class="flow-cap">Anatomy of a structured prompt</p>
+          <div class="flow">
+            <span class="node">Context</span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node">Instructions</span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node">Examples</span>
+            <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+            <span class="node node--sage">Output spec</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Session 3 -->
+    <article class="session reveal">
+      <div class="session__top">
+        <div class="session__idx">03</div>
+        <div class="session__meta">
+          <p class="label">Session three · Production</p>
+          <h3 class="session__title">Claude in the tools you already use.</h3>
+          <p class="session__promise">Where the team's deliverables actually live: the workbook, the deck, and across the desktop.</p>
+        </div>
+      </div>
+      <div class="session__body">
+        <ul class="session__topics">
+          <li>Claude for Excel: formula generation, audit trails, financial models, cross-sheet reasoning</li>
+          <li>Claude for PowerPoint: decks from outlines, brand-aligning, IC-ready memos</li>
+          <li>Claude Cowork: desktop automation and multi-app workflows</li>
+          <li>The bigger idea: tools and function calling</li>
+          <li>Why Claude + tools is fundamentally more capable than Claude alone</li>
+        </ul>
+        <div class="flow-wrap">
+          <p class="flow-cap">Tools around the model</p>
+          <div class="hub">
+            <div class="hub__row">
+              <span class="node">Excel<span class="sub">models &amp; data</span></span>
+              <span class="node">PowerPoint<span class="sub">decks &amp; memos</span></span>
+              <span class="node">Cowork<span class="sub">desktop agent</span></span>
+            </div>
+            <div class="hub__stems" aria-hidden="true">
+              <svg viewBox="0 0 14 18"><line x1="7" y1="0" x2="7" y2="12" stroke="currentColor" stroke-width="1"/><path d="M3 12 L7 17 L11 12" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+              <svg viewBox="0 0 14 18"><line x1="7" y1="0" x2="7" y2="12" stroke="currentColor" stroke-width="1"/><path d="M3 12 L7 17 L11 12" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+              <svg viewBox="0 0 14 18"><line x1="7" y1="0" x2="7" y2="12" stroke="currentColor" stroke-width="1"/><path d="M3 12 L7 17 L11 12" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+            </div>
+            <div class="hub__center">
+              <span class="node node--sage">Claude + tools<span class="sub">function calling</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Session 4 -->
+    <article class="session reveal">
+      <div class="session__top">
+        <div class="session__idx">04</div>
+        <div class="session__meta">
+          <p class="label">Session four · Construction</p>
+          <h3 class="session__title">Building with Claude Code.</h3>
+          <p class="session__promise">The most capable tool in the suite, far beyond a developer tool: where AI-native workflows compound month over month.</p>
+        </div>
+      </div>
+      <div class="session__body">
+        <ul class="session__topics">
+          <li>The agentic loop, version-controlled prompts, and markdown fluency</li>
+          <li>Skills &amp; SKILL.md: packaging team expertise as deployable capability</li>
+          <li>MCP: connecting Claude to databases, APIs, and internal systems</li>
+          <li>The infinite-horizon problem and explicit done-conditions</li>
+          <li>Automation patterns: structured extraction, batch processing, report generation</li>
+        </ul>
+        <div class="flow-wrap">
+          <p class="flow-cap">The agentic loop</p>
+          <div class="loop">
+            <div class="flow">
+              <span class="node">Plan<span class="sub">decompose</span></span>
+              <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+              <span class="node">Act<span class="sub">execute</span></span>
+              <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+              <span class="node">Verify<span class="sub">check work</span></span>
+              <span class="arrow"><svg viewBox="0 0 28 12" aria-hidden="true"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1"/><path d="M22 2 L27 6 L22 10" fill="none" stroke="currentColor" stroke-width="1"/></svg></span>
+              <span class="node node--sage">Iterate<span class="sub">refine</span></span>
+            </div>
+            <div class="loop__return">
+              <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M20 1 L20 6 L3 6" fill="none" stroke="currentColor" stroke-width="1"/><path d="M7 2 L2 6 L7 10" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+              <span>Iterate feeds back into the plan — the loop runs until the done-condition is met.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- THE THREAD -->
+  <section class="band-dark section thread">
+    <svg class="thread__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell thread__grid">
+      <div>
+        <p class="label reveal">The thread</p>
+        <h2 class="reveal" style="--reveal-delay:80ms">Every session carries the analyst-first principle.</h2>
+        <p class="thread__quote reveal" style="--reveal-delay:140ms">Analysts produce the formative work first, then bring Claude in as a critic, a red-teamer, and a verifier.</p>
+      </div>
+      <div class="thread__body reveal" style="--reveal-delay:120ms">
+        <p>The risk in any rollout is that talented people become editors of drafts they cannot fully defend. <strong>We design every session the other way round.</strong> Verification habits, the devil's advocate pattern, AI as critic rather than author — the same skills that unconstrained use erodes are the ones we build.</p>
+        <p>That is what we mean by <strong>augmentation without cognitive atrophy</strong>, and it runs through all four sessions and everything that follows them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE -->
+  <section class="shell section">
+    <p class="label reveal">Programme structure</p>
+    <h2 class="reveal measure" style="font-size:var(--t-xl); margin-top:1rem; max-width:18ch">Built to flex around the firm.</h2>
+    <div class="struct__grid">
+      <div class="struct reveal">
+        <h3>Month to month</h3>
+        <p>Programmes run monthly with no minimum commitment. Stay as long as the frontier keeps moving — which is to say, as long as it is useful.</p>
+      </div>
+      <div class="struct reveal" style="--reveal-delay:80ms">
+        <h3>Sessions plus build hours</h3>
+        <p>Training pairs with optional build and consulting hours, so confidence from the room turns into real systems on real workflows.</p>
+      </div>
+      <div class="struct reveal">
+        <h3>On site or remote</h3>
+        <p>Delivered at your office in Lisbon, remotely, or a mix. The format follows the team, not the other way round.</p>
+      </div>
+      <div class="struct reveal" style="--reveal-delay:80ms">
+        <h3>Open to the whole firm</h3>
+        <p>Analyst to managing partner. Fluency is a firm-wide capability, not a specialism held by a few. Each engagement is scoped and priced bespoke.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band-dark section pcta">
+    <svg class="pcta__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell">
+      <div class="pcta__inner reveal">
+        <p class="label">Member of the Anthropic Partner Network · Phase 1</p>
+        <h2 style="margin-top:1.25rem">A conversation to tune the programme to your firm's priorities.</h2>
+        <p>Tell us where your team is today and what the next quarter looks like. We will shape the arc around it.</p>
+        <a href="contact.html" class="btn btn--dark">Start a conversation <span class="arw">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <svg class="footer-chevron" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+  <div class="site-footer__grid">
+    <div>
+      <a href="index.html" class="site-footer__mark" aria-label="Solven Advisory home">
+        <img src="assets/logos/02_solven_reversed_lockup.svg" alt="Solven Advisory" width="240" height="64" />
+      </a>
+      <p class="partner-badge" style="margin-top:1.5rem"><span class="dot"></span> Anthropic Partner Network · Phase 1</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul class="footer-list">
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-list">
+        <li><a href="mailto:hello@solvenadvisory.ai">hello@solvenadvisory.ai</a></li>
+        <li><a href="tel:+351967130877">+351 967 130 877</a></li>
+        <li>Lisbon, Portugal</li>
+        <li><a href="https://www.linkedin.com/company/solven-advisory">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>Lisbon · 2026</span>
+    <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
+  </div>
+</footer>
+
+<aside class="tweaks" id="tweaks" aria-label="Tweaks">
+  <div class="tweaks__bar">
+    <h3>Tweaks</h3>
+    <button class="tweaks__close" id="tw-close" aria-label="Close tweaks">✕</button>
+  </div>
+  <div class="tweaks__body">
+    <p class="tweaks__note">Tune the “always on the frontier” visual — how the weekly cadence reads against your session rhythm.</p>
+    <div class="tw">
+      <div class="tw__label"><span>Headline</span></div>
+      <input type="text" id="tw-headline" />
+    </div>
+    <div class="tw">
+      <div class="tw__label"><span>Weeks shown</span><span class="val" id="tw-weeks-v"></span></div>
+      <input type="range" id="tw-weeks" min="8" max="16" step="1" />
+    </div>
+    <div class="tw">
+      <div class="tw__label"><span>Session cadence</span></div>
+      <div class="tw__seg" id="tw-cadence">
+        <button type="button" data-v="fortnightly">Fortnightly</button>
+        <button type="button" data-v="monthly">Monthly</button>
+        <button type="button" data-v="sixweekly">Six-weekly</button>
+      </div>
+    </div>
+    <div class="tw">
+      <div class="tw__label"><span>Frontier events</span><span class="val" id="tw-events-v"></span></div>
+      <input type="range" id="tw-events" min="1" max="5" step="1" />
+    </div>
+    <div class="tw">
+      <div class="tw__toggle" id="tw-labels" role="switch" tabindex="0"><span class="tw__label">Show labels</span><span class="tw__switch"></span></div>
+    </div>
+    <div class="tw">
+      <div class="tw__toggle" id="tw-animate" role="switch" tabindex="0"><span class="tw__label">Animate playhead</span><span class="tw__switch"></span></div>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function () {
+  "use strict";
+  var TWEAKS = /*EDITMODE-BEGIN*/{
+    "frontierHeadline": "The frontier moves weekly. We keep your team on it.",
+    "weeks": 12,
+    "cadence": "monthly",
+    "events": 3,
+    "showLabels": true,
+    "animate": false
+  }/*EDITMODE-END*/;
+
+  var EVENT_LABELS = ["new model", "new tool", "new capability", "new best practice", "new skill"];
+  var STEP = { fortnightly: 2, monthly: 4, sixweekly: 6 };
+  var WORD = { fortnightly: "fortnightly", monthly: "monthly", sixweekly: "six-weekly" };
+
+  function pos(i, n) { return (4 + (n <= 1 ? 0 : (i / (n - 1)) * 92)).toFixed(2); }
+
+  function renderCadence() {
+    var track = document.getElementById("fcad-track");
+    if (!track) return;
+    var weeks = TWEAKS.weeks, evN = TWEAKS.events;
+    var step = STEP[TWEAKS.cadence] || 4;
+    var html = '<div class="fcad__axis"></div>';
+    var i;
+    for (i = 0; i < weeks; i++) html += '<div class="fcad__week" style="left:' + pos(i, weeks) + '%"></div>';
+
+    var sessions = [], used = {};
+    for (i = 0; i < weeks; i += step) { sessions.push(i); used[i] = 1; }
+
+    for (var k = 0; k < evN; k++) {
+      var idx = Math.round(((k + 1) / (evN + 1)) * (weeks - 1));
+      var guard = 0;
+      while ((used[idx] || idx <= 0 || idx >= weeks - 1) && guard < weeks) { idx = (idx + 1) % weeks; guard++; }
+      used[idx] = 1;
+      html += '<div class="fcad__event" style="left:' + pos(idx, weeks) + '%" data-l="' + EVENT_LABELS[k % EVENT_LABELS.length] + '"></div>';
+    }
+    sessions.forEach(function (s) {
+      html += '<div class="fcad__session" style="left:' + pos(s, weeks) + '%" data-l="Session"></div>';
+    });
+    if (TWEAKS.animate) html += '<div class="fcad__playhead"></div>';
+
+    track.innerHTML = html;
+    track.classList.toggle("fcad__nolabels", !TWEAKS.showLabels);
+    track.classList.toggle("fcad--animate", !!TWEAKS.animate);
+
+    var h = document.getElementById("fcad-headline");
+    if (h) h.textContent = TWEAKS.frontierHeadline;
+    var lw = document.getElementById("fcad-legend-session");
+    if (lw) lw.textContent = "Solven session, " + (WORD[TWEAKS.cadence] || "monthly");
+  }
+
+  function syncPanel() {
+    document.getElementById("tw-headline").value = TWEAKS.frontierHeadline;
+    document.getElementById("tw-weeks").value = TWEAKS.weeks;
+    document.getElementById("tw-weeks-v").textContent = TWEAKS.weeks + " wks";
+    document.getElementById("tw-events").value = TWEAKS.events;
+    document.getElementById("tw-events-v").textContent = TWEAKS.events;
+    Array.prototype.forEach.call(document.querySelectorAll("#tw-cadence button"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-v") === TWEAKS.cadence);
+    });
+    document.getElementById("tw-labels").classList.toggle("on", !!TWEAKS.showLabels);
+    document.getElementById("tw-animate").classList.toggle("on", !!TWEAKS.animate);
+  }
+
+  function persist(key, val) {
+    var edits = {}; edits[key] = val;
+    try { window.parent.postMessage({ type: "__edit_mode_set_keys", edits: edits }, "*"); } catch (e) {}
+  }
+  function set(key, val) { TWEAKS[key] = val; renderCadence(); persist(key, val); }
+
+  // ---- wire controls ----
+  var hi = document.getElementById("tw-headline");
+  hi.addEventListener("input", function () { set("frontierHeadline", hi.value); });
+
+  var wk = document.getElementById("tw-weeks");
+  wk.addEventListener("input", function () { document.getElementById("tw-weeks-v").textContent = wk.value + " wks"; set("weeks", parseInt(wk.value, 10)); });
+
+  var ev = document.getElementById("tw-events");
+  ev.addEventListener("input", function () { document.getElementById("tw-events-v").textContent = ev.value; set("events", parseInt(ev.value, 10)); });
+
+  Array.prototype.forEach.call(document.querySelectorAll("#tw-cadence button"), function (b) {
+    b.addEventListener("click", function () { set("cadence", b.getAttribute("data-v")); syncPanel(); });
+  });
+
+  function bindToggle(id, key) {
+    var el = document.getElementById(id);
+    var toggle = function () { set(key, !TWEAKS[key]); el.classList.toggle("on", !!TWEAKS[key]); };
+    el.addEventListener("click", toggle);
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  }
+  bindToggle("tw-labels", "showLabels");
+  bindToggle("tw-animate", "animate");
+
+  // ---- Tweaks host protocol (listener first, then announce) ----
+  var panel = document.getElementById("tweaks");
+  window.addEventListener("message", function (e) {
+    var d = e.data || {};
+    if (d.type === "__activate_edit_mode") panel.classList.add("open");
+    else if (d.type === "__deactivate_edit_mode") panel.classList.remove("open");
+  });
+  document.getElementById("tw-close").addEventListener("click", function () {
+    panel.classList.remove("open");
+    try { window.parent.postMessage({ type: "__edit_mode_dismissed" }, "*"); } catch (e) {}
+  });
+  try { window.parent.postMessage({ type: "__edit_mode_available" }, "*"); } catch (e) {}
+
+  // ---- init ----
+  syncPanel();
+  renderCadence();
+})();
+</script>
+
+<script src="solven.js"></script>
+</body>
+</html>

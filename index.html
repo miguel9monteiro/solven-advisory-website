@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solven Advisory — AI implementation for firms where judgment is the product</title>
+<meta name="description" content="Solven Advisory trains entire investment teams on AI and builds AI systems on their workflows. The frontier moves weekly; we keep your firm current. Augmentation without cognitive atrophy." />
+<link rel="icon" type="image/svg+xml" href="assets/logos/05_solven_favicon.svg" />
+<link rel="stylesheet" href="solven.css" />
+<style>
+  /* ===== HERO ===== */
+  .hero { position: relative; overflow: hidden; padding-block: clamp(3.5rem, 8vw, 8rem) clamp(3rem, 6vw, 6rem); }
+  .hero__chev {
+    position: absolute;
+    right: -8%; top: -6%;
+    width: clamp(420px, 52vw, 820px);
+    opacity: 0.05;
+    transform: rotate(0deg);
+    z-index: 0;
+  }
+  .hero__inner { position: relative; z-index: 1; }
+
+  /* Cinematic entrance — transition-based, gated by a JS class.
+     The hero is VISIBLE BY DEFAULT. It is hidden only after JS arms the
+     intro, and always transitions back to visible. If JS or motion stalls,
+     content stays shown (transitions complete reliably; keyframe clocks may not). */
+  @media (prefers-reduced-motion: no-preference) {
+    body.intro-armed:not(.intro-go) .hero__eyebrow,
+    body.intro-armed:not(.intro-go) .hero h1,
+    body.intro-armed:not(.intro-go) .hero__beat > div,
+    body.intro-armed:not(.intro-go) .hero__cta { opacity: 0; transform: translateY(32px); transition: none; }
+    body.intro-armed:not(.intro-go) .hero__chev { opacity: 0; transform: translateY(-46px) scale(1.09); transition: none; }
+
+    body.intro-go .hero__eyebrow,
+    body.intro-go .hero h1,
+    body.intro-go .hero__beat > div,
+    body.intro-go .hero__cta { transition: opacity 0.95s cubic-bezier(0.22,0.61,0.36,1), transform 0.95s cubic-bezier(0.22,0.61,0.36,1); }
+    body.intro-go .hero__chev { transition: opacity 1.6s cubic-bezier(0.22,0.61,0.36,1), transform 1.6s cubic-bezier(0.22,0.61,0.36,1); }
+
+    body.intro-go .hero__eyebrow { transition-delay: 0.15s; }
+    body.intro-go .hero h1 { transition-delay: 0.28s; }
+    body.intro-go .hero__beat > div:nth-child(1) { transition-delay: 0.5s; }
+    body.intro-go .hero__beat > div:nth-child(2) { transition-delay: 0.62s; }
+    body.intro-go .hero__cta { transition-delay: 0.8s; }
+
+    /* Guaranteed escape: if the transition clock never advances, this snaps
+       the hero to its visible resting state without needing any animation. */
+    body.intro-rescue .hero__eyebrow,
+    body.intro-rescue .hero h1,
+    body.intro-rescue .hero__beat > div,
+    body.intro-rescue .hero__cta { opacity: 1 !important; transform: none !important; transition: none !important; }
+    body.intro-rescue .hero__chev { opacity: 0.05 !important; transform: none !important; transition: none !important; }
+  }
+  .hero__eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: clamp(1.5rem, 4vw, 2.75rem); }
+  .hero__eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); display: inline-block; }
+  .hero h1 {
+    font-size: var(--t-hero);
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    max-width: 18ch;
+    margin: 0;
+  }
+  .hero h1 .em { font-style: italic; color: var(--charcoal); }
+  .hero h1 .chev-i { display: inline-block; width: 0.62em; height: 0.62em; vertical-align: baseline; margin: 0 0.02em; transform: translateY(0.04em); }
+  .hero h1 .chev-i path { fill: var(--sage-deep); }
+
+  .hero__beat {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: start;
+  }
+  .hero__beat .rule-top { border-top: 1px solid var(--charcoal); padding-top: var(--s-4); }
+  .hero__beat .lead { margin: 0; max-width: 26ch; }
+  .hero__promise { font-size: var(--t-base); line-height: 1.6; color: var(--text-2); margin: 0; max-width: 46ch; }
+  .hero__promise strong { color: var(--text); font-weight: 400; font-family: var(--serif); font-style: italic; }
+  .hero__cta { display: flex; gap: var(--s-4); margin-top: clamp(2rem, 4vw, 3rem); flex-wrap: wrap; }
+
+  @media (max-width: 760px) {
+    .hero__beat { grid-template-columns: 1fr; gap: var(--s-5); }
+    .hero h1 { max-width: 14ch; }
+  }
+
+  /* ===== OFFER DOORS ===== */
+  .doors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: var(--rule-thin); border-bottom: var(--rule-thin); }
+  .door {
+    position: relative;
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.4vw, 2.4rem);
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    min-height: 320px;
+    transition: background var(--fast);
+    overflow: hidden;
+  }
+  .door + .door { border-left: var(--rule-thin); }
+  .door:hover { background: var(--ink-04); }
+  .door__num { font-family: var(--sans); font-size: var(--t-meta); letter-spacing: var(--track-label); color: var(--text-3); font-weight: 600; }
+  .door__label { margin: var(--s-2) 0 var(--s-5); }
+  .door h3 { font-size: var(--t-lg); line-height: 1.12; max-width: 16ch; margin: 0 0 var(--s-4); }
+  .door p { color: var(--text-2); margin: 0 0 var(--s-6); max-width: 42ch; line-height: 1.55; }
+  .door__go { margin-top: auto; font-family: var(--sans); font-size: var(--t-sm); display: inline-flex; align-items: center; gap: 0.5em; color: var(--text); }
+  .door:hover .door__go .arw { transform: translateX(4px); }
+  .door__go .arw { transition: transform var(--fast); }
+  .door__chev { position: absolute; right: -10%; bottom: -22%; width: 56%; opacity: 0.05; pointer-events: none; }
+  @media (max-width: 900px) {
+    .doors { grid-template-columns: 1fr; }
+    .door + .door { border-left: 0; border-top: var(--rule-thin); }
+    .door { min-height: 0; }
+  }
+
+  /* ===== PRACTICES ===== */
+  .practices__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .practices__head h2 { font-size: var(--t-2xl); max-width: 16ch; }
+  .practices__head p { margin: 0; }
+  .pgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .practice {
+    padding: clamp(1.75rem, 3vw, 2.75rem) clamp(0rem, 2vw, 2.25rem);
+    border-top: 1px solid var(--charcoal);
+    position: relative;
+  }
+  .practice:nth-child(odd) { padding-left: 0; }
+  .practice__top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-5); gap: var(--s-4); }
+  .practice__num { font-family: var(--serif); font-size: var(--t-md); color: var(--sage-deep); }
+  .practice__aud { }
+  .practice h3 { font-size: var(--t-lg); margin: 0 0 var(--s-3); }
+  .practice p { color: var(--text-2); margin: 0; line-height: 1.55; font-size: var(--t-base); max-width: 44ch; }
+  @media (max-width: 760px) {
+    .practices__head { grid-template-columns: 1fr; gap: var(--s-4); }
+    .pgrid { grid-template-columns: 1fr; }
+    .practice { padding-inline: 0 !important; }
+  }
+
+  /* ===== AI DILIGENCE ===== */
+  .diligence-band { background: var(--bone-deep); position: relative; overflow: hidden; }
+  .dil__chev { position: absolute; left: -4%; bottom: -34%; width: 34%; min-width: 260px; opacity: 0.05; }
+  .dil { position: relative; z-index: 1; }
+  .dil__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .dil__head h2 { font-size: var(--t-2xl); max-width: 14ch; margin-top: 0.6rem; }
+  .dil__head .lead { margin: 0; }
+  .dil__compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: stretch; }
+  .dil__tag { font-family: var(--sans); font-size: var(--t-meta); font-weight: 700; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--text-2); margin: 0 0 var(--s-4); padding-bottom: var(--s-3); border-bottom: var(--rule-thin); }
+  .dil__real .dil__tag { color: var(--sage-deep); border-color: var(--sage-deep); }
+  .dil__col ul { list-style: none; margin: 0; padding: 0; }
+  .dil__say li { font-family: var(--serif); font-style: italic; font-size: var(--t-md); color: var(--grey-mid); padding: var(--s-4) 0; border-bottom: var(--rule-thin); }
+  .dil__real li { color: var(--text); padding: var(--s-4) 0 var(--s-4) var(--s-5); border-bottom: var(--rule-thin); position: relative; line-height: 1.5; }
+  .dil__real li::before { content: ""; position: absolute; left: 0; top: calc(var(--s-4) + 0.5em); width: 9px; height: 8px; background: var(--sage-deep); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+  .dil__vs { position: relative; width: 1px; background: var(--rule); align-self: stretch; }
+  .dil__vs::after { content: "?"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 38px; height: 38px; border: 1px solid var(--charcoal); border-radius: 50%; background: var(--bone-deep); font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--charcoal); text-align: center; line-height: 36px; }
+  .dil__output { font-family: var(--serif); font-size: var(--t-md); color: var(--text); margin: clamp(2rem, 4vw, 3rem) 0 0; max-width: 52ch; line-height: 1.45; }
+  @media (max-width: 820px) {
+    .dil__head { grid-template-columns: 1fr; gap: var(--s-4); }
+    .dil__compare { grid-template-columns: 1fr; gap: var(--s-6); }
+    .dil__vs { display: none; }
+  }
+
+  /* ===== CURRENCY / FRONTIER BAND ===== */
+  .frontier { position: relative; }
+  .frontier__chev { position: absolute; left: -6%; top: -30%; width: 40%; min-width: 300px; opacity: 0.06; }
+  .frontier__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; position: relative; z-index: 1; }
+  .frontier h2 { font-size: var(--t-2xl); max-width: 15ch; line-height: 1.05; }
+  .frontier .lead { margin-top: var(--s-5); max-width: 34ch; }
+  .frontier__body p { color: var(--sage-pale); line-height: 1.65; max-width: 46ch; }
+  .frontier__body p strong { color: var(--bone); font-weight: 400; }
+
+  /* cadence timeline */
+  .cadence { margin-top: var(--s-6); }
+  .cadence__track { position: relative; height: 84px; border-left: 1px solid rgba(244,242,235,0.25); }
+  .cadence__axis { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(244,242,235,0.2); }
+  .cadence__week { position: absolute; top: calc(50% - 5px); width: 1px; height: 10px; background: rgba(244,242,235,0.35); }
+  .cadence__cap { position: absolute; top: 50%; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); transform: translate(-50%, -50%); }
+  .cadence__cap::after { content: attr(data-l); position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--sans); font-size: 10px; letter-spacing: 0.04em; color: var(--sage); }
+  .cadence__session { position: absolute; top: 50%; width: 13px; height: 13px; background: var(--bone); transform: translate(-50%, -50%) rotate(45deg); }
+  .cadence__session::after { content: attr(data-l); position: absolute; top: 16px; left: 50%; transform: translateX(-50%) rotate(-45deg); white-space: nowrap; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bone); }
+  .cadence__legend { display: flex; gap: var(--s-6); margin-top: var(--s-7); flex-wrap: wrap; font-family: var(--sans); font-size: var(--t-meta); color: var(--sage-pale); }
+  .cadence__legend span { display: inline-flex; align-items: center; gap: 0.5em; }
+  .cadence__legend .k1 { width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+  .cadence__legend .k2 { width: 9px; height: 9px; background: var(--bone); transform: rotate(45deg); }
+  @media (max-width: 760px) { .frontier__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+  /* ===== SIGNAL ===== */
+  .signal { text-align: left; }
+  .signal p { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.4; max-width: 30ch; color: var(--text); margin: 0; }
+  .signal .label { margin-bottom: var(--s-5); }
+
+  /* ===== CLOSING CTA ===== */
+  .closer { position: relative; overflow: hidden; }
+  .closer__chev { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); width: clamp(180px, 22vw, 360px); opacity: 0.1; }
+  .closer__inner { position: relative; z-index: 1; max-width: 40ch; }
+  .closer h2 { font-size: var(--t-2xl); line-height: 1.05; }
+  .closer p { color: var(--sage-pale); margin: var(--s-5) 0 var(--s-7); max-width: 40ch; }
+  .closer .wry { font-family: var(--serif); font-style: italic; color: var(--sage); font-size: var(--t-md); margin-top: var(--s-6); }
+</style>
+</head>
+<body data-intro>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand" aria-label="Solven Advisory home">
+      <span class="brand__word">Sol<svg class="brand__v" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg>en</span>
+      <span class="brand__rule"></span>
+      <span class="brand__sub">Advisory</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html" class="is-current">Home</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <div class="shell hero__inner">
+      <div class="hero__eyebrow">
+        <span class="tick"></span>
+        <p class="label">AI Enablement &amp; Implementation · Private Equity</p>
+      </div>
+      <h1>
+        AI implementation for firms where <span class="em">judgment</span> is the product.
+      </h1>
+
+      <div class="hero__beat">
+        <div class="rule-top">
+          <p class="lead">We train entire investment teams on AI, then build AI systems on the workflows that matter.</p>
+        </div>
+        <div class="rule-top">
+          <p class="hero__promise">The technology underneath this work changes weekly: new models, new tools, shifting best practice. Most firms train once and fall behind quietly. <strong>Solven's programmes are monthly because the frontier is weekly</strong> — your team, analyst to partner, stays current as the market moves.</p>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <a href="programmes.html" class="btn btn--solid">Explore the programmes <span class="arw">→</span></a>
+        <a href="contact.html" class="btn">Start a conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO DOORS -->
+  <section class="shell" aria-label="What we offer">
+    <div class="doors">
+      <a href="programmes.html" class="door reveal">
+        <svg class="door__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+        <span class="door__num">01</span>
+        <p class="label door__label">Enablement</p>
+        <h3>Learn the tools, at every level of the firm.</h3>
+        <p>Hands-on Claude sessions for the whole team, from the newest analyst to the managing partner. A four-session arc from first principles to building with the most advanced tools in the suite.</p>
+        <span class="door__go">The programmes <span class="arw">→</span></span>
+      </a>
+      <a href="work.html" class="door reveal" style="--reveal-delay:120ms">
+        <svg class="door__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+        <span class="door__num">02</span>
+        <p class="label door__label">Build</p>
+        <h3>Then build AI systems on your workflows.</h3>
+        <p>Agents, automation, and workflow systems applied to the real work: contract redlining, IC memo interrogation, portfolio reporting. Build hours pair with the training so confidence becomes real systems.</p>
+        <span class="door__go">Selected work <span class="arw">→</span></span>
+      </a>
+      <a href="#diligence" class="door reveal" style="--reveal-delay:200ms">
+        <svg class="door__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+        <span class="door__num">03</span>
+        <p class="label door__label">AI Diligence</p>
+        <h3>And tell real AI from marketing jargon.</h3>
+        <p>Independent diligence for funds: we pressure-test whether a target or a pitching founder is genuinely AI-native, or simply fluent in the vocabulary, before the term sheet is signed.</p>
+        <span class="door__go">How it works <span class="arw">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- PRACTICES -->
+  <section class="shell section">
+    <div class="practices__head">
+      <h2 class="reveal">Four practices, four entry points into the firm.</h2>
+      <p class="lead reveal measure-sm" style="--reveal-delay:100ms">Each maps to a different seat at the table, and each is designed to sharpen judgment rather than substitute for it.</p>
+    </div>
+    <div class="pgrid">
+      <article class="practice reveal">
+        <div class="practice__top">
+          <span class="practice__num">01</span>
+          <span class="label label--muted practice__aud">Deal team</span>
+        </div>
+        <h3>Diligence &amp; deal flow</h3>
+        <p>First-pass diligence, question banks, comparables, data room synthesis, and sourcing screens — defensible at investment committee.</p>
+      </article>
+      <article class="practice reveal" style="--reveal-delay:80ms">
+        <div class="practice__top">
+          <span class="practice__num">02</span>
+          <span class="label label--muted practice__aud">Portfolio team</span>
+        </div>
+        <h3>Portfolio operations</h3>
+        <p>Board packs, quarterly reports, KPI monitoring, and variance flagging that scale with the portfolio, not the headcount.</p>
+      </article>
+      <article class="practice reveal">
+        <div class="practice__top">
+          <span class="practice__num">03</span>
+          <span class="label label--muted practice__aud">CFO &amp; IR</span>
+        </div>
+        <h3>Investor relations &amp; compliance</h3>
+        <p>LP letters, capital call narratives, and SFDR / CSRD / ESG workflows, at the cadence investors expect and with the audit trail intact.</p>
+      </article>
+      <article class="practice reveal" style="--reveal-delay:80ms">
+        <div class="practice__top">
+          <span class="practice__num">04</span>
+          <span class="label label--muted practice__aud">Managing partner</span>
+        </div>
+        <h3>Knowledge &amp; methodology</h3>
+        <p>Institutional memory, workflow playbooks, and analyst training in the AI-as-adversary methodology that holds under pressure.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- AI DILIGENCE -->
+  <section class="diligence-band section" id="diligence" aria-labelledby="dil-title">
+    <svg class="dil__chev" data-parallax="0.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <div class="shell dil">
+      <div class="dil__head">
+        <div>
+          <p class="label reveal">AI Diligence</p>
+          <h2 id="dil-title" class="reveal" style="--reveal-delay:80ms">Find out whether the AI is real.</h2>
+        </div>
+        <p class="lead reveal measure-sm" style="--reveal-delay:120ms">When a target or a founder claims to be “AI-powered,” we give the fund a defensible read on what is genuine capability and what is marketing jargon, before the term sheet.</p>
+      </div>
+      <div class="dil__compare reveal" style="--reveal-delay:140ms">
+        <div class="dil__col dil__say">
+          <p class="dil__tag">The pitch</p>
+          <ul>
+            <li>“Proprietary AI engine.”</li>
+            <li>“AI-native from day one.”</li>
+            <li>“Our models are the moat.”</li>
+            <li>“The workflow is fully automated.”</li>
+          </ul>
+        </div>
+        <div class="dil__vs" aria-hidden="true"></div>
+        <div class="dil__col dil__real">
+          <p class="dil__tag">What we surface</p>
+          <ul>
+            <li>The stack behind the story: built in-house, or a thin wrapper on a model anyone can rent.</li>
+            <li>Whether the data and models are genuinely defensible, or commodity dressed up as a moat.</li>
+            <li>Whether the team can ship what they claim, at the velocity they claim.</li>
+            <li>Where AI actually touches the P&amp;L, and where it is theatre for the raise.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="dil__output reveal accent-rule" style="--reveal-delay:160ms">The deliverable: a clear read for the investment committee — what is real, what is veneer, and what it changes about the price.</p>
+    </div>
+  </section>
+
+  <!-- FRONTIER / CURRENCY BAND -->
+  <section class="band-dark section frontier">
+    <svg class="frontier__chev" data-parallax="0.06" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell frontier__grid">
+      <div>
+        <p class="label reveal">The currency argument</p>
+        <h2 class="reveal" style="--reveal-delay:80ms">The frontier moves weekly. We keep your team on it.</h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">A firm that trained its team six months ago is already operating on stale knowledge.</p>
+      </div>
+      <div class="frontier__body reveal" style="--reveal-delay:120ms">
+        <p>New models, new tools, new capabilities, shifting best practice — the ground under this work shifts on a weekly cadence. <strong>Our programmes are monthly precisely because the technology is weekly.</strong> Every person in the firm stays fluent with the frontier as it moves, without anyone having to track the firehose themselves.</p>
+        <div class="cadence" aria-hidden="true">
+          <div class="cadence__track">
+            <div class="cadence__axis"></div>
+            <div class="cadence__week" style="left:8%"></div>
+            <div class="cadence__week" style="left:16%"></div>
+            <div class="cadence__week" style="left:24%"></div>
+            <div class="cadence__week" style="left:33%"></div>
+            <div class="cadence__week" style="left:41%"></div>
+            <div class="cadence__week" style="left:49%"></div>
+            <div class="cadence__week" style="left:58%"></div>
+            <div class="cadence__week" style="left:66%"></div>
+            <div class="cadence__week" style="left:74%"></div>
+            <div class="cadence__week" style="left:83%"></div>
+            <div class="cadence__week" style="left:91%"></div>
+            <div class="cadence__cap" style="left:16%" data-l="new model"></div>
+            <div class="cadence__cap" style="left:41%" data-l="new tool"></div>
+            <div class="cadence__cap" style="left:74%" data-l="new capability"></div>
+            <div class="cadence__session" style="left:8%" data-l="Session"></div>
+            <div class="cadence__session" style="left:49%" data-l="Session"></div>
+            <div class="cadence__session" style="left:91%" data-l="Session"></div>
+          </div>
+          <div class="cadence__legend">
+            <span><span class="k1"></span> Frontier shifts, weekly</span>
+            <span><span class="k2"></span> Solven session, monthly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNAL -->
+  <section class="shell section--tight">
+    <div class="signal reveal accent-rule">
+      <p class="label">Where we work</p>
+      <p>Currently working with pan-European real estate, private equity, and venture capital firms, from Lisbon to London.</p>
+    </div>
+  </section>
+
+  <!-- CLOSER -->
+  <section class="band-dark section closer">
+    <svg class="closer__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell">
+      <div class="closer__inner reveal">
+        <p class="label">Member of the Anthropic Partner Network · Phase 1</p>
+        <h2 style="margin-top:1.25rem">Let's tune a programme to your firm's priorities.</h2>
+        <p>A short conversation is the fastest way to see where Claude belongs in your team's work — and where it shouldn't.</p>
+        <a href="contact.html" class="btn btn--dark">Start a conversation <span class="arw">→</span></a>
+        <p class="wry">Let's increase some IRR.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <svg class="footer-chevron" data-parallax="0.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+  <div class="site-footer__grid">
+    <div>
+      <a href="index.html" class="site-footer__mark" aria-label="Solven Advisory home">
+        <img src="assets/logos/02_solven_reversed_lockup.svg" alt="Solven Advisory" width="240" height="64" />
+      </a>
+      <p class="partner-badge" style="margin-top:1.5rem"><span class="dot"></span> Anthropic Partner Network · Phase 1</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul class="footer-list">
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-list">
+        <li><a href="mailto:hello@solvenadvisory.ai">hello@solvenadvisory.ai</a></li>
+        <li><a href="tel:+351967130877">+351 967 130 877</a></li>
+        <li>Lisbon, Portugal</li>
+        <li><a href="https://www.linkedin.com/company/solven-advisory">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>Lisbon · 2026</span>
+    <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
+  </div>
+</footer>
+
+<script src="solven.js"></script>
+</body>
+</html>
