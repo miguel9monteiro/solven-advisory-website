@@ -199,7 +199,9 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 50;
+  background: var(--bone); /* fallback if color-mix() is unsupported */
   background: color-mix(in srgb, var(--bone) 88%, transparent);
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
   backdrop-filter: saturate(120%) blur(8px);
   border-bottom: var(--rule-thin);
 }
@@ -376,7 +378,6 @@ h1, h2, h3, h4 {
 .reveal.pending {
   opacity: 0;
   transform: translateY(24px);
-  will-change: opacity, transform;
 }
 .reveal.pending.in {
   opacity: 1;
@@ -393,6 +394,168 @@ h1, h2, h3, h4 {
   html { scroll-behavior: auto; }
   .reveal.pending, .draw-rule.pending { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============================================================
+   CINEMATIC MOTION LAYER
+   Progressive enhancement over the static, visible-by-default
+   document. Hidden states exist ONLY behind JS-applied classes
+   (html.anim, .pending, body.intro-armed) with guaranteed release
+   paths (rescue timeouts + reduced-motion neutralisers). With no JS
+   or reduced motion, every resting state is the finished design.
+   ============================================================ */
+
+/* ---- Cross-page View Transitions (MPA, declarative, zero JS) ----
+   Unsupported browsers simply navigate normally. */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 280ms;
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}
+
+/* ---- Generic hero intro contract (shared by every page) ----
+   Opt in with <body data-intro> + .intro-rise / .intro-chev on hero
+   pieces. JS adds intro-armed (hide) then intro-go (release); a 2000ms
+   rescue adds intro-rescue. Hidden state lives ONLY under intro-armed,
+   so a JS/clock stall can never leave the hero blank. */
+@media (prefers-reduced-motion: no-preference) {
+  body.intro-armed:not(.intro-go) .intro-rise {
+    opacity: 0; transform: translateY(30px); transition: none;
+  }
+  body.intro-armed:not(.intro-go) .intro-chev {
+    opacity: 0; transform: translateY(-38px) scale(1.08); transition: none;
+  }
+  body.intro-go .intro-rise {
+    transition: opacity .95s cubic-bezier(.22,.61,.36,1),
+                transform .95s cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--intro-delay, 0s);
+  }
+  body.intro-go .intro-chev {
+    transition: opacity 1.6s cubic-bezier(.22,.61,.36,1),
+                transform 1.6s cubic-bezier(.22,.61,.36,1);
+  }
+  body.intro-rescue .intro-rise {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  body.intro-rescue .intro-chev {
+    opacity: var(--chev-rest, .05) !important; transform: none !important; transition: none !important;
+  }
+}
+
+/* ---- Line-mask headline reveal (hero <h1>, plain text only) ----
+   JS splits the headline into .lm__line spans inside overflow-hidden
+   masks, then the lines wipe up. Rides the body.intro lifecycle. */
+/* padding-bottom gives descenders (g/y/p) room inside the clip;
+   the matching negative margin keeps the headline's layout unchanged. */
+.lm .lm__mask { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+.lm .lm__line { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  body.intro-armed:not(.intro-go) .lm .lm__line { transform: translateY(110%); }
+  body.intro-go .lm .lm__line {
+    transform: translateY(0);
+    transition: transform .9s cubic-bezier(.22,.61,.36,1);
+    transition-delay: calc(var(--intro-delay, .2s) + var(--li, 0) * 100ms);
+  }
+  body.intro-rescue .lm .lm__line { transform: none !important; transition: none !important; }
+}
+
+/* ---- Section headline clip-unmask (below-fold <h2>, no split) ----
+   The clip is the sole motion: neutralise the plain .reveal fade so the
+   headline doesn't both fade and unmask. */
+@media (prefers-reduced-motion: no-preference) {
+  html.anim .reveal-mask.reveal.pending { opacity: 1; transform: none; }
+  html.anim .reveal-mask.pending { clip-path: inset(0 0 104% 0); }
+  html.anim .reveal-mask.pending.in {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path .9s cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/* ---- Dark-band curtain: a page-bone overlay retracts upward ----
+   The band background stays charcoal at ALL times; only a bone overlay
+   lifts. Worst case (JS fails) = the band shows immediately, never
+   white-on-white. Default (no .pending) = overlay already retracted. */
+.band-curtain { position: relative; }
+.band-curtain::after {
+  content: ""; position: absolute; inset: 0; z-index: 3;
+  background: var(--bone); transform: scaleY(0); transform-origin: top;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.anim .band-curtain.pending::after { transform: scaleY(1); }
+  html.anim .band-curtain.pending.in::after {
+    transform: scaleY(0);
+    transition: transform .8s cubic-bezier(.22,.61,.36,1);
+  }
+}
+@media (prefers-reduced-motion: reduce) { .band-curtain::after { display: none; } }
+
+/* ---- Accent rule: the sage bar draws downward on reveal ----
+   Replaces border-left with a drawable ::before (same 2px sage bar). */
+.accent-rule { position: relative; border-left: 0; }
+.accent-rule::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--sage-deep); transform-origin: top;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.anim .accent-rule.reveal.pending::before { transform: scaleY(0); }
+  html.anim .accent-rule.reveal.pending.in::before {
+    transform: scaleY(1);
+    transition: transform .7s cubic-bezier(.22,.61,.36,1);
+    transition-delay: 140ms;
+  }
+}
+
+/* ---- Staggered child cascade (lists / grids) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  html.anim [data-stagger].pending > * { opacity: 0; transform: translateY(16px); }
+  html.anim [data-stagger].pending.in > * {
+    opacity: 1; transform: none;
+    transition: opacity var(--slow), transform var(--slow);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+}
+
+/* ---- Magnetic primary CTA (fine-pointer only; gated in JS) ----
+   JS sets --mx/--my on pointermove; resets on leave. Resting = 0. */
+@media (prefers-reduced-motion: no-preference) {
+  html.has-pointer .btn--solid,
+  html.has-pointer .btn--dark {
+    transform: translate(var(--mx, 0px), var(--my, 0px));
+    transition: transform 200ms cubic-bezier(.22,.61,.36,1),
+                background var(--fast), color var(--fast), border-color var(--fast);
+  }
+}
+
+/* ---- Scroll-progress hairline (CHARCOAL — introduces no new sage) ---- */
+.scroll-rule {
+  position: fixed; top: 0; left: 0; right: 0; height: 1px; z-index: 60;
+  background: var(--charcoal);
+  transform: scaleX(0); transform-origin: left;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) { .scroll-rule { display: none; } }
+
+/* ---- Film grain: the page reads as a printed plate, not a flat hex ----
+   Neutral (desaturated) noise so it introduces no off-palette colour, and
+   NO mix-blend-mode: a fixed blend layer forces a whole-viewport re-composite
+   on every scroll frame. A plain low-opacity fixed layer composites cheaply
+   on the GPU and reads as paper texture on bone, negligibly on charcoal. */
+.grain {
+  position: fixed; inset: 0; z-index: 90; pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+@media (max-width: 760px) { .grain { opacity: 0.02; } }
 
 /* ---------- Responsive header ---------- */
 @media (max-width: 860px) {

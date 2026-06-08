@@ -50,7 +50,7 @@
   .abcta p { color: var(--text-2); margin: var(--s-4) 0 var(--s-6); }
 </style>
 </head>
-<body>
+<body data-intro>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
@@ -76,13 +76,13 @@
 
   <!-- HERO -->
   <section class="abhero">
-    <svg class="abhero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <svg class="abhero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
     <div class="shell abhero__inner">
-      <div class="eyebrow">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
         <span class="tick"></span>
         <p class="label">About Solven</p>
       </div>
-      <h1>Finance-native and AI-native, in equal measure.</h1>
+      <h1 class="line-mask" style="--intro-delay:.28s">Finance-native and AI-native, in equal measure.</h1>
     </div>
   </section>
 
@@ -101,11 +101,11 @@
   </div>
 
   <!-- TEXTURE / CREDIBILITY -->
-  <section class="band-dark section texture">
+  <section class="band-dark section texture band-curtain">
     <svg class="texture__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell texture__inner">
       <p class="label reveal">Where the team comes from</p>
-      <h2 class="reveal" style="--reveal-delay:80ms">The credibility is in the pedigree, not the pitch.</h2>
+      <h2 class="reveal reveal-mask" style="--reveal-delay:80ms">The credibility is in the pedigree, not the pitch.</h2>
       <p class="lead reveal" style="--reveal-delay:120ms">The team's backgrounds span institutional finance and applied AI. We let the experience speak plainly.</p>
       <div class="texture__grid reveal" style="--reveal-delay:160ms">
         <ul class="pedigree">

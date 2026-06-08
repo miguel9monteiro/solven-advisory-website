@@ -59,7 +59,7 @@
   .wcta p { color: var(--sage-pale); margin: var(--s-5) 0 var(--s-7); }
 </style>
 </head>
-<body>
+<body data-intro>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
@@ -85,15 +85,15 @@
 
   <!-- HERO -->
   <section class="whero">
-    <svg class="whero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <svg class="whero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
     <div class="shell whero__inner">
-      <div class="eyebrow">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
         <span class="tick"></span>
         <p class="label">Selected work</p>
       </div>
-      <h1>Enablement and build, on real workflows.</h1>
-      <p class="lead">A look at how the two sides of the work fit together inside live engagements.</p>
-      <p class="note">Engagements are described anonymously, by sector and structure. We never name clients, and we cite no metrics we cannot stand behind.</p>
+      <h1 class="line-mask" style="--intro-delay:.28s">Enablement and build, on real workflows.</h1>
+      <p class="lead intro-rise" style="--intro-delay:.45s">A look at how the two sides of the work fit together inside live engagements.</p>
+      <p class="note intro-rise" style="--intro-delay:.6s">Engagements are described anonymously, by sector and structure. We never name clients, and we cite no metrics we cannot stand behind.</p>
     </div>
   </section>
 
@@ -202,7 +202,7 @@
   </div>
 
   <!-- CTA -->
-  <section class="band-dark section wcta">
+  <section class="band-dark section wcta band-curtain">
     <svg class="wcta__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell">
       <div class="wcta__inner reveal">

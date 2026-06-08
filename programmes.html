@@ -204,7 +204,7 @@
   .pcta p { color: var(--sage-pale); margin: var(--s-5) 0 var(--s-7); }
 </style>
 </head>
-<body>
+<body data-intro>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
@@ -230,20 +230,20 @@
 
   <!-- HERO -->
   <section class="phero">
-    <svg class="phero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <svg class="phero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
     <div class="shell phero__inner">
-      <div class="eyebrow">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
         <span class="tick"></span>
         <p class="label">Enablement · The programmes</p>
       </div>
-      <h1>Genuine AI fluency at every level of the firm, from analyst to partner.</h1>
-      <p class="lead">Hands-on Claude sessions that take an entire firm from first principles to building with the most advanced tools in the suite.</p>
+      <h1 class="line-mask" style="--intro-delay:.28s">Genuine AI fluency at every level of the firm, from analyst to partner.</h1>
+      <p class="lead intro-rise" style="--intro-delay:.45s">Hands-on Claude sessions that take an entire firm from first principles to building with the most advanced tools in the suite.</p>
 
       <div class="phero__split">
-        <div class="rule-top">
+        <div class="rule-top intro-rise" style="--intro-delay:.6s">
           <p>A team trained once is a team falling behind. The technology underneath this work shifts on a weekly cadence, so a firm that trained six months ago is already operating on stale knowledge.</p>
         </div>
-        <div class="rule-top">
+        <div class="rule-top intro-rise" style="--intro-delay:.7s">
           <p><strong>Our programmes are monthly precisely because the technology is weekly.</strong> Each person learns to recognise where Claude belongs in their own work, and stays current as the market keeps moving.</p>
         </div>
       </div>
@@ -251,7 +251,7 @@
   </section>
 
   <!-- ALWAYS ON THE FRONTIER (tweakable) -->
-  <section class="band-dark section fcad" id="frontier" aria-labelledby="fcad-headline">
+  <section class="band-dark section fcad band-curtain" id="frontier" aria-labelledby="fcad-headline">
     <svg class="fcad__chev" data-parallax="0.06" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell">
       <p class="label reveal">Always on the frontier</p>
@@ -491,12 +491,12 @@
   </section>
 
   <!-- THE THREAD -->
-  <section class="band-dark section thread">
+  <section class="band-dark section thread band-curtain">
     <svg class="thread__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell thread__grid">
       <div>
         <p class="label reveal">The thread</p>
-        <h2 class="reveal" style="--reveal-delay:80ms">Every session carries the analyst-first principle.</h2>
+        <h2 class="reveal reveal-mask" style="--reveal-delay:80ms">Every session carries the analyst-first principle.</h2>
         <p class="thread__quote reveal" style="--reveal-delay:140ms">Analysts produce the formative work first, then bring Claude in as a critic, a red-teamer, and a verifier.</p>
       </div>
       <div class="thread__body reveal" style="--reveal-delay:120ms">
@@ -531,7 +531,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="band-dark section pcta">
+  <section class="band-dark section pcta band-curtain">
     <svg class="pcta__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell">
       <div class="pcta__inner reveal">

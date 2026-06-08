@@ -28,3 +28,4 @@ pnpm-debug.log*
 
 # Claude Code (personal settings; shared settings.json is fine to commit)
 .claude/settings.local.json
+.claude/scheduled_tasks.lock

@@ -20,36 +20,96 @@
   }
   .hero__inner { position: relative; z-index: 1; }
 
-  /* Cinematic entrance — transition-based, gated by a JS class.
-     The hero is VISIBLE BY DEFAULT. It is hidden only after JS arms the
-     intro, and always transitions back to visible. If JS or motion stalls,
-     content stays shown (transitions complete reliably; keyframe clocks may not). */
+  /* Hero chevron draw — the brand V inks itself, then fills.
+     The generic staggered rise of the eyebrow/h1/beat/cta lives in
+     solven.css via the .intro-rise contract; this is the home-only
+     flourish. The chevron stays a 5% watermark (.hero__chev carries
+     opacity:0.05). Fill is the safe resting state; stroke is one-time. */
+  .hero__chev .cf { opacity: 1; }
+  .hero__chev .cs { opacity: 0; }
   @media (prefers-reduced-motion: no-preference) {
-    body.intro-armed:not(.intro-go) .hero__eyebrow,
-    body.intro-armed:not(.intro-go) .hero h1,
-    body.intro-armed:not(.intro-go) .hero__beat > div,
-    body.intro-armed:not(.intro-go) .hero__cta { opacity: 0; transform: translateY(32px); transition: none; }
-    body.intro-armed:not(.intro-go) .hero__chev { opacity: 0; transform: translateY(-46px) scale(1.09); transition: none; }
+    body.intro-armed:not(.intro-go) .hero__chev .cf { opacity: 0; }
+    body.intro-armed:not(.intro-go) .hero__chev .cs {
+      opacity: 1;
+      stroke-dasharray: var(--chev-len, 130);
+      stroke-dashoffset: var(--chev-len, 130);
+    }
+    body.intro-go .hero__chev .cs {
+      opacity: 0;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.22,0.61,0.36,1) 0.3s,
+                  opacity 0.4s ease 1.7s;
+    }
+    body.intro-go .hero__chev .cf { opacity: 1; transition: opacity 0.7s ease 1.55s; }
+    body.intro-rescue .hero__chev .cs { opacity: 0 !important; transition: none !important; }
+    body.intro-rescue .hero__chev .cf { opacity: 1 !important; transition: none !important; }
+  }
 
-    body.intro-go .hero__eyebrow,
-    body.intro-go .hero h1,
-    body.intro-go .hero__beat > div,
-    body.intro-go .hero__cta { transition: opacity 0.95s cubic-bezier(0.22,0.61,0.36,1), transform 0.95s cubic-bezier(0.22,0.61,0.36,1); }
-    body.intro-go .hero__chev { transition: opacity 1.6s cubic-bezier(0.22,0.61,0.36,1), transform 1.6s cubic-bezier(0.22,0.61,0.36,1); }
+  /* Doors — hover: the watermark chevron breathes open (no lift/shadow). */
+  @media (prefers-reduced-motion: no-preference) {
+    .door__chev { transition: transform 0.3s cubic-bezier(0.22,0.61,0.36,1), opacity 0.3s ease; }
+    .door:hover .door__chev,
+    .door:focus-visible .door__chev { transform: translateY(-8px) scale(1.03); }
+  }
 
-    body.intro-go .hero__eyebrow { transition-delay: 0.15s; }
-    body.intro-go .hero h1 { transition-delay: 0.28s; }
-    body.intro-go .hero__beat > div:nth-child(1) { transition-delay: 0.5s; }
-    body.intro-go .hero__beat > div:nth-child(2) { transition-delay: 0.62s; }
-    body.intro-go .hero__cta { transition-delay: 0.8s; }
+  /* AI Diligence — the argument resolves: pitch (one block) → medallion →
+     "what we surface" row by row, each chevron bullet landing just before
+     its line. The compare wrapper itself stays put; its children carry it. */
+  @media (prefers-reduced-motion: no-preference) {
+    .dil-stage.reveal.pending { opacity: 1; transform: none; }
+    .dil-stage.pending [data-stage]        { opacity: 0; transform: translateY(18px); }
+    .dil-stage.pending .dil-rows li         { opacity: 0; transform: translateY(14px); }
+    .dil-stage.pending .dil-rows li::before { transform: scale(0); }
 
-    /* Guaranteed escape: if the transition clock never advances, this snaps
-       the hero to its visible resting state without needing any animation. */
-    body.intro-rescue .hero__eyebrow,
-    body.intro-rescue .hero h1,
-    body.intro-rescue .hero__beat > div,
-    body.intro-rescue .hero__cta { opacity: 1 !important; transform: none !important; transition: none !important; }
-    body.intro-rescue .hero__chev { opacity: 0.05 !important; transform: none !important; transition: none !important; }
+    .dil-stage.in [data-stage] {
+      opacity: 1; transform: none;
+      transition: opacity var(--slow), transform var(--slow);
+    }
+    .dil-stage.in [data-stage="2"] { transition-delay: 0.2s; }
+    .dil-stage.in [data-stage="3"] { transition-delay: 0.32s; }
+    .dil-stage.in .dil-rows li {
+      opacity: 1; transform: none;
+      transition: opacity var(--slow), transform var(--slow);
+      transition-delay: calc(0.42s + var(--i, 0) * 90ms);
+    }
+    .dil-stage.in .dil-rows li::before {
+      transform: scale(1);
+      transition: transform 360ms cubic-bezier(0.22,0.61,0.36,1);
+      transition-delay: calc(0.40s + var(--i, 0) * 90ms);
+    }
+  }
+
+  /* Frontier cadence — axis draws, then ticks (weekly, dense/quick),
+     dots, and diamonds (monthly, sparse/slow) settle left→right via the
+     per-element --d delays set in solven.js. Container stays put. */
+  @media (prefers-reduced-motion: no-preference) {
+    .cadence.reveal.pending { opacity: 1; transform: none; }
+    .cadence.pending .cadence__axis    { transform: scaleX(0); transform-origin: left; }
+    .cadence.pending .cadence__week    { opacity: 0; }
+    .cadence.pending .cadence__cap     { opacity: 0; transform: translate(-50%,-50%) scale(0); }
+    .cadence.pending .cadence__session { opacity: 0; transform: translate(-50%,-50%) rotate(45deg) scale(0); }
+
+    .cadence.in .cadence__axis { transform: scaleX(1); transition: transform 700ms cubic-bezier(0.22,0.61,0.36,1); }
+    .cadence.in .cadence__week {
+      opacity: 1; transition: opacity 400ms ease var(--d, 0ms);
+    }
+    .cadence.in .cadence__cap {
+      opacity: 1; transform: translate(-50%,-50%) scale(1);
+      transition: opacity 300ms ease var(--d, 500ms), transform 420ms cubic-bezier(0.22,0.61,0.36,1) var(--d, 500ms);
+    }
+    .cadence.in .cadence__session {
+      opacity: 1; transform: translate(-50%,-50%) rotate(45deg) scale(1);
+      transition: opacity 300ms ease var(--d, 1000ms), transform 460ms cubic-bezier(0.22,0.61,0.36,1) var(--d, 1000ms);
+    }
+  }
+
+  /* Closer — the wry aside lands last, after the CTA. */
+  @media (prefers-reduced-motion: no-preference) {
+    .closer__inner.reveal.pending .wry { opacity: 0; transform: translateY(12px); }
+    .closer__inner.reveal.pending.in .wry {
+      opacity: 1; transform: none;
+      transition: opacity 0.5s ease 0.9s, transform 0.5s cubic-bezier(0.22,0.61,0.36,1) 0.9s;
+    }
   }
   .hero__eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: clamp(1.5rem, 4vw, 2.75rem); }
   .hero__eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); display: inline-block; }
@@ -218,26 +278,29 @@
 
   <!-- HERO -->
   <section class="hero">
-    <svg class="hero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <svg class="hero__chev" viewBox="0 0 40 36" aria-hidden="true">
+      <path class="cf" d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/>
+      <path class="cs" d="M 3 1 L 20 31 L 37 1" fill="none" stroke="#6B8068" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
     <div class="shell hero__inner">
-      <div class="hero__eyebrow">
+      <div class="hero__eyebrow intro-rise" style="--intro-delay:.15s">
         <span class="tick"></span>
         <p class="label">AI Enablement &amp; Implementation · Private Equity</p>
       </div>
-      <h1>
+      <h1 class="intro-rise" style="--intro-delay:.28s">
         AI implementation for firms where <span class="em">judgment</span> is the product.
       </h1>
 
       <div class="hero__beat">
-        <div class="rule-top">
+        <div class="rule-top intro-rise" style="--intro-delay:.5s">
           <p class="lead">We train entire investment teams on AI, then build AI systems on the workflows that matter.</p>
         </div>
-        <div class="rule-top">
+        <div class="rule-top intro-rise" style="--intro-delay:.62s">
           <p class="hero__promise">The technology underneath this work changes weekly: new models, new tools, shifting best practice. Most firms train once and fall behind quietly. <strong>Solven's programmes are monthly because the frontier is weekly</strong> — your team, analyst to partner, stays current as the market moves.</p>
         </div>
       </div>
 
-      <div class="hero__cta">
+      <div class="hero__cta intro-rise" style="--intro-delay:.8s">
         <a href="programmes.html" class="btn btn--solid">Explore the programmes <span class="arw">→</span></a>
         <a href="contact.html" class="btn">Start a conversation</a>
       </div>
@@ -323,12 +386,12 @@
       <div class="dil__head">
         <div>
           <p class="label reveal">AI Diligence</p>
-          <h2 id="dil-title" class="reveal" style="--reveal-delay:80ms">Find out whether the AI is real.</h2>
+          <h2 id="dil-title" class="reveal reveal-mask" style="--reveal-delay:80ms">Find out whether the AI is real.</h2>
         </div>
         <p class="lead reveal measure-sm" style="--reveal-delay:120ms">When a target or a founder claims to be “AI-powered,” we give the fund a defensible read on what is genuine capability and what is marketing jargon, before the term sheet.</p>
       </div>
-      <div class="dil__compare reveal" style="--reveal-delay:140ms">
-        <div class="dil__col dil__say">
+      <div class="dil__compare reveal dil-stage" style="--reveal-delay:140ms">
+        <div class="dil__col dil__say" data-stage="1">
           <p class="dil__tag">The pitch</p>
           <ul>
             <li>“Proprietary AI engine.”</li>
@@ -337,14 +400,14 @@
             <li>“The workflow is fully automated.”</li>
           </ul>
         </div>
-        <div class="dil__vs" aria-hidden="true"></div>
-        <div class="dil__col dil__real">
+        <div class="dil__vs" data-stage="2" aria-hidden="true"></div>
+        <div class="dil__col dil__real" data-stage="3">
           <p class="dil__tag">What we surface</p>
-          <ul>
-            <li>The stack behind the story: built in-house, or a thin wrapper on a model anyone can rent.</li>
-            <li>Whether the data and models are genuinely defensible, or commodity dressed up as a moat.</li>
-            <li>Whether the team can ship what they claim, at the velocity they claim.</li>
-            <li>Where AI actually touches the P&amp;L, and where it is theatre for the raise.</li>
+          <ul class="dil-rows">
+            <li style="--i:0">The stack behind the story: built in-house, or a thin wrapper on a model anyone can rent.</li>
+            <li style="--i:1">Whether the data and models are genuinely defensible, or commodity dressed up as a moat.</li>
+            <li style="--i:2">Whether the team can ship what they claim, at the velocity they claim.</li>
+            <li style="--i:3">Where AI actually touches the P&amp;L, and where it is theatre for the raise.</li>
           </ul>
         </div>
       </div>
@@ -353,17 +416,17 @@
   </section>
 
   <!-- FRONTIER / CURRENCY BAND -->
-  <section class="band-dark section frontier">
+  <section class="band-dark section frontier band-curtain">
     <svg class="frontier__chev" data-parallax="0.06" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell frontier__grid">
       <div>
         <p class="label reveal">The currency argument</p>
-        <h2 class="reveal" style="--reveal-delay:80ms">The frontier moves weekly. We keep your team on it.</h2>
+        <h2 class="reveal reveal-mask" style="--reveal-delay:80ms">The frontier moves weekly. We keep your team on it.</h2>
         <p class="lead reveal" style="--reveal-delay:140ms">A firm that trained its team six months ago is already operating on stale knowledge.</p>
       </div>
       <div class="frontier__body reveal" style="--reveal-delay:120ms">
         <p>New models, new tools, new capabilities, shifting best practice — the ground under this work shifts on a weekly cadence. <strong>Our programmes are monthly precisely because the technology is weekly.</strong> Every person in the firm stays fluent with the frontier as it moves, without anyone having to track the firehose themselves.</p>
-        <div class="cadence" aria-hidden="true">
+        <div class="cadence reveal" aria-hidden="true">
           <div class="cadence__track">
             <div class="cadence__axis"></div>
             <div class="cadence__week" style="left:8%"></div>
@@ -402,7 +465,7 @@
   </section>
 
   <!-- CLOSER -->
-  <section class="band-dark section closer">
+  <section class="band-dark section closer band-curtain">
     <svg class="closer__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell">
       <div class="closer__inner reveal">

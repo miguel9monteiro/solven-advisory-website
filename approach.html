@@ -67,7 +67,7 @@
   .acta p { color: var(--text-2); margin: var(--s-4) 0 var(--s-6); }
 </style>
 </head>
-<body>
+<body data-intro>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
@@ -93,14 +93,14 @@
 
   <!-- HERO -->
   <section class="ahero">
-    <svg class="ahero__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <svg class="ahero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
     <div class="shell ahero__inner">
-      <div class="eyebrow">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
         <span class="tick"></span>
         <p class="label">The approach</p>
       </div>
-      <h1>Augmentation without cognitive atrophy.</h1>
-      <p class="lead">The risk in enterprise AI is not adoption failure. It is what happens to analytical judgment when adoption succeeds.</p>
+      <h1 class="line-mask" style="--intro-delay:.28s">Augmentation without cognitive atrophy.</h1>
+      <p class="lead intro-rise" style="--intro-delay:.45s">The risk in enterprise AI is not adoption failure. It is what happens to analytical judgment when adoption succeeds.</p>
     </div>
   </section>
 
@@ -161,11 +161,11 @@
   </div>
 
   <!-- BRIDGE -->
-  <section class="band-dark section bridge">
+  <section class="band-dark section bridge band-curtain">
     <svg class="bridge__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
     <div class="shell bridge__inner">
       <p class="label reveal">One thesis, both sides of the work</p>
-      <h2 class="reveal" style="--reveal-delay:80ms">The approach governs how we train and what we build.</h2>
+      <h2 class="reveal reveal-mask" style="--reveal-delay:80ms">The approach governs how we train and what we build.</h2>
       <p class="reveal" style="--reveal-delay:120ms">It is not a slide at the front of a deck. <strong>It is the operating principle</strong> behind every session we teach and every system we ship.</p>
       <div class="bridge__two reveal" style="--reveal-delay:160ms">
         <div>
