@@ -20,29 +20,67 @@
   }
   .hero__inner { position: relative; z-index: 1; }
 
-  /* Hero chevron draw — the brand V inks itself, then fills.
-     The generic staggered rise of the eyebrow/h1/beat/cta lives in
-     solven.css via the .intro-rise contract; this is the home-only
-     flourish. The chevron stays a 5% watermark (.hero__chev carries
-     opacity:0.05). Fill is the safe resting state; stroke is one-time. */
+  /* Hero chevron — the signature moment. The brand mark constructs itself:
+     the full silhouette inks (outer V descends, then the triangular cutout
+     is carved), the fill floods in with a subtle seat, and the whole mark
+     recedes into the 5% watermark. The group opacity is lifted DURING the
+     build (0.05 rests too faint to read) and settles back as the fill seats,
+     so the gesture is actually seen without ever becoming loud.
+     The generic staggered rise of the eyebrow/h1/beat/cta lives in solven.css
+     via the .intro-rise contract; this is the home-only flourish. Fill is the
+     safe resting state; stroke and the opacity lift are one-time only. */
   .hero__chev .cf { opacity: 1; }
   .hero__chev .cs { opacity: 0; }
   @media (prefers-reduced-motion: no-preference) {
+    body.intro-armed .hero__chev { opacity: 0.16; }        /* lift so the build reads */
     body.intro-armed:not(.intro-go) .hero__chev .cf { opacity: 0; }
     body.intro-armed:not(.intro-go) .hero__chev .cs {
       opacity: 1;
-      stroke-dasharray: var(--chev-len, 130);
-      stroke-dashoffset: var(--chev-len, 130);
+      stroke-dasharray: var(--chev-len, 160);
+      stroke-dashoffset: var(--chev-len, 160);
+    }
+    body.intro-go .hero__chev {
+      opacity: 0.05;                                        /* recede to watermark */
+      transition: opacity 0.55s ease 1.4s;
     }
     body.intro-go .hero__chev .cs {
       opacity: 0;
       stroke-dashoffset: 0;
-      transition: stroke-dashoffset 1.5s cubic-bezier(0.22,0.61,0.36,1) 0.3s,
-                  opacity 0.4s ease 1.7s;
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.22,0.61,0.36,1) 0.25s,
+                  opacity 0.35s ease 1.5s;
     }
-    body.intro-go .hero__chev .cf { opacity: 1; transition: opacity 0.7s ease 1.55s; }
+    body.intro-go .hero__chev .cf {
+      transform-box: fill-box; transform-origin: 50% 100%;
+      animation: hero-chev-seat 0.5s cubic-bezier(0.22,0.61,0.36,1) 1.4s both;
+    }
+    body.intro-rescue .hero__chev { opacity: 0.05 !important; transition: none !important; }
     body.intro-rescue .hero__chev .cs { opacity: 0 !important; transition: none !important; }
-    body.intro-rescue .hero__chev .cf { opacity: 1 !important; transition: none !important; }
+    body.intro-rescue .hero__chev .cf { opacity: 1 !important; animation: none !important; transition: none !important; }
+  }
+  @keyframes hero-chev-seat {
+    from { opacity: 0; transform: translateY(2.5%) scale(1.02); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Living hero chevron — once the intro has seated, the frontier mark
+     responds to the reader: it eases toward the cursor and wakes slightly
+     while the pointer is in the hero, and a click re-inks it (a repeatable
+     echo of the construction). Bound in JS only after the intro settles and
+     only on fine pointers with motion enabled, so it never fights the
+     construction or the reduced-motion resting state. */
+  /* These must out-rank the persistent finalizer solven.js leaves on the body:
+     `body.intro-rescue .hero__chev { opacity/transition: … !important }` (0,2,1).
+     Interaction is bound only after intro-rescue lands (2s), so the interactive
+     rules are scoped under it and carry an extra class to win the cascade:
+     .live (0,3,1) beats the transition pin; .live.awake (0,4,1) beats opacity. */
+  body.intro-rescue .hero__chev.live {
+    transition: transform 0.5s cubic-bezier(0.22,0.61,0.36,1), opacity 0.6s ease !important;
+  }
+  body.intro-rescue .hero__chev.live.awake { opacity: 0.09 !important; }
+  .hero__chev.reinking { animation: hero-chev-reink 0.8s cubic-bezier(0.22,0.61,0.36,1); }
+  @keyframes hero-chev-reink {
+    from { clip-path: inset(0 0 100% 0); }
+    to   { clip-path: inset(0 0 0 0); }
   }
 
   /* Doors — hover: the watermark chevron breathes open (no lift/shadow). */
@@ -336,7 +374,7 @@
   <section class="hero">
     <svg class="hero__chev" viewBox="0 0 40 36" aria-hidden="true">
       <path class="cf" d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/>
-      <path class="cs" d="M 3 1 L 20 31 L 37 1" fill="none" stroke="#6B8068" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path class="cs" d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="none" stroke="#6B8068" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
     <div class="shell hero__inner">
       <div class="hero__eyebrow intro-rise" style="--intro-delay:.15s">

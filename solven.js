@@ -263,4 +263,53 @@
     window.addEventListener("resize", pxUpdate);
     pxUpdate();
   }
+
+  /* ---- Living hero chevron (home only) ----
+     Once the intro construction has seated, the watermark frontier mark
+     becomes a quiet, explorable object: it eases toward the cursor and wakes
+     slightly while the pointer is inside the hero, and a click re-inks it.
+     Bound after the intro/rescue window (2200ms) so it never competes with
+     the construction, and only when has-pointer is set (fine pointer + motion
+     — never under reduced motion). Pure enhancement: navigation and the
+     resting 5% watermark are untouched if this never runs. */
+  var heroChev = document.querySelector(".hero__chev");
+  var heroSec = document.querySelector(".hero");
+  if (heroChev && heroSec && de.classList.contains("has-pointer")) {
+    window.setTimeout(function () {
+      heroChev.classList.add("live");
+      var craf = null, rect = null;
+      heroSec.addEventListener("pointerenter", function () {
+        rect = heroSec.getBoundingClientRect();
+        heroChev.classList.add("awake");
+      });
+      heroSec.addEventListener("pointermove", function (e) {
+        if (craf) return;
+        craf = window.requestAnimationFrame(function () {
+          craf = null;
+          if (!rect) rect = heroSec.getBoundingClientRect();
+          var dx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          var dy = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          dx = Math.max(-1, Math.min(1, dx));
+          dy = Math.max(-1, Math.min(1, dy));
+          heroChev.style.transform =
+            "translate3d(" + (dx * 7).toFixed(1) + "px," + (dy * 5).toFixed(1) +
+            "px,0) rotate(" + (dx * 2.4).toFixed(2) + "deg)";
+        });
+      });
+      heroSec.addEventListener("pointerleave", function () {
+        heroChev.classList.remove("awake");
+        heroChev.style.transform = "";
+      });
+      // Click the hero backdrop (not a control) to re-ink the mark.
+      heroSec.addEventListener("click", function (e) {
+        if (e.target.closest("a, button, input, textarea, select, label")) return;
+        heroChev.classList.remove("reinking");
+        void heroChev.offsetWidth;                 // restart the keyframe
+        heroChev.classList.add("reinking");
+      });
+      heroChev.addEventListener("animationend", function (e) {
+        if (e.animationName === "hero-chev-reink") heroChev.classList.remove("reinking");
+      });
+    }, 2200);
+  }
 })();
