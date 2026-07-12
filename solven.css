@@ -10,6 +10,7 @@
   --charcoal-deep: #1F2420;
   --sage-deep:     #6B8068;
   --sage:          #8FA68A;
+  --sage-ink:      #566557;   /* darker settled sage: signed ink, hover-deepened accents */
   --bone:          #F4F2EB;
 
   /* Secondary */
@@ -190,6 +191,13 @@ h1, h2, h3, h4 {
 .tlink:hover { gap: 0.9em; color: var(--accent); border-color: var(--accent); }
 .tlink .arw { transition: transform var(--fast); }
 .tlink:hover .arw { transform: translateX(2px); }
+
+/* text link on dark bands (bone on charcoal) */
+.tlink--dark { color: var(--bone); border-color: var(--bone); }
+.tlink--dark:hover { color: var(--sage); border-color: var(--sage); }
+
+/* a primary CTA and a secondary link, side by side */
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-5); }
 
 /* arrow glyph */
 .arw { display: inline-block; line-height: 1; }
@@ -585,4 +593,274 @@ h1, h2, h3, h4 {
   .site-nav a { width: 100%; padding: 0.75rem 0; border-bottom: var(--rule-thin); font-size: var(--t-base); }
   .site-nav a::after { display: none; }
   .site-footer__grid { grid-template-columns: 1fr; gap: var(--s-6); }
+}
+
+/* ============================================================
+   THE EXECUTION PAGE — booking CTA as a term-sheet signing block
+   Link-mode only (no third-party script; "No tracking, no list"
+   survives). Uses the site palette + Georgia/Calibri via tokens.
+   Namespaced under .exec / .clause / .signing / .party /
+   .countersign; no collisions with the rest of the system.
+   ============================================================ */
+
+/* ---- The document ---- */
+.exec {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 88px 32px 120px;
+}
+
+/* Document header: file reference strip, like a drafted instrument */
+.exec__ref {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  border-top: 2px solid var(--charcoal);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.exec__ref strong {
+  color: var(--charcoal);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* The instrument's title */
+.exec__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(44px, 7.5vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 56px 0 18px;
+  max-width: 14ch;
+}
+.exec__title em {
+  font-style: italic;
+  color: var(--sage-deep);
+}
+
+.exec__standfirst {
+  max-width: 52ch;
+  font-size: 19px;
+  color: var(--charcoal);
+  margin: 0 0 72px;
+}
+.exec__standfirst .flip {
+  color: var(--sage-ink);
+}
+
+/* ---- The clauses ---- */
+.clauses {
+  border-top: 1px solid var(--rule);
+}
+
+.clause {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 32px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.clause__no {
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--sage-deep);
+  padding-top: 3px;
+}
+
+.clause__body h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
+}
+
+.clause__body p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--text-2);
+}
+.clause__body p strong {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+/* ---- The execution block ---- */
+.signing {
+  margin-top: 88px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.signing__witness {
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: -18px;
+}
+
+.party { position: relative; }
+
+.party__role {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: 0 0 44px;
+}
+
+/* Solven's side: already signed. A fixed SVG ink stroke. */
+.party--solven .party__sig {
+  height: 84px;
+  display: flex;
+  align-items: flex-end;
+}
+.party--solven svg { display: block; }
+.party--solven .ink {
+  fill: none;
+  stroke: var(--sage-ink);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+/* The visitor's side: the line that wants a signature.
+   This IS the call to action. */
+.countersign {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.countersign .party__sig {
+  height: 84px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* The pen cursor resting on the line */
+.countersign .nib {
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sage-deep);
+  animation: nib-breathe 2.6s ease-in-out infinite;
+}
+@keyframes nib-breathe {
+  0%, 100% { transform: scale(1);   opacity: 0.9; }
+  50%      { transform: scale(1.6); opacity: 0.45; }
+}
+
+/* The visitor's ink: drawn on hover / focus */
+.countersign svg { display: block; position: relative; }
+.countersign .ink {
+  fill: none;
+  stroke: var(--sage-deep);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 470;
+  stroke-dashoffset: 470;
+  transition: stroke-dashoffset 900ms cubic-bezier(.6,.05,.2,1);
+}
+.countersign:hover .ink,
+.countersign:focus-visible .ink {
+  stroke-dashoffset: 0;
+}
+.countersign:hover .nib,
+.countersign:focus-visible .nib {
+  animation: none;
+  opacity: 0;
+}
+
+.sig-rule {
+  border-bottom: 1.5px solid var(--charcoal);
+  position: relative;
+}
+.sig-rule::after {
+  content: "×";
+  position: absolute;
+  left: -22px;
+  bottom: 2px;
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--sage-deep);
+}
+
+.party__name {
+  font-family: var(--serif);
+  font-size: 17px;
+  margin: 12px 0 2px;
+}
+.party__caption {
+  font-size: 14px;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.countersign .party__name .hint {
+  color: var(--sage-deep);
+  transition: color 140ms ease;
+}
+.countersign:hover .party__name .hint,
+.countersign:focus-visible .party__name .hint {
+  color: var(--sage-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.countersign:focus-visible .sig-rule {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 6px;
+}
+
+/* ---- Foot of the instrument ---- */
+.exec__foot {
+  margin-top: 80px;
+  padding-top: 16px;
+  border-top: 2px solid var(--charcoal);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.exec__foot a {
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--sage-deep);
+}
+
+/* ---- Responsive & motion ---- */
+@media (max-width: 760px) {
+  .exec { padding: 56px 20px 80px; }
+  .clause { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .signing { grid-template-columns: 1fr; gap: 56px; }
+  .exec__ref { flex-direction: column; gap: 4px; }
+  .exec__foot { flex-direction: column; gap: 8px; }
+  .sig-rule::after { left: -16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countersign .ink { transition: none; stroke-dashoffset: 0; opacity: 0.35; }
+  .countersign:hover .ink, .countersign:focus-visible .ink { opacity: 1; }
+  .countersign .nib { animation: none; }
 }
