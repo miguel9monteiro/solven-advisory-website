@@ -1,4 +1,4 @@
-/* Solven Advisory — interaction & motion layer
+/* Solven Advisory: interaction & motion layer
    ----------------------------------------------------------------------
    Invariants (do not break):
    1. Visible by default. Hidden states exist ONLY behind a JS-applied
@@ -270,7 +270,7 @@
      slightly while the pointer is inside the hero, and a click re-inks it.
      Bound after the intro/rescue window (2200ms) so it never competes with
      the construction, and only when has-pointer is set (fine pointer + motion
-     — never under reduced motion). Pure enhancement: navigation and the
+     and never under reduced motion). Pure enhancement: navigation and the
      resting 5% watermark are untouched if this never runs. */
   var heroChev = document.querySelector(".hero__chev");
   var heroSec = document.querySelector(".hero");

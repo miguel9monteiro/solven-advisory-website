@@ -1,4 +1,4 @@
-# Solven Advisory — full site text
+# Solven Advisory: full site text
 
 This file is the complete text of https://solvenadvisory.ai for AI systems and their users. A shorter index lives at /llms.txt. Generated from the live pages on 2026-07-28.
 
@@ -15,7 +15,7 @@ AI Enablement & Implementation · Private Equity
 
 We train entire investment teams on AI, then build AI systems on the workflows that matter.
 
-The technology underneath this work changes weekly: new models, new tools, shifting best practice. Most firms train once and fall behind quietly. Solven's programmes are monthly because the frontier is weekly — your team, analyst to partner, stays current as the market moves.
+The technology underneath this work changes weekly: new models, new tools, shifting best practice. Most firms train once and fall behind quietly. Solven's programmes are monthly because the frontier is weekly: your team, analyst to partner, stays current as the market moves.
 
 Enablement
 
@@ -39,7 +39,7 @@ Token Economics
 
 #### And make every token earn its place.
 
-Where your compute spend actually goes, what it returns, and how to pace it — so the firm's token budget lasts the full year, not the first quarter.
+Where your compute spend actually goes, what it returns, and how to pace it, so the firm's token budget lasts the full year, not the first quarter.
 
 ### Four practices, four entry points into the firm.
 
@@ -47,7 +47,7 @@ Each maps to a different seat at the table, and each is designed to sharpen judg
 
 #### Diligence & deal flow
 
-First-pass diligence, question banks, comparables, data room synthesis, and sourcing screens — defensible at investment committee.
+First-pass diligence, question banks, comparables, data room synthesis, and sourcing screens, all defensible at investment committee.
 
 #### Portfolio operations
 
@@ -87,7 +87,7 @@ What we surface
 
 - Where AI actually touches the P&L, and where it is theatre for the raise.
 
-The deliverable: a clear read for the investment committee — what is real, what is veneer, and what it changes about the price.
+The deliverable: a clear read for the investment committee covering what is real, what is veneer, and what it changes about the price.
 
 Token Economics
 
@@ -97,7 +97,7 @@ An unmanaged compute budget has a way of being gone by March. We show you where 
 
 #### Usage analytics
 
-A clear read on where tokens go — by team, workflow, model, and prompt — so the spend that was invisible becomes legible.
+A clear read on where tokens go, by team, workflow, model, and prompt, so the spend that was invisible becomes legible.
 
 #### ROI analytics
 
@@ -105,13 +105,13 @@ What each token actually returns. Cost measured per outcome, not per call, so yo
 
 #### Efficiency
 
-Right-sized models, prompt caching, and tighter context — the same output for a fraction of the spend, without dropping quality.
+Right-sized models, prompt caching, and tighter context: the same output for a fraction of the spend, without dropping quality.
 
 #### Budget pacing
 
 Forecasts and guardrails that keep consumption tracking the year, so there are no surprises and no scramble in the fourth quarter.
 
-The deliverable: a token P&L the partners can read — what each workflow costs, what it earns, and the changes that stretch the same budget across the whole year.
+The deliverable: a token P&L the partners can read, showing what each workflow costs, what it earns, and the changes that stretch the same budget across the whole year.
 
 The currency argument
 
@@ -119,7 +119,7 @@ The currency argument
 
 A firm that trained its team six months ago is already operating on stale knowledge.
 
-New models, new tools, new capabilities, shifting best practice — the ground under this work shifts on a weekly cadence. Our programmes are monthly precisely because the technology is weekly. Every person in the firm stays fluent with the frontier as it moves, without anyone having to track the firehose themselves.
+New models, new tools, new capabilities, shifting best practice: the ground under this work shifts on a weekly cadence. Our programmes are monthly precisely because the technology is weekly. Every person in the firm stays fluent with the frontier as it moves, without anyone having to track the firehose themselves.
 
 Where we work
 
@@ -129,7 +129,7 @@ Member of the Anthropic Partner Network · Phase 1
 
 ### Let's tune a programme to your firm's priorities.
 
-A short conversation is the fastest way to see where Claude belongs in your team's work — and where it shouldn't.
+A short conversation is the fastest way to see where Claude belongs in your team's work, and where it shouldn't.
 
 The first thirty minutes are on us. So is the straight answer.
 
@@ -279,7 +279,7 @@ The thread
 
 Analysts produce the formative work first, then bring Claude in as a critic, a red-teamer, and a verifier.
 
-The risk in any rollout is that talented people become editors of drafts they cannot fully defend. We design every session the other way round. Verification habits, the devil's advocate pattern, AI as critic rather than author — the same skills that unconstrained use erodes are the ones we build.
+The risk in any rollout is that talented people become editors of drafts they cannot fully defend. We design every session the other way round. Verification habits, the devil's advocate pattern, AI as critic rather than author: the same skills that unconstrained use erodes are the ones we build.
 
 That is what we mean by augmentation without cognitive atrophy, and it runs through all four sessions and everything that follows them.
 
@@ -289,7 +289,7 @@ Programme structure
 
 #### Month to month
 
-Programmes run monthly with no minimum commitment. Stay as long as the frontier keeps moving — which is to say, as long as it is useful.
+Programmes run monthly with no minimum commitment. Stay as long as the frontier keeps moving, which is to say, as long as it is useful.
 
 #### Sessions plus build hours
 
@@ -309,7 +309,7 @@ Straight answers to the questions that usually precede the first call. Anything 
 
 **Q: How is an engagement priced?**
 
-Each engagement is scoped and priced individually — a six-person deal team and a forty-person firm are not the same programme. Programmes run monthly with no minimum commitment, so the decision you are making is a month's decision, not a year's.
+Each engagement is scoped and priced individually: a six-person deal team and a forty-person firm are not the same programme. Programmes run monthly with no minimum commitment, so the decision you are making is a month's decision, not a year's.
 
 **Q: How much of the team's time does the programme take?**
 
@@ -317,11 +317,11 @@ Month one is four sessions covering the full arc, from how a model thinks throug
 
 **Q: What happens to our firm's data during the sessions?**
 
-Sessions run on your actual deals, models, and memos, so this question deserves a precise answer rather than a reassuring one. Data handling is settled during scoping, before any material is opened: whose accounts the work passes through, on what terms, and what — if anything — is retained afterwards. The answers are put in writing before the first session.
+Sessions run on your actual deals, models, and memos, so this question deserves a precise answer rather than a reassuring one. Data handling is settled during scoping, before any material is opened: whose accounts the work passes through, on what terms, and what, if anything, is retained afterwards. The answers are put in writing before the first session.
 
-**Q: Which AI tools do you train on — and are we locking ourselves into one vendor?**
+**Q: Which AI tools do you train on, and are we locking ourselves into one vendor?**
 
-We train on the Claude suite — Claude.ai, Claude Code, and Claude in Excel, PowerPoint, Chrome, and Cowork — and Solven is a member of the Anthropic Partner Network. That is a deliberate position, not an accident. On lock-in: session one teaches how any large model works — tokens, attention, probability, where hallucinations come from — and the verification habits we build are model-agnostic. If the market shifts, the fluency travels with your team.
+We train on the Claude suite: Claude.ai, Claude Code, and Claude in Excel, PowerPoint, Chrome, and Cowork. Solven is a member of the Anthropic Partner Network. That is a deliberate position, not an accident. On lock-in: session one teaches how any large model works, from tokens, attention, and probability to where hallucinations come from, and the verification habits we build are model-agnostic. If the market shifts, the fluency travels with your team.
 
 **Q: Are the sessions delivered in Portuguese or English?**
 
@@ -333,15 +333,15 @@ Three ways the firm can see rather than take on trust. The work itself: output t
 
 **Q: Why Solven rather than a large consultancy, or doing this in-house?**
 
-Three honest reasons. The work is specific: we do one thing, for investment firms, and sessions run on your deals and memos rather than a generic curriculum. The cadence is the product: the technology shifts weekly, and a one-off training project — internal or external — is stale within a quarter; our engagement is monthly because the frontier is. And the thesis is different: most enablement measures adoption; we design against cognitive offloading, so judgment gets sharper rather than thinner. If what a firm mainly needs is change management across a thousand seats, a large consultancy is the right call, and we will say so.
+Three honest reasons. The work is specific: we do one thing, for investment firms, and sessions run on your deals and memos rather than a generic curriculum. The cadence is the product: the technology shifts weekly, and a one-off training project, internal or external, is stale within a quarter; our engagement is monthly because the frontier is. And the thesis is different: most enablement measures adoption; we design against cognitive offloading, so judgment gets sharper rather than thinner. If what a firm mainly needs is change management across a thousand seats, a large consultancy is the right call, and we will say so.
 
 **Q: What happens after the programme ends?**
 
-The engagement is monthly with no minimum commitment, so ending is a decision you can make any month. What the firm keeps: the verification habits, the prompts and skills built in session four — version-controlled files that live in your systems — and anything produced in build hours. Nothing is designed to make leaving hard.
+The engagement is monthly with no minimum commitment, so ending is a decision you can make any month. What the firm keeps: the verification habits; the prompts and skills built in session four, version-controlled files that live in your systems; and anything produced in build hours. Nothing is designed to make leaving hard.
 
 **Q: Will this make our analysts dependent on AI?**
 
-That risk is the reason the firm exists. The failure mode in most rollouts is not adoption failure — it is analysts becoming editors of drafts they cannot defend. Every session is built the other way round: the analyst produces a defensible first pass, then brings Claude in as a critic, a red-teamer, and a verifier. Used this way, the model sharpens exactly the skills that unconstrained use erodes. We call it augmentation without cognitive atrophy.
+That risk is the reason the firm exists. The failure mode in most rollouts is not adoption failure; it is analysts becoming editors of drafts they cannot defend. Every session is built the other way round: the analyst produces a defensible first pass, then brings Claude in as a critic, a red-teamer, and a verifier. Used this way, the model sharpens exactly the skills that unconstrained use erodes. We call it augmentation without cognitive atrophy.
 
 **Q: Can partners attend, or is this for analysts?**
 
@@ -431,7 +431,7 @@ Selected work
 
 A look at how the two sides of the work fit together on the workflows that fill an investment team's week.
 
-Described by the work itself — by workflow and structure — with no metrics we cannot stand behind.
+Described by the work itself, by workflow and structure, with no metrics we cannot stand behind.
 
 Capability 01
 
@@ -441,7 +441,7 @@ Diligence · financing · investment committee
 
 #### Context
 
-Diligence, financing, and investment-committee workflows are repetitive and judgment-heavy — exactly the work where a team wants genuine fluency rather than a one-off demonstration.
+Diligence, financing, and investment-committee workflows are repetitive and judgment-heavy: exactly the work where a team wants genuine fluency rather than a one-off demonstration.
 
 #### Approach
 
@@ -479,7 +479,7 @@ Discovery & scoping
 
 #### Context
 
-Before any build, mapping where AI belongs across deal evaluation and investment-memo workflows — and, just as important, where it does not.
+Before any build, mapping where AI belongs across deal evaluation and investment-memo workflows, and, just as important, where it does not.
 
 #### Approach
 
@@ -595,7 +595,7 @@ Sign here: choose your thirty minutes →
 
 The calendar is just below. Dated the day you pick.
 
-Schedule of execution — choose your thirty minutes
+Schedule of execution: choose your thirty minutes
 
 Booking runs on Cal.com's EU infrastructure. If the calendar does not load, open it in a new tab.
 
@@ -619,11 +619,11 @@ The full set lives on the programmes page. These are the three that usually come
 
 **Q: How is an engagement priced?**
 
-Each engagement is scoped and priced individually — a six-person deal team and a forty-person firm are not the same programme. Programmes run monthly with no minimum commitment, so the decision you are making is a month's decision, not a year's.
+Each engagement is scoped and priced individually: a six-person deal team and a forty-person firm are not the same programme. Programmes run monthly with no minimum commitment, so the decision you are making is a month's decision, not a year's.
 
 **Q: What happens to our firm's data during the sessions?**
 
-Sessions run on your actual deals, models, and memos, so this question deserves a precise answer rather than a reassuring one. Data handling is settled during scoping, before any material is opened: whose accounts the work passes through, on what terms, and what — if anything — is retained afterwards. The answers are put in writing before the first session.
+Sessions run on your actual deals, models, and memos, so this question deserves a precise answer rather than a reassuring one. Data handling is settled during scoping, before any material is opened: whose accounts the work passes through, on what terms, and what, if anything, is retained afterwards. The answers are put in writing before the first session.
 
 **Q: Are the sessions delivered in Portuguese or English?**
 
@@ -649,13 +649,13 @@ Solven Advisory is an AI enablement and implementation consultancy based in Lisb
 
 ### What we collect, and why
 
-If you use the contact form, we receive the details you type — name, firm, email address, and your message. The form is delivered to our inbox by FormSubmit, a form-forwarding service; we use the details only to reply to you. If you book a call, scheduling runs on Cal.com's EU-hosted infrastructure, which collects the name, email address, and time slot you provide in order to place the meeting in both calendars. If you simply email or phone us, we hold the correspondence the way any firm holds its mail.
+If you use the contact form, we receive the details you type: name, firm, email address, and your message. The form is delivered to our inbox by FormSubmit, a form-forwarding service; we use the details only to reply to you. If you book a call, scheduling runs on Cal.com's EU-hosted infrastructure, which collects the name, email address, and time slot you provide in order to place the meeting in both calendars. If you simply email or phone us, we hold the correspondence the way any firm holds its mail.
 
 The site itself sets no cookies and runs no advertising or profiling scripts. We use Vercel's cookieless analytics, which counts visits in aggregate and does not identify individuals. There is no newsletter and no marketing list; when we say we reply to people, not leads, this notice is what that means in practice.
 
 ### The legal basis
 
-We process contact and booking details because you asked us to — steps taken at your request before a possible contract (Article 6(1)(b) of the GDPR) — and we keep ordinary business correspondence on the basis of legitimate interest (Article 6(1)(f)).
+We process contact and booking details because you asked us to: steps taken at your request before a possible contract (Article 6(1)(b) of the GDPR). We keep ordinary business correspondence on the basis of legitimate interest (Article 6(1)(f)).
 
 ### Where the data sits
 
@@ -663,7 +663,7 @@ The site is hosted by Vercel. Form delivery passes through FormSubmit. Schedulin
 
 ### How long we keep it
 
-Correspondence is kept for as long as a working relationship, or the reasonable prospect of one, exists — and afterwards only as long as ordinary business record-keeping requires. If you would like something deleted sooner, ask.
+Correspondence is kept for as long as a working relationship, or the reasonable prospect of one, exists, and afterwards only as long as ordinary business record-keeping requires. If you would like something deleted sooner, ask.
 
 ### Your rights
 
@@ -685,7 +685,7 @@ A tese
 
 O risco de um rollout de IA numa firma de investimento não é a adoção falhar. É o que acontece ao critério analítico quando a adoção resulta: analistas que se tornam editores de rascunhos que não conseguem defender em comité de investimento.
 
-Todo o nosso trabalho é desenhado contra esse risco. O analista produz primeiro a sua análise; o modelo entra depois, como crítico, adversário e verificador — nunca como autor. Chamamos-lhe augmentation without cognitive atrophy: a IA torna o critério mais afiado, nunca mais fino.
+Todo o nosso trabalho é desenhado contra esse risco. O analista produz primeiro a sua análise; o modelo entra depois, como crítico, adversário e verificador, nunca como autor. Chamamos-lhe augmentation without cognitive atrophy: a IA torna o critério mais afiado, nunca mais fino.
 
 O que fazemos
 
@@ -701,19 +701,19 @@ Agentes e automação sobre o trabalho real: revisão de contratos, interrogaç�
 
 #### Due diligence de IA
 
-Uma leitura independente sobre se a IA de uma empresa-alvo é capacidade genuína ou vocabulário de pitch — antes do term sheet, num formato defensável em comité.
+Uma leitura independente sobre se a IA de uma empresa-alvo é capacidade genuína ou vocabulário de pitch, antes do term sheet e num formato defensável em comité.
 
 #### Economia de tokens
 
 Onde vai o orçamento de compute, o que devolve, e como fazê-lo durar o ano inteiro. O resultado é um P&L de tokens que os partners conseguem ler.
 
-As sessões decorrem em português ou inglês, conforme a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são — tal como o resto deste site, disponível em solvenadvisory.ai.
+As sessões decorrem em português ou inglês, conforme a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são, tal como o resto deste site, disponível em solvenadvisory.ai.
 
 Membro da Anthropic Partner Network
 
 ### Trinta minutos, com o escrutínio a correr na vossa direção.
 
-Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up — e com a resposta direta, incluindo «não somos a firma certa para isto».
+Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up, e com a resposta direta, incluindo «não somos a firma certa para isto».
 
 ---
 
@@ -725,7 +725,7 @@ Solven Journal
 
 ## Notes from the frontier, as it moves.
 
-Short, practical writing on what is actually changing in AI — new models, new tooling, and what it means for firms where judgment is the product. Signal over noise, always.
+Short, practical writing on what is actually changing in AI: new models, new tooling, and what it means for firms where judgment is the product. Signal over noise, always.
 
 - July 20264 min read Editors of drafts they cannot defend The real failure mode of an AI rollout is not that analysts refuse the tools; it is that they end up polishing arguments they never built. Read the piece →
 
@@ -735,7 +735,7 @@ Short, practical writing on what is actually changing in AI — new models, new 
 
 ---
 
-# Journal — Editors of drafts they cannot defend
+# Journal: Editors of drafts they cannot defend
 
 <https://solvenadvisory.ai/blog/editors-of-drafts-they-cannot-defend>
 
@@ -745,7 +745,7 @@ Solven Journal · July 2026 · 4 min read
 
 The real failure mode of an AI rollout is not that analysts refuse the tools; it is that they end up polishing arguments they never built.
 
-Every investment committee has a version of the same moment. A partner stops on a single figure — an exit multiple, a churn assumption, a discount rate — and asks the analyst why it is what it is. The question is rarely about the number itself. It is a probe. If the analyst can walk backwards from that cell through the reasoning that produced it, the partner extends trust to the rest of the memo. If the analyst hesitates, the whole document is suddenly on the table.
+Every investment committee has a version of the same moment. A partner stops on a single figure, perhaps an exit multiple, a churn assumption, or a discount rate, and asks the analyst why it is what it is. The question is rarely about the number itself. It is a probe. If the analyst can walk backwards from that cell through the reasoning that produced it, the partner extends trust to the rest of the memo. If the analyst hesitates, the whole document is suddenly on the table.
 
 That exchange only works if the person defending the work is the person who did it. This is precisely the assumption that careless AI adoption quietly breaks.
 
@@ -761,25 +761,25 @@ What has actually happened is the substitution of one cognitive act for a much w
 
 Some professions can absorb this quietly. Investment work cannot, because its entire review structure presumes authorship. A memo passes from associate to principal to partner to committee, and at each stage the reviewer samples: they probe two or three load-bearing assumptions, watch how the author responds, and extend or withdraw trust accordingly. Sampling is efficient precisely because defending one number well is evidence that the author can defend the others.
 
-Break the authorship assumption and the sampling breaks with it. The analyst who edited a generated draft may survive the first probe — models are good at making assumptions sound reasoned — and fail the second, or survive both and carry an undetected error into a signed term sheet. The erosion also compounds. Analysts learn judgment by producing work and having it taken apart; the partners who take memos apart learned to do it by having their own taken apart. A firm that lets its juniors skip the production step is not saving time. It is quietly cancelling the apprenticeship that produces its future partners.
+Break the authorship assumption and the sampling breaks with it. The analyst who edited a generated draft may survive the first probe, because models are good at making assumptions sound reasoned, and fail the second, or survive both and carry an undetected error into a signed term sheet. The erosion also compounds. Analysts learn judgment by producing work and having it taken apart; the partners who take memos apart learned to do it by having their own taken apart. A firm that lets its juniors skip the production step is not saving time. It is quietly cancelling the apprenticeship that produces its future partners.
 
 ### Invert the workflow
 
-The answer is not less AI. It is a different sequence. The analyst produces the first pass — the position, the numbers, the reasoning — before the model sees any of it. Then the model is brought in as an adversary rather than an author: to attack the thesis, hunt for disconfirming evidence, stress the assumptions the analyst is most attached to, and check the arithmetic and the sourcing. We call this AI as adversary, not author, and it is the principle behind everything we do.
+The answer is not less AI. It is a different sequence. The analyst produces the first pass, the position, the numbers, and the reasoning, before the model sees any of it. Then the model is brought in as an adversary rather than an author: to attack the thesis, hunt for disconfirming evidence, stress the assumptions the analyst is most attached to, and check the arithmetic and the sourcing. We call this AI as adversary, not author, and it is the principle behind everything we do.
 
-The inversion matters because the model is at its most valuable, and least corrosive, in the critic's chair. As an author it displaces the formative work; as an adversary it multiplies it. An analyst whose thesis has survived serious red-teaming walks into committee with better answers than either the unaided analyst or the prompt-and-polish one — and every answer is the analyst's own.
+The inversion matters because the model is at its most valuable, and least corrosive, in the critic's chair. As an author it displaces the formative work; as an adversary it multiplies it. An analyst whose thesis has survived serious red-teaming walks into committee with better answers than either the unaided analyst or the prompt-and-polish one, and every answer is the analyst's own.
 
 ### What a firm can do about it
 
-None of this survives on good intentions, because the prompt-and-polish route will always be faster on any given Tuesday. It has to be held in place by structure. Review norms can require that the human contribution be legible: a memo arrives with its formative work attached, and reviewers are entitled to ask which parts the analyst produced and which the model challenged. Partners can make provenance a normal question in committee, asked without ceremony, the way “why this number” is asked now. Senior-led calibration sessions — working a live deal problem together, unassisted first, then with the model as critic — surface drift in individual analysts before it compounds across the team. And occasionally requiring a fully unassisted first pass does for the firm's bench what an audit does for its books: it verifies that the capability everyone assumes is there is actually still there.
+None of this survives on good intentions, because the prompt-and-polish route will always be faster on any given Tuesday. It has to be held in place by structure. Review norms can require that the human contribution be legible: a memo arrives with its formative work attached, and reviewers are entitled to ask which parts the analyst produced and which the model challenged. Partners can make provenance a normal question in committee, asked without ceremony, the way “why this number” is asked now. Senior-led calibration sessions surface drift in individual analysts before it compounds across the team: working a live deal problem together, unassisted first, then with the model as critic. And occasionally requiring a fully unassisted first pass does for the firm's bench what an audit does for its books: it verifies that the capability everyone assumes is there is actually still there.
 
-Firms that get this right will be faster and sharper than the firms that merely adopted the tools, because they will have kept the one asset the tools cannot replace. The firms that get it wrong will not notice for a while — their documents will look excellent — until one afternoon in committee a partner stops on a number and asks why, and nobody in the room owns the answer.
+Firms that get this right will be faster and sharper than the firms that merely adopted the tools, because they will have kept the one asset the tools cannot replace. The firms that get it wrong will not notice for a while; their documents will look excellent. Then one afternoon in committee a partner stops on a number and asks why, and nobody in the room owns the answer.
 
 If that question is one your firm has started asking itself, we are glad to talk it through.
 
 ---
 
-# Journal — How to tell whether the AI is real
+# Journal: How to tell whether the AI is real
 
 <https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real>
 
@@ -797,7 +797,7 @@ None of this requires a machine learning specialist on the deal team. It require
 
 ### Start with where the model comes from
 
-Ask the engineers, not the chief executive, and ask precisely. A "proprietary AI engine" in a deck very often means a rented frontier model with a carefully written prompt in front of it. That is not disqualifying — some of the best applied AI businesses are built on models anyone can rent — but it changes what you are pricing. You are no longer valuing a technology asset; you are valuing whatever has been built around a supplier.
+Ask the engineers, not the chief executive, and ask precisely. A "proprietary AI engine" in a deck very often means a rented frontier model with a carefully written prompt in front of it. That is not disqualifying; some of the best applied AI businesses are built on models anyone can rent. But it changes what you are pricing. You are no longer valuing a technology asset; you are valuing whatever has been built around a supplier.
 
 The tell is precision. A strong team will describe its stack without hedging: which models, where fine-tuning ends and prompting begins, what was built and what was bought. A team that is vague about its own architecture either does not want you to know or does not know itself. Both answers are useful, and both should move the price.
 
@@ -811,11 +811,11 @@ If the answers are thin, the AI can be entirely real and the business still repl
 
 A rented model is a supplier relationship, and model providers behave the way suppliers do: prices change, versions are retired, terms are rewritten. Ask which model versions the product depends on today. Ask what happened the last time one was deprecated, how long the migration took, and what it cost. A team that has switched providers once and can describe the exercise in detail has demonstrated something valuable. A team that has never considered the question is carrying a risk it has not priced, which means you would be.
 
-The same part of the conversation should cover unit economics. Inference is a marginal cost that scales with usage in a way traditional software's costs never did. Ask what it costs to serve a customer — per seat, per transaction, per document, whatever the unit is — and which direction that number is moving. A gross margin that depends on model prices staying where they are, or on customers never using the product heavily, is not a margin; it is a hope. The encouraging sign is a team that knows its inference cost per unit without looking it up, because it watches the number weekly.
+The same part of the conversation should cover unit economics. Inference is a marginal cost that scales with usage in a way traditional software's costs never did. Ask what it costs to serve a customer, per seat, per transaction, per document, whatever the unit is, and which direction that number is moving. A gross margin that depends on model prices staying where they are, or on customers never using the product heavily, is not a margin; it is a hope. The encouraging sign is a team that knows its inference cost per unit without looking it up, because it watches the number weekly.
 
 ### Make them show rather than tell
 
-Slides can claim anything. So ask for a live session, on inputs the deal team chooses, rather than a recorded demo built on inputs the company chose. Ask to see the evaluation suite — the tests that tell them whether a model update has quietly degraded the product — because a team without one is finding out from its customers. Ask what the last three months of engineering time actually went into; if the honest answer is prompts and interface work, the claimed depth of the AI intellectual property needs revising downwards. And ask who gets woken up when the model misbehaves in production, and what the runbook tells them to do.
+Slides can claim anything. So ask for a live session, on inputs the deal team chooses, rather than a recorded demo built on inputs the company chose. Ask to see the evaluation suite, the tests that tell them whether a model update has quietly degraded the product, because a team without one is finding out from its customers. Ask what the last three months of engineering time actually went into; if the honest answer is prompts and interface work, the claimed depth of the AI intellectual property needs revising downwards. And ask who gets woken up when the model misbehaves in production, and what the runbook tells them to do.
 
 None of this is hostile. Serious teams tend to enjoy these questions, because they finally get to talk about what they built. The teams that bristle are giving you information too.
 
@@ -833,13 +833,13 @@ For a deal this quarter, the method compresses to five questions.
 
 - Show us, live, on inputs we choose.
 
-Notice that none of these is exotic. They are supplier concentration, cost of goods, switching costs, and replicability — the questions investment committees have always asked, wearing new vocabulary. A deal team that asks them calmly will separate the targets that own their capability from the targets that rent it, and will price each accordingly. Expect that separation to be visible within the first meeting with the engineers.
+Notice that none of these is exotic. They are supplier concentration, cost of goods, switching costs, and replicability. These are the questions investment committees have always asked, wearing new vocabulary. A deal team that asks them calmly will separate the targets that own their capability from the targets that rent it, and will price each accordingly. Expect that separation to be visible within the first meeting with the engineers.
 
 If you would like a second pair of eyes on a live deal, we are happy to talk.
 
 ---
 
-# Journal — Making every token earn its place
+# Journal: Making every token earn its place
 
 <https://solvenadvisory.ai/blog/making-every-token-earn-its-place>
 
@@ -867,7 +867,7 @@ Tokens are the correct unit for billing and the wrong unit for management. A par
 
 > A partner cannot price a token. Every partner can price a memo.
 
-Workflow-level costing is the translation between the two. Instead of a single undifferentiated AI line, spend is attributed to named workflows, and each workflow acquires a unit cost: what first-pass diligence costs per target screened, what an adversarial review costs per investment committee memo, what a data room summary costs per room. Set beside the analyst-hours the work displaces or the speed it adds, each line supports an actual decision — keep, improve, or stop.
+Workflow-level costing is the translation between the two. Instead of a single undifferentiated AI line, spend is attributed to named workflows, and each workflow acquires a unit cost: what first-pass diligence costs per target screened, what an adversarial review costs per investment committee memo, what a data room summary costs per room. Set beside the analyst-hours the work displaces or the speed it adds, each line supports an actual decision: keep, improve, or stop.
 
 Attribution also changes what expensive means. A workflow with a high unit cost that saves a deal team two days per target is cheap. A workflow with a negligible unit cost that produces output nobody reads is pure waste, and there is more of the second kind than most firms expect, precisely because each instance is too small to notice. Without attribution, the worthless spend hides inside the aggregate, and the valuable spend gets caught in the same squeeze when the cuts eventually come.
 

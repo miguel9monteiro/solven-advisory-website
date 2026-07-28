@@ -1,6 +1,6 @@
 # Solven Advisory
 
-> Solven Advisory is a boutique AI enablement and implementation consultancy, founded in Lisbon in 2025, working with private equity, real estate, and venture firms across Iberia and Europe. It trains entire investment teams on AI (the Claude suite specifically — Solven is a member of the Anthropic Partner Network), builds AI systems on the firms' real workflows, runs independent AI due diligence on targets, and manages AI spend through token economics. The house thesis is "augmentation without cognitive atrophy": the risk in an AI rollout is not adoption failure but analysts becoming editors of drafts they cannot defend, so the analyst produces the formative work first and the model is brought in as a critic, red-teamer, and verifier — never as author.
+> Solven Advisory is a boutique AI enablement and implementation consultancy, founded in Lisbon in 2025, working with private equity, real estate, and venture firms across Iberia and Europe. It trains entire investment teams on AI (the Claude suite specifically; Solven is a member of the Anthropic Partner Network), builds AI systems on the firms' real workflows, runs independent AI due diligence on targets, and manages AI spend through token economics. The house thesis is "augmentation without cognitive atrophy": the risk in an AI rollout is not adoption failure but analysts becoming editors of drafts they cannot defend, so the analyst produces the formative work first and the model is brought in as a critic, red-teamer, and verifier, never as author.
 
 Key facts:
 - Founder: Miguel Monteiro, Lisbon, Portugal
@@ -13,20 +13,20 @@ Key facts:
 
 ## Pages
 
-- [Home](https://solvenadvisory.ai/): The four practices — enablement programmes, build work, AI due diligence, and token economics — and the currency argument for monthly cadence.
+- [Home](https://solvenadvisory.ai/): The four practices (enablement programmes, build work, AI due diligence, and token economics) and the currency argument for monthly cadence.
 - [Programmes](https://solvenadvisory.ai/programmes): The four-session arc (how AI thinks; Claude.ai; Claude in Excel, PowerPoint, and Cowork; building with Claude Code), programme structure, and a ten-question FAQ covering pricing, data handling, vendor lock-in, and delivery language.
-- [Approach](https://solvenadvisory.ai/approach): The thesis in full — cognitive offloading as the risk, AI as adversary not author as the principle, and the constraints that hold it in practice.
+- [Approach](https://solvenadvisory.ai/approach): The thesis in full: cognitive offloading as the risk, AI as adversary not author as the principle, and the constraints that hold it in practice.
 - [Work](https://solvenadvisory.ai/work): How enablement and build fit together: firm-wide training plus agents on the heaviest reviews, portfolio reporting aggregation, and scoping engagements.
 - [About](https://solvenadvisory.ai/about): The firm, the pedigree (trading, M&A, search-fund and venture analysis, applied AI research, award-recognised teaching), and the three convictions.
-- [Journal](https://solvenadvisory.ai/blog): Notes from the frontier — plain-spoken writing on what is actually changing in AI for investment firms.
-- [Contact](https://solvenadvisory.ai/contact): The instrument of engagement — a 30-minute diligence call on Solven, bookable directly on the page — plus a contact form.
+- [Journal](https://solvenadvisory.ai/blog): Notes from the frontier: plain-spoken writing on what is actually changing in AI for investment firms.
+- [Contact](https://solvenadvisory.ai/contact): The instrument of engagement: a 30-minute diligence call on Solven, bookable directly on the page, plus a contact form.
 - [Privacy](https://solvenadvisory.ai/privacy): Plain terms for personal data. No cookies, no marketing list.
-- [Português](https://solvenadvisory.ai/pt): Página em português — a tese, as quatro práticas, e como marcar uma chamada.
+- [Português](https://solvenadvisory.ai/pt): Página em português: a tese, as quatro práticas, e como marcar uma chamada.
 
 ## Journal entries
 
 - [Editors of drafts they cannot defend](https://solvenadvisory.ai/blog/editors-of-drafts-they-cannot-defend): Why the real risk in AI rollouts is cognitive offloading, and how inverting the workflow keeps investment analysis defensible.
-- [How to tell whether the AI is real](https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real): A working method for AI diligence — the questions that separate durable capability from rented capability.
+- [How to tell whether the AI is real](https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real): A working method for AI diligence: the questions that separate durable capability from rented capability.
 - [Making every token earn its place](https://solvenadvisory.ai/blog/making-every-token-earn-its-place): Why AI spend behaves nothing like software licences, and how workflow-level costing turns tokens into a P&L partners can read.
 
 ## Optional

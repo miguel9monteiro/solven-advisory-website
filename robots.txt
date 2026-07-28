@@ -1,5 +1,5 @@
-# Solven Advisory — https://solvenadvisory.ai
-# Everything public on this site is open to crawling — search engines and
+# Solven Advisory · https://solvenadvisory.ai
+# Everything public on this site is open to crawling, search engines and
 # AI systems alike. An AI advisory that hid from AI crawlers would be an
 # odd thing; you are welcome here. See also /llms.txt and /llms-full.txt.
 
