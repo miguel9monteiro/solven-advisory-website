@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solven Advisory — Implementação de IA para firmas de investimento</title>
+<meta name="description" content="A Solven Advisory forma equipas de investimento inteiras em IA e constrói sistemas sobre os fluxos de trabalho que importam. Programas de capacitação, due diligence de IA e economia de tokens, a partir de Lisboa." />
+<link rel="canonical" href="https://solvenadvisory.ai/pt/" />
+<link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/" />
+<link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/" />
+<link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Solven Advisory" />
+<meta property="og:title" content="Solven Advisory — Implementação de IA para firmas de investimento" />
+<meta property="og:description" content="A Solven Advisory forma equipas de investimento inteiras em IA e constrói sistemas sobre os fluxos de trabalho que importam. Programas de capacitação, due diligence de IA e economia de tokens, a partir de Lisboa." />
+<meta property="og:url" content="https://solvenadvisory.ai/pt/" />
+<meta property="og:image" content="https://solvenadvisory.ai/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="pt_PT" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Solven Advisory — Implementação de IA para firmas de investimento" />
+<meta name="twitter:description" content="A Solven Advisory forma equipas de investimento inteiras em IA e constrói sistemas sobre os fluxos de trabalho que importam. Programas de capacitação, due diligence de IA e economia de tokens, a partir de Lisboa." />
+<meta name="twitter:image" content="https://solvenadvisory.ai/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/assets/logos/05_solven_favicon.svg" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Solven Advisory — Implementação de IA para firmas de investimento",
+  "url": "https://solvenadvisory.ai/pt/",
+  "inLanguage": "pt-PT",
+  "about": { "@id": "https://solvenadvisory.ai/#organization" }
+}
+</script>
+<link rel="stylesheet" href="/solven.css" />
+<style>
+  .pthero { position: relative; overflow: hidden; padding-block: clamp(3rem, 6vw, 6rem) clamp(2.5rem, 5vw, 4.5rem); }
+  .pthero__chev { position: absolute; right: -8%; top: -18%; width: clamp(360px, 44vw, 660px); opacity: 0.05; }
+  .pthero__inner { position: relative; z-index: 1; }
+  .pthero .eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+  .pthero .eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); }
+  .pthero h1 { font-size: var(--t-2xl); line-height: 1.05; max-width: 18ch; }
+  .pthero .lead { margin-top: clamp(1.5rem, 3vw, 2.25rem); max-width: 46ch; }
+  .pthero__cta { display: flex; gap: var(--s-4); margin-top: clamp(2rem, 4vw, 3rem); flex-wrap: wrap; }
+
+  .ptthesis { border-top: 1px solid var(--charcoal); padding-block: clamp(2.5rem, 5vw, 4rem); display: grid; grid-template-columns: 0.7fr 1.3fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .ptthesis__body p { font-size: var(--t-md); line-height: 1.6; color: var(--text); margin: 0 0 var(--s-5); max-width: 56ch; }
+  .ptthesis__body p.sub { font-size: var(--t-base); color: var(--text-2); }
+  .ptthesis__body p:last-child { margin-bottom: 0; }
+  @media (max-width: 820px) { .ptthesis { grid-template-columns: 1fr; gap: var(--s-5); } }
+
+  .ptgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: clamp(2rem, 4vw, 3rem); }
+  .ptcard { padding: clamp(1.5rem, 3vw, 2.25rem) clamp(0rem, 2vw, 2rem); border-top: 1px solid var(--charcoal); }
+  .ptcard:nth-child(odd) { padding-left: 0; }
+  .ptcard .n { font-family: var(--serif); color: var(--sage-deep); font-size: var(--t-md); }
+  .ptcard h3 { font-size: var(--t-lg); margin: var(--s-3) 0 var(--s-3); max-width: 18ch; }
+  .ptcard p { color: var(--text-2); margin: 0; line-height: 1.55; max-width: 44ch; }
+  @media (max-width: 760px) { .ptgrid { grid-template-columns: 1fr; } .ptcard { padding-inline: 0 !important; } }
+
+  .ptcta { position: relative; overflow: hidden; }
+  .ptcta__chev { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(160px, 20vw, 320px); opacity: 0.1; }
+  .ptcta__inner { position: relative; z-index: 1; max-width: 46ch; }
+  .ptcta h2 { font-size: var(--t-2xl); line-height: 1.05; }
+  .ptcta p { color: var(--sage-pale); margin: var(--s-5) 0 var(--s-7); max-width: 44ch; }
+
+  .ptfooter { background: var(--bg-dark); color: var(--bone); padding-block: clamp(3rem, 5vw, 5rem); position: relative; overflow: hidden; }
+  .ptfooter__inner { max-width: var(--col); margin-inline: auto; padding-inline: var(--pad); position: relative; z-index: 1; display: flex; justify-content: space-between; gap: var(--s-6); flex-wrap: wrap; align-items: flex-start; }
+  .ptfooter a { color: var(--bone); text-decoration: none; opacity: 0.82; transition: opacity var(--fast); }
+  .ptfooter a:hover { opacity: 1; }
+  .ptfooter .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; font-size: var(--t-sm); }
+  .ptfooter__meta { max-width: var(--col); margin: var(--s-7) auto 0; padding: var(--s-5) var(--pad) 0; border-top: 0.5px solid rgba(244,242,235,0.16); font-size: var(--t-meta); color: var(--grey-light); position: relative; z-index: 1; display: flex; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; }
+</style>
+</head>
+<body data-intro>
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/pt/" class="brand" aria-label="Solven Advisory — início">
+      <span class="brand__word">Sol<svg class="brand__v" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg>en</span>
+      <span class="brand__rule"></span>
+      <span class="brand__sub">Advisory</span>
+    </a>
+    <nav class="site-nav" aria-label="Principal" style="max-height:none; position:static; flex-direction:row; border:0; padding:0; background:transparent; overflow:visible">
+      <a href="/" hreflang="en">English site</a>
+      <a href="/contact#book" class="nav-cta">Marcar uma chamada</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="pthero">
+    <svg class="pthero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <div class="shell pthero__inner">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
+        <span class="tick"></span>
+        <p class="label">Capacitação e implementação de IA · Private Equity</p>
+      </div>
+      <h1 class="line-mask" style="--intro-delay:.28s">Implementação de IA para firmas onde o critério é o produto.</h1>
+      <p class="lead intro-rise" style="--intro-delay:.45s">Formamos equipas de investimento inteiras em IA e construímos sistemas sobre os fluxos de trabalho que realmente importam. A partir de Lisboa, para firmas de private equity, imobiliário e venture capital.</p>
+      <div class="pthero__cta intro-rise" style="--intro-delay:.62s">
+        <a href="/contact#book" class="btn btn--solid">Marcar uma chamada <span class="arw">→</span></a>
+        <a href="mailto:miguelmonteiro@solvenadvisory.ai" class="btn">Escrever-nos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESE -->
+  <div class="shell">
+    <section class="ptthesis reveal">
+      <div>
+        <p class="label">A tese</p>
+      </div>
+      <div class="ptthesis__body">
+        <p>O risco de um rollout de IA numa firma de investimento não é a adoção falhar. É o que acontece ao critério analítico quando a adoção resulta: analistas que se tornam editores de rascunhos que não conseguem defender em comité de investimento.</p>
+        <p class="sub">Todo o nosso trabalho é desenhado contra esse risco. O analista produz primeiro a sua análise; o modelo entra depois, como crítico, adversário e verificador — nunca como autor. Chamamos-lhe <em>augmentation without cognitive atrophy</em>: a IA torna o critério mais afiado, nunca mais fino.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRÁTICAS -->
+  <section class="shell section--tight" aria-labelledby="pt-praticas">
+    <p class="label reveal">O que fazemos</p>
+    <h2 id="pt-praticas" class="reveal" style="font-size:var(--t-xl); margin-top:1rem; max-width:22ch">Quatro práticas, quatro portas de entrada na firma.</h2>
+    <div class="ptgrid">
+      <article class="ptcard reveal">
+        <span class="n">01</span>
+        <h3>Programas de capacitação</h3>
+        <p>Sessões práticas com Claude para toda a firma, do analista ao managing partner, sobre os vossos próprios negócios, modelos e memorandos. Mensais, porque a fronteira é semanal.</p>
+      </article>
+      <article class="ptcard reveal" style="--reveal-delay:80ms">
+        <span class="n">02</span>
+        <h3>Construção de sistemas</h3>
+        <p>Agentes e automação sobre o trabalho real: revisão de contratos, interrogação adversarial de memorandos de comité de investimento, agregação de reporting de portefólio.</p>
+      </article>
+      <article class="ptcard reveal">
+        <span class="n">03</span>
+        <h3>Due diligence de IA</h3>
+        <p>Uma leitura independente sobre se a IA de uma empresa-alvo é capacidade genuína ou vocabulário de pitch — antes do term sheet, num formato defensável em comité.</p>
+      </article>
+      <article class="ptcard reveal" style="--reveal-delay:80ms">
+        <span class="n">04</span>
+        <h3>Economia de tokens</h3>
+        <p>Onde vai o orçamento de compute, o que devolve, e como fazê-lo durar o ano inteiro. O resultado é um P&amp;L de tokens que os partners conseguem ler.</p>
+      </article>
+    </div>
+    <p class="lead reveal" style="margin-top:2.5rem; max-width:52ch">As sessões decorrem em português ou inglês, conforme a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são — tal como o resto deste site, disponível em <a href="/" hreflang="en" style="color:inherit">solvenadvisory.ai</a>.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="band-dark section ptcta band-curtain">
+    <svg class="ptcta__chev" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+    <div class="shell">
+      <div class="ptcta__inner reveal">
+        <p class="label">Membro da Anthropic Partner Network</p>
+        <h2 style="margin-top:1.25rem">Trinta minutos, com o escrutínio a correr na vossa direção.</h2>
+        <p>Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up — e com a resposta direta, incluindo «não somos a firma certa para isto».</p>
+        <div class="cta-row">
+          <a href="/contact#book" class="btn btn--dark">Marcar uma chamada <span class="arw">→</span></a>
+          <a href="mailto:miguelmonteiro@solvenadvisory.ai" class="tlink tlink--dark">miguelmonteiro@solvenadvisory.ai</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ptfooter">
+  <svg class="footer-chevron" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+  <div class="ptfooter__inner">
+    <a href="/pt/" aria-label="Solven Advisory — início">
+      <img src="/assets/logos/02_solven_reversed_lockup.svg" alt="Solven Advisory" width="240" height="64" />
+    </a>
+    <ul class="list">
+      <li><a href="mailto:miguelmonteiro@solvenadvisory.ai">miguelmonteiro@solvenadvisory.ai</a></li>
+      <li><a href="tel:+351967130877">+351 967 130 877</a></li>
+      <li>Lisboa, Portugal</li>
+      <li><a href="https://www.linkedin.com/company/solven-advisory">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="ptfooter__meta">
+    <span>© 2026 Solven Advisory · Lisboa · <a href="/privacy">Privacidade</a> · <a href="/" hreflang="en">English</a></span>
+    <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
+  </div>
+</footer>
+
+<script src="/solven.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

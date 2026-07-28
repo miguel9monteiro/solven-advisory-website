@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://solvenadvisory.ai/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/programmes</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/approach</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/work</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/about</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/blog</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/blog/editors-of-drafts-they-cannot-defend</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/blog/making-every-token-earn-its-place</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/contact</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/privacy</loc>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+</urlset>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to tell whether the AI is real — Solven Journal | Solven Advisory</title>
+<meta name="description" content="A working method for AI diligence: where the model comes from, what surrounds it, what breaks when a provider changes terms, and what engineers can show live." />
+<link rel="canonical" href="https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Solven Advisory" />
+<meta property="og:title" content="How to tell whether the AI is real" />
+<meta property="og:description" content="A working method for AI diligence: where the model comes from, what surrounds it, what breaks when a provider changes terms, and what engineers can show live." />
+<meta property="og:url" content="https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real" />
+<meta property="og:image" content="https://solvenadvisory.ai/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_GB" />
+<meta property="article:published_time" content="2026-07-28" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to tell whether the AI is real" />
+<meta name="twitter:description" content="A working method for AI diligence: where the model comes from, what surrounds it, what breaks when a provider changes terms, and what engineers can show live." />
+<meta name="twitter:image" content="https://solvenadvisory.ai/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/assets/logos/05_solven_favicon.svg" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to tell whether the AI is real",
+  "description": "A working method for AI diligence: where the model comes from, what surrounds it, what breaks when a provider changes terms, and what engineers can show live.",
+  "datePublished": "2026-07-28",
+  "dateModified": "2026-07-28",
+  "author": {
+    "@type": "Person",
+    "name": "Miguel Monteiro"
+  },
+  "publisher": {
+    "@id": "https://solvenadvisory.ai/#organization"
+  },
+  "mainEntityOfPage": "https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real",
+  "url": "https://solvenadvisory.ai/blog/how-to-tell-whether-the-ai-is-real",
+  "image": "https://solvenadvisory.ai/assets/og.png",
+  "inLanguage": "en-GB"
+}
+</script>
+<link rel="stylesheet" href="/solven.css" />
+<style>
+  .jhero { position: relative; overflow: hidden; padding-block: clamp(3rem, 6vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+  .jhero__chev { position: absolute; left: -6%; top: -22%; width: clamp(340px, 40vw, 620px); opacity: 0.05; }
+  .jhero__inner { position: relative; z-index: 1; }
+  .jhero .eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: clamp(1.25rem, 3vw, 2rem); flex-wrap: wrap; }
+  .jhero .eyebrow .tick { width: 34px; height: 1px; background: var(--charcoal); }
+  .jhero h1 { font-size: var(--t-xl); line-height: 1.08; max-width: 26ch; }
+  .jhero .lead { margin-top: clamp(1.25rem, 3vw, 1.75rem); max-width: 52ch; }
+  .jfoot { border-top: 1px solid var(--charcoal); margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+</style>
+</head>
+<body data-intro>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="brand" aria-label="Solven Advisory home">
+      <span class="brand__word">Sol<svg class="brand__v" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg>en</span>
+      <span class="brand__rule"></span>
+      <span class="brand__sub">Advisory</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/programmes">Programmes</a>
+      <a href="/approach">Approach</a>
+      <a href="/work">Work</a>
+      <a href="/about">About</a>
+      <a href="/blog" class="is-current">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact#book" class="nav-cta">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="jhero">
+    <svg class="jhero__chev intro-chev" style="--chev-rest:.05" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#6B8068"/></svg>
+    <div class="shell jhero__inner">
+      <div class="eyebrow intro-rise" style="--intro-delay:.15s">
+        <span class="tick"></span>
+        <p class="label">Solven Journal · July 2026 · 4 min read</p>
+      </div>
+      <h1 class="line-mask" style="--intro-delay:.28s">How to tell whether the AI is real</h1>
+      <p class="lead intro-rise" style="--intro-delay:.45s">The questions that separate durable AI capability from rented capability, asked the way a deal team can actually ask them this quarter.</p>
+    </div>
+  </section>
+
+  <div class="shell">
+    <article class="prose reveal">
+<p>Most decks a deal team reads this year will describe the target as AI-powered. The phrase has stopped carrying information. It no longer distinguishes a company that has built something durable from a company that has an API key and a good copywriter, which means the work of distinguishing them has moved into diligence, where it belongs.</p>
+
+<p>None of this requires a machine learning specialist on the deal team. It requires a handful of questions, asked in the right order and put to the right people, with as much attention to how the answers are given as to what they say.</p>
+
+<blockquote>The question is not whether the target uses AI. It is what would remain if you removed everything the company rents.</blockquote>
+
+<h2>Start with where the model comes from</h2>
+
+<p>Ask the engineers, not the chief executive, and ask precisely. A "proprietary AI engine" in a deck very often means a rented frontier model with a carefully written prompt in front of it. That is not disqualifying — some of the best applied AI businesses are built on models anyone can rent — but it changes what you are pricing. You are no longer valuing a technology asset; you are valuing whatever has been built around a supplier.</p>
+
+<p>The tell is precision. A strong team will describe its stack without hedging: which models, where fine-tuning ends and prompting begins, what was built and what was bought. A team that is vague about its own architecture either does not want you to know or does not know itself. Both answers are useful, and both should move the price.</p>
+
+<h2>Then ask what sits around the model</h2>
+
+<p>In most AI businesses the durable asset is not the model at all. It is the data the company alone collects, and the depth to which the product is threaded into a customer's working day. So ask for those directly. What data do you hold that a well-funded competitor could not buy, license, or scrape within a year? What does the product learn from each customer's usage that makes it better for the next one? How long would it take a customer to leave, and what would they lose on the way out? None of these is a technical question. Each is an argument about the multiple, and each belongs in the investment committee discussion rather than in a technical annexe.</p>
+
+<p>If the answers are thin, the AI can be entirely real and the business still replicable. Rented capability plus commodity data is a product, and possibly a good one, but it is not a moat, and it should not be priced as one.</p>
+
+<h2>Ask what breaks when the supplier moves</h2>
+
+<p>A rented model is a supplier relationship, and model providers behave the way suppliers do: prices change, versions are retired, terms are rewritten. Ask which model versions the product depends on today. Ask what happened the last time one was deprecated, how long the migration took, and what it cost. A team that has switched providers once and can describe the exercise in detail has demonstrated something valuable. A team that has never considered the question is carrying a risk it has not priced, which means you would be.</p>
+
+<p>The same part of the conversation should cover unit economics. Inference is a marginal cost that scales with usage in a way traditional software's costs never did. Ask what it costs to serve a customer — per seat, per transaction, per document, whatever the unit is — and which direction that number is moving. A gross margin that depends on model prices staying where they are, or on customers never using the product heavily, is not a margin; it is a hope. The encouraging sign is a team that knows its inference cost per unit without looking it up, because it watches the number weekly.</p>
+
+<h2>Make them show rather than tell</h2>
+
+<p>Slides can claim anything. So ask for a live session, on inputs the deal team chooses, rather than a recorded demo built on inputs the company chose. Ask to see the evaluation suite — the tests that tell them whether a model update has quietly degraded the product — because a team without one is finding out from its customers. Ask what the last three months of engineering time actually went into; if the honest answer is prompts and interface work, the claimed depth of the AI intellectual property needs revising downwards. And ask who gets woken up when the model misbehaves in production, and what the runbook tells them to do.</p>
+
+<p>None of this is hostile. Serious teams tend to enjoy these questions, because they finally get to talk about what they built. The teams that bristle are giving you information too.</p>
+
+<h2>The short version</h2>
+
+<p>For a deal this quarter, the method compresses to five questions.</p>
+
+<ul>
+<li>Where, precisely, does the model come from?</li>
+<li>What do you hold that a competitor could not rent or buy?</li>
+<li>What happened the last time your model provider changed something, and what did it cost you?</li>
+<li>What does inference cost per customer, and which way is it moving?</li>
+<li>Show us, live, on inputs we choose.</li>
+</ul>
+
+<p>Notice that none of these is exotic. They are supplier concentration, cost of goods, switching costs, and replicability — the questions investment committees have always asked, wearing new vocabulary. A deal team that asks them calmly will separate the targets that own their capability from the targets that rent it, and will price each accordingly. Expect that separation to be visible within the first meeting with the engineers.</p>
+
+<p>If you would like a second pair of eyes on a live deal, <a href="/contact#book">we are happy to talk</a>.</p>
+    </article>
+    <div class="jfoot">
+      <div class="cta-row">
+        <a href="/contact#book" class="btn btn--solid">Book a call <span class="arw">→</span></a>
+        <a href="/blog" class="tlink">All journal entries <span class="arw">→</span></a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <svg class="footer-chevron" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
+  <div class="site-footer__grid">
+    <div>
+      <a href="/" class="site-footer__mark" aria-label="Solven Advisory home">
+        <img src="/assets/logos/02_solven_reversed_lockup.svg" alt="Solven Advisory" width="240" height="64" />
+      </a>
+      <p class="partner-badge" style="margin-top:1.5rem"><span class="dot"></span> Anthropic Partner Network · Phase 1</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul class="footer-list">
+        <li><a href="/programmes">Programmes</a></li>
+        <li><a href="/approach">Approach</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-list">
+        <li><a href="mailto:miguelmonteiro@solvenadvisory.ai">miguelmonteiro@solvenadvisory.ai</a></li>
+        <li><a href="tel:+351967130877">+351 967 130 877</a></li>
+        <li>Lisbon, Portugal</li>
+        <li><a href="https://www.linkedin.com/company/solven-advisory">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="/pt/" lang="pt-PT" hreflang="pt-PT">Português</a></span>
+    <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
+  </div>
+</footer>
+
+<script src="/solven.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
