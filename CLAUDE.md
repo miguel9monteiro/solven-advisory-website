@@ -22,6 +22,12 @@ with `cleanUrls` (internal links are extensionless). Brand reference lives in
 
 ## Invariants
 
+- Motion: content is visible by default. Hidden states exist only behind
+  JS-applied classes (`.pending`, `body.intro-armed`, `html.anim`) with
+  timed rescue paths, and `prefers-reduced-motion: reduce` is a hard stop
+  for every effect. New motion must follow the same contract (see the
+  headers in `solven.js` and the cinematic sections of `solven.css`).
+
 - The three FAQ answers shared between `programmes.html` and `contact.html`
   must stay word-for-word identical, and the FAQPage JSON-LD in
   `programmes.html` must exactly match the visible answer text.

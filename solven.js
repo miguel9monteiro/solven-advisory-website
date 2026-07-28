@@ -117,6 +117,12 @@
 
   if (reduce) return; // everything below is enhancement only
 
+  /* ---- Measure the executed signature so its ink can draw on reveal ---- */
+  var sig = document.querySelector(".party--solven .ink");
+  if (sig && "getTotalLength" in sig) {
+    try { sig.style.setProperty("--sig-len", sig.getTotalLength().toFixed(1)); } catch (e) {}
+  }
+
   /* ---- Reveal engine: IntersectionObserver + reveal:in event bus ----
      Preserves the original contract: only elements that START below the
      fold are hidden; a 2500ms safety net reveals anything left. */
