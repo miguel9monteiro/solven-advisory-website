@@ -673,7 +673,7 @@ You can ask for access to the data we hold about you, have it corrected or delet
 
 # Português
 
-<https://solvenadvisory.ai/pt/>
+<https://solvenadvisory.ai/pt>
 
 Capacitação e implementação de IA · Private Equity
 
