@@ -469,15 +469,6 @@ h1, h2, h3, h4 {
   body.intro-rescue .intro-chev {
     opacity: var(--chev-rest, .05) !important; transform: none !important; transition: none !important;
   }
-
-  /* the eyebrow tick draws itself as its block rises */
-  body.intro-armed:not(.intro-go) .intro-rise .tick { transform: scaleX(0); transform-origin: left; }
-  body.intro-go .intro-rise .tick {
-    transform: scaleX(1); transform-origin: left;
-    transition: transform .8s cubic-bezier(.22,.61,.36,1);
-    transition-delay: calc(var(--intro-delay, 0s) + .25s);
-  }
-  body.intro-rescue .intro-rise .tick { transform: none !important; transition: none !important; }
 }
 
 /* ---- Line-mask headline reveal (hero <h1>, plain text only) ----
