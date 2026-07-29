@@ -127,14 +127,6 @@ VIDEOS = [
     },
     {
         "shelf": "Now screening",
-        "url": "https://www.youtube.com/watch?v=-8k9lGpGQ6g",
-        "len": "26 min",
-        "title": "Build Anything With a Custom MCP Server",
-        "src": "Tech With Tim · Python tutorial",
-        "note": "",
-    },
-    {
-        "shelf": "Now screening",
         "url": "https://www.youtube.com/watch?v=ZaPbP9DwBOE",
         "len": "57 min",
         "title": "Don't Learn AI Agents Without These Fundamentals",
