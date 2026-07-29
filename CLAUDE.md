@@ -28,7 +28,11 @@ member of the Anthropic Partner Network.
 
 - Pages: `index`, `programmes`, `approach`, `work`, `about`, `contact`,
   `privacy`, `404`, `blog/index` + three articles (`blog/<slug>.html`,
-  July 2026, author Miguel Monteiro).
+  July 2026, author Miguel Monteiro), and `ai-flix` (the AI Flix library:
+  hand-curated external resources on themed shelves; EN-only like the
+  journal, "AI Flix · EN" in the PT nav). Every AI Flix link was verified
+  live before publishing; verify any link you add, and note The Bitter
+  Lesson must stay http:// (its https certificate is broken).
 - Portuguese mirror under `pt/`: `pt/index` plus full pt-PT versions of the
   five core pages. The pairs (keep in sync when EN copy changes):
   `/` ↔ `/pt`, `/programmes` ↔ `/pt/programas`, `/approach` ↔ `/pt/abordagem`,

@@ -1213,6 +1213,90 @@ Uma das duas, ou ambas. Estamos sediados em Lisboa e trabalhamos com casas de Li
 
 ---
 
+# AI Flix
+
+<https://solvenadvisory.ai/ai-flix>
+
+AI Flix · The library
+
+## The extra mile, curated.
+
+The talks, papers, courses, and tools the Solven team actually rates, each with a line on why it earns its place. For professionals who want to go further than fluency.
+
+22 entries · five shelves · chosen by hand · updated July 2026
+
+### Start here
+
+The mental models. Watch these first and everything else on this page gets easier.
+
+- Video27 min Transformers, the tech behind LLMs 3Blue1Brown The clearest visual explanation of what a transformer actually does. The mental model everything else on this shelf builds on. Open →
+
+- Video26 min Attention in transformers, step by step 3Blue1Brown Attention is the idea that made the frontier possible. Twenty-six minutes here saves hours of confusion later. Open →
+
+- Video1 h Intro to Large Language Models Andrej Karpathy A busy hour that pays for itself: how models are trained, what they can do, and where they fail, from someone who built them. Open →
+
+- Video3 h 31 min Deep Dive into LLMs like ChatGPT Andrej Karpathy The long version. Watch it in pieces and arrive able to reason about model behaviour rather than guess at it. Open →
+
+- Guide30 min read The Illustrated Transformer Jay Alammar The written companion to the videos on this shelf: the diagrams that made the architecture legible to a generation of readers. Open →
+
+### The craft
+
+Prompting as a discipline rather than a knack.
+
+- DocsReference Prompt engineering overview Anthropic The official reference for getting more out of Claude. Short, precise, and the first thing we send every new cohort. Open →
+
+- Course9 chapters Interactive Prompt Engineering Tutorial Anthropic Learning by doing: nine chapters of exercises that turn the reference into habit. Open →
+
+- Video2 h 11 min How I use LLMs Andrej Karpathy A practical tour of daily use, from research to voice to code. Watch it for the workflow ideas you did not know you were missing. Open →
+
+- CodeRecipes Claude Cookbooks Anthropic Working recipes for the real patterns: retrieval, tool use, sub-agents. Where the craft turns into running code. Open →
+
+### Agents and systems
+
+For the builders, and for anyone who signs off on what they build.
+
+- Essay20 min read Building Effective AI Agents Anthropic The essay that separates workflows from agents, and says plainly when not to build one. We assign it before any build conversation. Open →
+
+- DocsStandard Model Context Protocol MCP project The open standard for connecting models to your systems and your data. Session four of our arc runs on it. Open →
+
+- DocsReference Claude Code documentation Anthropic The most capable tool in the suite, documented. Far more than a developer tool: this is where AI-native workflows compound. Open →
+
+- Guide30 min read Agents Chip Huyen A rigorous chapter on planning, tools, and the failure modes nobody advertises. The sceptic's companion to the essay above. Open →
+
+### Papers worth the hour
+
+Four originals. The point is to have met the sources everyone else paraphrases.
+
+- Paper2017 Attention Is All You Need Vaswani et al. Where the transformer began. Read the abstract and the diagrams; the rest is optional, having met the source is not. Open →
+
+- Paper2020 Scaling Laws for Neural Language Models Kaplan et al. Why bigger kept getting better, measured. The paper behind the last five years of capital expenditure. Open →
+
+- Paper2022 Constitutional AI: Harmlessness from AI Feedback Bai et al., Anthropic How Claude is trained to refuse well without a human grading every answer. Useful before any governance conversation. Open →
+
+- Essay5 min read The Bitter Lesson Rich Sutton Seventy years of AI in one page: general methods plus compute beat clever features. Reread it before underwriting any AI moat. Open →
+
+### Stay current
+
+The frontier is weekly. These are the hands we trust to keep on it.
+
+- BlogOngoing Simon Willison's Weblog Simon Willison The single best running record of what the tools can actually do, tested by hand within days of release. Open →
+
+- NewsletterOngoing One Useful Thing Ethan Mollick What the models mean for how professionals actually work, from the academic who tests them hardest. Open →
+
+- PodcastOngoing Latent Space swyx and friends The AI engineers talking to each other. Where the practice is argued out before it becomes convention. Open →
+
+- PodcastOngoing Dwarkesh Podcast Dwarkesh Patel Long interviews with the people building the frontier, researched to a depth that changes what you take from them. Open →
+
+- BlogOngoing Engineering at Anthropic Anthropic First-party notes from the lab whose tools we teach: how the systems are actually built and used. Open →
+
+The honest caveat
+
+### The library is the extra mile. The programmes are the road.
+
+Everything on these shelves is free and excellent, and none of it runs on your firm's own deals, models, and memos. That part is our job.
+
+---
+
 # Journal
 
 <https://solvenadvisory.ai/blog>

@@ -19,6 +19,7 @@ Key facts:
 - [Work](https://solvenadvisory.ai/work): How enablement and build fit together: firm-wide training plus agents on the heaviest reviews, portfolio reporting aggregation, and scoping engagements.
 - [About](https://solvenadvisory.ai/about): The firm, the pedigree (trading, M&A, search-fund and venture analysis, applied AI research, award-recognised teaching), and the three convictions.
 - [Journal](https://solvenadvisory.ai/blog): Notes from the frontier: plain-spoken writing on what is actually changing in AI for investment firms.
+- [AI Flix](https://solvenadvisory.ai/ai-flix): The Solven library, twenty-two hand-curated talks, papers, courses, and tools across five shelves, each annotated with why it earns its place.
 - [Contact](https://solvenadvisory.ai/contact): The instrument of engagement: a 30-minute diligence call on Solven, bookable directly on the page, plus a contact form.
 - [Privacy](https://solvenadvisory.ai/privacy): Plain terms for personal data. No cookies, no marketing list.
 - [Português](https://solvenadvisory.ai/pt): Início da versão portuguesa do site: a tese, as quatro práticas, e como marcar uma chamada.

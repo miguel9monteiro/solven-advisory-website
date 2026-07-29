@@ -23,6 +23,7 @@ PAGES = [
     ("pt/trabalho.html", "Português: Trabalho", "https://solvenadvisory.ai/pt/trabalho"),
     ("pt/sobre.html", "Português: Sobre", "https://solvenadvisory.ai/pt/sobre"),
     ("pt/contacto.html", "Português: Contacto", "https://solvenadvisory.ai/pt/contacto"),
+    ("ai-flix.html", "AI Flix", "https://solvenadvisory.ai/ai-flix"),
     ("blog/index.html", "Journal", "https://solvenadvisory.ai/blog"),
     ("blog/editors-of-drafts-they-cannot-defend.html",
      "Journal: Editors of drafts they cannot defend",
