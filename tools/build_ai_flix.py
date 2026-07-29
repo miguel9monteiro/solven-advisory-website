@@ -109,6 +109,22 @@ VIDEOS = [
         "src": "Stanford MS&E 435 · Economics of the AI Supercycle",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=thyxopgzG4k",
+        "len": "1 h 18 min",
+        "title": "The Consolidation Play and Due Diligence",
+        "src": "John Poerink, Linley Capital · Wharton School",
+        "note": "",
+    },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=Pn4O4scLEuc",
+        "len": "1 h 25 min",
+        "title": "Private Equity: Industry Review",
+        "src": "Ed Mathias, The Carlyle Group · Wharton School",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
