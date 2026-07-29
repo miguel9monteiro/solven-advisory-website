@@ -21,6 +21,14 @@ VIDEOS = [
         "src": "Peter Steinberger · Lex Fridman Podcast",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=96jN2OCOfLs",
+        "len": "30 min",
+        "title": "From Vibe Coding to Agentic Engineering",
+        "src": "Andrej Karpathy · Sequoia Capital",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
