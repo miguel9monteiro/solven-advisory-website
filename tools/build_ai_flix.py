@@ -183,10 +183,10 @@ def main():
   .shelf__head h2 {{ font-size: var(--t-lg); }}
   .shelf__count {{ flex: 0 0 auto; font-family: var(--sans); font-size: var(--t-meta); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--grey-light); }}
 
-  .rail {{ display: grid; grid-auto-flow: column; grid-auto-columns: clamp(300px, 32vw, 420px); gap: var(--s-4); overflow-x: auto; scroll-snap-type: x proximity; list-style: none; margin: 0; padding: 2px 2px var(--s-5); scrollbar-width: thin; scrollbar-color: rgba(244,242,235,0.25) transparent; }}
-  .rail::-webkit-scrollbar {{ height: 6px; }}
-  .rail::-webkit-scrollbar-thumb {{ background: rgba(244,242,235,0.25); }}
-  .rail li {{ scroll-snap-align: start; display: flex; }}
+  .rail {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-6) var(--s-4); list-style: none; margin: 0; padding: 2px 0 var(--s-5); }}
+  .rail li {{ display: flex; }}
+  @media (max-width: 980px) {{ .rail {{ grid-template-columns: repeat(2, 1fr); }} }}
+  @media (max-width: 620px) {{ .rail {{ grid-template-columns: 1fr; }} }}
 
   .vid {{ display: block; width: 100%; text-decoration: none; color: inherit; }}
   .vid__thumb {{ position: relative; display: block; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }}
