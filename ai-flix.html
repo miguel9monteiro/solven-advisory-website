@@ -35,7 +35,7 @@
   "inLanguage": "en-GB",
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 9,
+    "numberOfItems": 10,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -99,6 +99,13 @@
         "name": "The Thinking Game",
         "url": "https://www.youtube.com/watch?v=d95J8yzvjbQ",
         "image": "https://i.ytimg.com/vi/d95J8yzvjbQ/maxresdefault.jpg"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "«We are near the end of the exponential»",
+        "url": "https://www.youtube.com/watch?v=n1E9IZfvGMA",
+        "image": "https://i.ytimg.com/vi/n1E9IZfvGMA/maxresdefault.jpg"
       }
     ]
   }
@@ -142,6 +149,26 @@
   @media (prefers-reduced-motion: no-preference) {
     .vid__thumb img { transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s ease; }
     .vid:hover .vid__thumb img { transform: scale(1.05); opacity: 0.85; }
+  }
+
+  /* ===== THE SOLVEN PLAYER ===== */
+  .player { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: clamp(0.75rem, 3vw, 3rem); opacity: 0; }
+  .player[hidden] { display: none; }
+  .player.open { opacity: 1; }
+  .player__scrim { position: absolute; inset: 0; background: rgba(31, 36, 32, 0.94); cursor: pointer; }
+  .player__stage { position: relative; z-index: 1; width: min(1080px, 100%); }
+  .player__bar { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s-5); margin-bottom: var(--s-4); }
+  .player__title { margin: 0; font-family: var(--serif); font-size: var(--t-lg); line-height: 1.15; color: var(--bone); }
+  .player__src { margin: 0.3em 0 0; font-family: var(--sans); font-size: var(--t-sm); color: var(--sage-pale); }
+  .player__close { flex: 0 0 auto; background: none; border: 1px solid rgba(244, 242, 235, 0.4); color: var(--bone); font-family: var(--sans); font-size: 1rem; line-height: 1; padding: 0.55em 0.7em; cursor: pointer; transition: border-color var(--fast), color var(--fast); }
+  .player__close:hover { border-color: var(--sage); color: var(--sage); }
+  .player__frame { aspect-ratio: 16 / 9; background: #000; border-top: 2px solid var(--sage-deep); }
+  .player__frame iframe { width: 100%; height: 100%; display: block; border: 0; }
+  .player__note { margin: var(--s-3) 0 0; font-family: var(--sans); font-size: var(--t-meta); color: var(--grey-light); }
+  @media (prefers-reduced-motion: no-preference) {
+    .player { transition: opacity 0.25s ease; }
+    .player__stage { transform: translateY(14px) scale(0.985); transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
+    .player.open .player__stage { transform: none; }
   }
 
   /* ===== CLOSER ===== */
@@ -189,7 +216,7 @@
       </div>
       <h1 class="line-mask" style="--intro-delay:.28s">The extra mile, curated.</h1>
       <p class="lead intro-rise" style="--intro-delay:.45s">Video only, and only what we would put in front of a client: watched end to end before it earns a place on the shelf. The library grows as the frontier does.</p>
-      <p class="fxhero__meta intro-rise" style="--intro-delay:.6s">9 videos · chosen by hand · updated July 2026</p>
+      <p class="fxhero__meta intro-rise" style="--intro-delay:.6s">10 videos · chosen by hand · updated July 2026</p>
     </div>
   </section>
 
@@ -199,11 +226,11 @@
     <section class="shelf reveal" aria-labelledby="shelf-now-screening">
       <div class="shelf__head">
         <h2 id="shelf-now-screening">Now screening</h2>
-        <span class="shelf__count">09 entries</span>
+        <span class="shelf__count">10 entries</span>
       </div>
       <ul class="rail" data-stagger>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=YFjfBk8HI5o" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=YFjfBk8HI5o" data-embed="YFjfBk8HI5o" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/YFjfBk8HI5o/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -216,7 +243,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=96jN2OCOfLs" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=96jN2OCOfLs" data-embed="96jN2OCOfLs" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/96jN2OCOfLs/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -229,7 +256,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=EWvNQjAaOHw" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=EWvNQjAaOHw" data-embed="EWvNQjAaOHw" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/EWvNQjAaOHw/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -242,7 +269,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=Bs_VjCqyDfU" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=Bs_VjCqyDfU" data-embed="Bs_VjCqyDfU" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/Bs_VjCqyDfU/hqdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -255,7 +282,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=wjZofJX0v4M" data-embed="wjZofJX0v4M" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/wjZofJX0v4M/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -268,7 +295,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=v7cTQfeUICY" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=v7cTQfeUICY" data-embed="v7cTQfeUICY" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/v7cTQfeUICY/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -281,7 +308,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=2UigwwWcl6g" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=2UigwwWcl6g" data-embed="2UigwwWcl6g" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/2UigwwWcl6g/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -307,7 +334,7 @@
           </a>
         </li>
         <li>
-          <a class="vid" href="https://www.youtube.com/watch?v=d95J8yzvjbQ" target="_blank" rel="noopener">
+          <a class="vid" href="https://www.youtube.com/watch?v=d95J8yzvjbQ" data-embed="d95J8yzvjbQ" target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="https://i.ytimg.com/vi/d95J8yzvjbQ/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -316,6 +343,19 @@
             <span class="vid__body">
               <h3>The Thinking Game</h3>
               <p class="vid__src">Google DeepMind · Documentary</p>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="vid" href="https://www.youtube.com/watch?v=n1E9IZfvGMA" data-embed="n1E9IZfvGMA" target="_blank" rel="noopener">
+            <span class="vid__thumb">
+              <img src="https://i.ytimg.com/vi/n1E9IZfvGMA/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
+              <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
+              <span class="vid__len">2 h 22 min</span>
+            </span>
+            <span class="vid__body">
+              <h3>«We are near the end of the exponential»</h3>
+              <p class="vid__src">Dario Amodei · Dwarkesh Podcast</p>
             </span>
           </a>
         </li>
@@ -341,6 +381,22 @@
   </section>
 
 </main>
+
+<!-- THE SOLVEN PLAYER -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-title" hidden>
+  <div class="player__scrim" data-player-close></div>
+  <div class="player__stage">
+    <div class="player__bar">
+      <div>
+        <p class="player__title" id="player-title"></p>
+        <p class="player__src" id="player-src"></p>
+      </div>
+      <button class="player__close" data-player-close aria-label="Close the player">✕</button>
+    </div>
+    <div class="player__frame" id="player-frame"></div>
+    <p class="player__note">The Solven player streams through YouTube's privacy-enhanced service; nothing is stored until you press play.</p>
+  </div>
+</div>
 
 <footer class="site-footer">
   <svg class="footer-chevron" viewBox="0 0 40 36" aria-hidden="true"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z" fill="#8FA68A"/></svg>
@@ -374,12 +430,62 @@
     </div>
   </div>
   <div class="footer-meta">
-    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
+    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
     <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
   </div>
 </footer>
 
+<script>
+  /* The Solven player: cards open in an on-site dialog rather than leaving
+     for YouTube. Progressive enhancement: without JS every card is a plain
+     link, and cards whose videos disallow embedding keep the plain link. */
+  (function () {
+    var player = document.getElementById("player");
+    var frame = document.getElementById("player-frame");
+    var titleEl = document.getElementById("player-title");
+    var srcEl = document.getElementById("player-src");
+    var lastFocus = null;
+
+    function openPlayer(card) {
+      var id = card.getAttribute("data-embed");
+      if (!id) return false;
+      lastFocus = document.activeElement;
+      titleEl.textContent = card.querySelector("h3").textContent;
+      var src = card.querySelector(".vid__src");
+      srcEl.textContent = src ? src.textContent : "";
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen = true;
+      f.title = titleEl.textContent;
+      frame.replaceChildren(f);
+      player.hidden = false;
+      window.requestAnimationFrame(function () { player.classList.add("open"); });
+      document.body.style.overflow = "hidden";
+      player.querySelector(".player__close").focus();
+      return true;
+    }
+
+    function closePlayer() {
+      player.classList.remove("open");
+      document.body.style.overflow = "";
+      window.setTimeout(function () { player.hidden = true; frame.replaceChildren(); }, 220);
+      if (lastFocus) lastFocus.focus();
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll(".vid[data-embed]"), function (card) {
+      card.addEventListener("click", function (e) { if (openPlayer(card)) e.preventDefault(); });
+    });
+    player.addEventListener("click", function (e) {
+      if (e.target.hasAttribute("data-player-close")) closePlayer();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !player.hidden) closePlayer();
+    });
+  })();
+</script>
 <script src="/solven.js"></script>
+<script src="/consent.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

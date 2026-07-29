@@ -85,6 +85,14 @@ VIDEOS = [
         "src": "Google DeepMind · Documentary",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=n1E9IZfvGMA",
+        "len": "2 h 22 min",
+        "title": "«We are near the end of the exponential»",
+        "src": "Dario Amodei · Dwarkesh Podcast",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
@@ -116,13 +124,16 @@ def head_ok(url):
 def enrich(v):
     vid = re.search(r"[?&]v=([\w-]{6,})", v["url"]).group(1)
     v = dict(v)
+    v["id"] = vid
     maxres = f"https://i.ytimg.com/vi/{vid}/maxresdefault.jpg"
     v["thumb"] = maxres if head_ok(maxres) else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
     try:
-        # Videos with embedding disabled return 401 here; overrides cover them.
+        # Videos with embedding disabled return 401 here; those cards fall
+        # back to opening on YouTube instead of the on-site player.
         oe = fetch_json(f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json")
     except Exception:
         oe = None
+    v["embeddable"] = oe is not None
     if oe:
         v.setdefault("title", "") or v.update(title=oe["title"])
         v.setdefault("src", "") or v.update(src=oe["author_name"])
@@ -142,7 +153,7 @@ def main():
         if not items:
             continue
         cards = "\n".join(f"""        <li>
-          <a class="vid" href="{esc(v['url'])}" target="_blank" rel="noopener">
+          <a class="vid" href="{esc(v['url'])}"{f' data-embed="{v["id"]}"' if v['embeddable'] else ''} target="_blank" rel="noopener">
             <span class="vid__thumb">
               <img src="{esc(v['thumb'])}" alt="" loading="lazy" width="1280" height="720" />
               <span class="vid__play" aria-hidden="true"><svg viewBox="0 0 40 36"><path d="M 0 0 L 20 36 L 40 0 L 34 0 L 20 25 L 6 0 Z"/></svg></span>
@@ -259,6 +270,26 @@ def main():
     .vid:hover .vid__thumb img {{ transform: scale(1.05); opacity: 0.85; }}
   }}
 
+  /* ===== THE SOLVEN PLAYER ===== */
+  .player {{ position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: clamp(0.75rem, 3vw, 3rem); opacity: 0; }}
+  .player[hidden] {{ display: none; }}
+  .player.open {{ opacity: 1; }}
+  .player__scrim {{ position: absolute; inset: 0; background: rgba(31, 36, 32, 0.94); cursor: pointer; }}
+  .player__stage {{ position: relative; z-index: 1; width: min(1080px, 100%); }}
+  .player__bar {{ display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s-5); margin-bottom: var(--s-4); }}
+  .player__title {{ margin: 0; font-family: var(--serif); font-size: var(--t-lg); line-height: 1.15; color: var(--bone); }}
+  .player__src {{ margin: 0.3em 0 0; font-family: var(--sans); font-size: var(--t-sm); color: var(--sage-pale); }}
+  .player__close {{ flex: 0 0 auto; background: none; border: 1px solid rgba(244, 242, 235, 0.4); color: var(--bone); font-family: var(--sans); font-size: 1rem; line-height: 1; padding: 0.55em 0.7em; cursor: pointer; transition: border-color var(--fast), color var(--fast); }}
+  .player__close:hover {{ border-color: var(--sage); color: var(--sage); }}
+  .player__frame {{ aspect-ratio: 16 / 9; background: #000; border-top: 2px solid var(--sage-deep); }}
+  .player__frame iframe {{ width: 100%; height: 100%; display: block; border: 0; }}
+  .player__note {{ margin: var(--s-3) 0 0; font-family: var(--sans); font-size: var(--t-meta); color: var(--grey-light); }}
+  @media (prefers-reduced-motion: no-preference) {{
+    .player {{ transition: opacity 0.25s ease; }}
+    .player__stage {{ transform: translateY(14px) scale(0.985); transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }}
+    .player.open .player__stage {{ transform: none; }}
+  }}
+
   /* ===== CLOSER ===== */
   .fxcta {{ position: relative; overflow: hidden; border-top: 0.5px solid rgba(244,242,235,0.18); }}
   .fxcta__chev {{ position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(160px, 20vw, 320px); opacity: 0.1; }}
@@ -312,9 +343,75 @@ def main():
 
 </main>
 
+<!-- THE SOLVEN PLAYER -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-title" hidden>
+  <div class="player__scrim" data-player-close></div>
+  <div class="player__stage">
+    <div class="player__bar">
+      <div>
+        <p class="player__title" id="player-title"></p>
+        <p class="player__src" id="player-src"></p>
+      </div>
+      <button class="player__close" data-player-close aria-label="Close the player">✕</button>
+    </div>
+    <div class="player__frame" id="player-frame"></div>
+    <p class="player__note">The Solven player streams through YouTube's privacy-enhanced service; nothing is stored until you press play.</p>
+  </div>
+</div>
+
 {footer}
 
+<script>
+  /* The Solven player: cards open in an on-site dialog rather than leaving
+     for YouTube. Progressive enhancement: without JS every card is a plain
+     link, and cards whose videos disallow embedding keep the plain link. */
+  (function () {{
+    var player = document.getElementById("player");
+    var frame = document.getElementById("player-frame");
+    var titleEl = document.getElementById("player-title");
+    var srcEl = document.getElementById("player-src");
+    var lastFocus = null;
+
+    function openPlayer(card) {{
+      var id = card.getAttribute("data-embed");
+      if (!id) return false;
+      lastFocus = document.activeElement;
+      titleEl.textContent = card.querySelector("h3").textContent;
+      var src = card.querySelector(".vid__src");
+      srcEl.textContent = src ? src.textContent : "";
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      f.allowFullscreen = true;
+      f.title = titleEl.textContent;
+      frame.replaceChildren(f);
+      player.hidden = false;
+      window.requestAnimationFrame(function () {{ player.classList.add("open"); }});
+      document.body.style.overflow = "hidden";
+      player.querySelector(".player__close").focus();
+      return true;
+    }}
+
+    function closePlayer() {{
+      player.classList.remove("open");
+      document.body.style.overflow = "";
+      window.setTimeout(function () {{ player.hidden = true; frame.replaceChildren(); }}, 220);
+      if (lastFocus) lastFocus.focus();
+    }}
+
+    Array.prototype.forEach.call(document.querySelectorAll(".vid[data-embed]"), function (card) {{
+      card.addEventListener("click", function (e) {{ if (openPlayer(card)) e.preventDefault(); }});
+    }});
+    player.addEventListener("click", function (e) {{
+      if (e.target.hasAttribute("data-player-close")) closePlayer();
+    }});
+    document.addEventListener("keydown", function (e) {{
+      if (e.key === "Escape" && !player.hidden) closePlayer();
+    }});
+  }})();
+</script>
 <script src="/solven.js"></script>
+<script src="/consent.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -31,6 +31,9 @@ member of the Anthropic Partner Network.
   July 2026, author Miguel Monteiro), and `ai-flix` (AI Flix, the Solven
   screening room: Netflix-style dark shelves of YouTube videos with real
   thumbnails; EN-only like the journal, "AI Flix · EN" in the PT nav).
+  Cards open in the on-site Solven player (a dialog embedding YouTube's
+  privacy-enhanced youtube-nocookie player); videos whose owners disable
+  embedding are detected automatically and open on YouTube instead.
   **AI Flix is videos only and the owner curates it** — never add entries
   on your own initiative. `ai-flix.html` is GENERATED: to add a video the
   owner supplies a YouTube URL; append it to `VIDEOS` in

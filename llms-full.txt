@@ -579,7 +579,7 @@ We warrant a straight answer, including the answer "we are not the right firm fo
 
 #### No further obligations.
 
-No tracking, no list, no retainer implied. If the thirty minutes return nothing, the instrument lapses and you keep the read.
+No follow-up sequence, no list, no retainer implied. If the thirty minutes return nothing, the instrument lapses and you keep the read.
 
 Executed in counterpart
 
@@ -609,7 +609,7 @@ Booking runs on Cal.com's EU infrastructure. If the calendar does not load, open
 
 Sent directly from the page. Prefer email? The address is on the left.
 
-No cookies, no list. We reply to people, not leads.
+We reply to people, not leads. There is no marketing list, and no analytics cookie unless you accept one.
 
 Before you book
 
@@ -639,9 +639,9 @@ Privacy
 
 ## Plain terms for personal data.
 
-No cookies, no list, no profiling. This page says what we do hold, why, and for how long.
+No marketing list, no advertising, and no cookie before you say yes. This page says what we do hold, why, and for how long.
 
-This notice covers the personal data of people who visit this site, write to us, or book a call. It is written to be read, not scrolled past. Last updated 28 July 2026.
+This notice covers the personal data of people who visit this site, write to us, or book a call. It is written to be read, not scrolled past. Last updated 29 July 2026.
 
 ### Who we are
 
@@ -651,15 +651,17 @@ Solven Advisory is an AI enablement and implementation consultancy based in Lisb
 
 If you use the contact form, we receive the details you type: name, firm, email address, and your message. The form is delivered to our inbox by FormSubmit, a form-forwarding service; we use the details only to reply to you. If you book a call, scheduling runs on Cal.com's EU-hosted infrastructure, which collects the name, email address, and time slot you provide in order to place the meeting in both calendars. If you simply email or phone us, we hold the correspondence the way any firm holds its mail.
 
-The site itself sets no cookies and runs no advertising or profiling scripts. We use Vercel's cookieless analytics, which counts visits in aggregate and does not identify individuals. There is no newsletter and no marketing list; when we say we reply to people, not leads, this notice is what that means in practice.
+We run Vercel's cookieless analytics, which counts visits in aggregate, stores nothing on your device, and does not identify individuals. It runs whether or not you accept anything else. Video on the AI Flix page streams through YouTube's privacy-enhanced player, which stores nothing on your device until you choose to press play.
+
+We would also like to understand how the site is actually read: which pages hold attention, where people stop, and which routes lead to a conversation. That requires cookies, so we ask before setting any. Nothing runs until you accept, declining takes a single click, and either choice is remembered. There is no advertising, no profiling for ad targeting, and no data sold or passed to brokers. There is no newsletter and no marketing list; when we say we reply to people, not leads, this notice is what that means in practice.
 
 ### The legal basis
 
-We process contact and booking details because you asked us to: steps taken at your request before a possible contract (Article 6(1)(b) of the GDPR). We keep ordinary business correspondence on the basis of legitimate interest (Article 6(1)(f)).
+We process contact and booking details because you asked us to: steps taken at your request before a possible contract (Article 6(1)(b) of the GDPR). We keep ordinary business correspondence on the basis of legitimate interest (Article 6(1)(f)). Analytics cookies rest on consent alone (Article 6(1)(a), together with Article 5(3) of the ePrivacy Directive as enacted in Portugal by Lei 41/2004). Consent is the entire basis there: withdraw it and the processing stops.
 
 ### Where the data sits
 
-The site is hosted by Vercel. Form delivery passes through FormSubmit. Scheduling runs on Cal.com (EU infrastructure). Our email runs on Microsoft 365. Each of these providers acts as a processor for the data described above; none of them is given your details for any purpose beyond delivering the service.
+The site is hosted by Vercel. Form delivery passes through FormSubmit. Scheduling runs on Cal.com (EU infrastructure). Our email runs on Microsoft 365. If you accept analytics, PostHog processes that data on its EU cloud in Frankfurt, and Microsoft Clarity processes it under Microsoft's terms, which permit transfers outside the EU covered by the Standard Contractual Clauses. Each of these providers acts as a processor for the data described above; none of them is given your details for any purpose beyond delivering the service.
 
 ### How long we keep it
 
@@ -1161,7 +1163,7 @@ Garantimos uma resposta direta, incluindo a resposta «não somos a casa certa p
 
 #### Sem obrigações adicionais.
 
-Sem tracking, sem lista, sem retainer implícito. Se os trinta minutos não devolverem nada, o instrumento caduca e a leitura fica convosco.
+Sem sequência de emails, sem lista, sem retainer implícito. Se os trinta minutos não devolverem nada, o instrumento caduca e a leitura fica convosco.
 
 Executado em duplicado
 
@@ -1191,7 +1193,7 @@ A marcação corre na infraestrutura europeia da Cal.com. Se o calendário não 
 
 Enviada diretamente a partir da página. Preferem email? O endereço está à esquerda.
 
-Sem cookies, sem listas. Respondemos a pessoas, não a leads.
+Respondemos a pessoas, não a leads. Não há lista de marketing, e nenhum cookie de análise sem aceitação prévia.
 
 Antes de marcar
 
@@ -1223,7 +1225,7 @@ AI Flix · The screening room
 
 Video only, and only what we would put in front of a client: watched end to end before it earns a place on the shelf. The library grows as the frontier does.
 
-9 videos · chosen by hand · updated July 2026
+10 videos · chosen by hand · updated July 2026
 
 ### Now screening
 
@@ -1244,6 +1246,8 @@ Video only, and only what we would put in front of a client: watched end to end 
 - 1 h 45 min Building Large Language Models Stanford CS229 · Stanford Online
 
 - 1 h 24 min The Thinking Game Google DeepMind · Documentary
+
+- 2 h 22 min «We are near the end of the exponential» Dario Amodei · Dwarkesh Podcast
 
 The honest caveat
 

@@ -1058,3 +1058,93 @@ h1, h2, h3, h4 {
   .countersign:hover .ink, .countersign:focus-visible .ink { opacity: 1; }
   .countersign .nib { animation: none; }
 }
+
+/* ============================================================
+   Consent banner
+   Bone card on a charcoal edge, anchored bottom, never modal:
+   the page stays readable and operable behind it. Decline and
+   accept carry equal weight by design, not by accident.
+   ============================================================ */
+
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: var(--bone);
+  border-top: 2px solid var(--charcoal);
+  box-shadow: 0 -18px 48px rgba(42, 42, 40, 0.13);
+  transform: translateY(101%);
+  transition: transform var(--slow);
+}
+.consent.is-open { transform: translateY(0); }
+
+.consent__inner {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 1.75rem) var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+.consent__text { max-width: 68ch; }
+
+.consent__title {
+  font-family: var(--serif);
+  font-size: var(--t-md);
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
+}
+
+.consent__body {
+  font-size: var(--t-sm);
+  line-height: 1.55;
+  color: var(--text-2);
+  margin: 0;
+}
+.consent__body a {
+  color: var(--sage-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--sage);
+  white-space: nowrap;
+}
+.consent__body a:hover { text-decoration-color: var(--sage-ink); }
+
+.consent__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Both buttons share one geometry. Refusing must never look like the
+   lesser path: same size, same padding, same hit area. */
+.consent__btn {
+  font-family: var(--sans);
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  padding: 0.85em 1.6em;
+  border: 1px solid var(--charcoal);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--fast), color var(--fast);
+}
+.consent__btn:hover { background: var(--charcoal); color: var(--bone); }
+
+.consent__btn--solid { background: var(--charcoal); color: var(--bone); }
+.consent__btn--solid:hover { background: transparent; color: var(--charcoal); }
+
+@media (max-width: 860px) {
+  .consent__inner { flex-direction: column; align-items: stretch; gap: 1.25rem; }
+  .consent__actions { justify-content: stretch; }
+  .consent__btn { flex: 1; text-align: center; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consent { transition: none; transform: translateY(0); }
+}
