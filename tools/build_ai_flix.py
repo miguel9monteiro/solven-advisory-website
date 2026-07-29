@@ -69,6 +69,22 @@ VIDEOS = [
         "src": "Amrit Saxena · Proof of Work",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts",
+        "len": "1 h 45 min",
+        "title": "Building Large Language Models",
+        "src": "Stanford CS229 · Stanford Online",
+        "note": "",
+    },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=d95J8yzvjbQ",
+        "len": "1 h 24 min",
+        "title": "The Thinking Game",
+        "src": "Google DeepMind · Documentary",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
@@ -99,13 +115,19 @@ def head_ok(url):
 
 def enrich(v):
     vid = re.search(r"[?&]v=([\w-]{6,})", v["url"]).group(1)
-    oe = fetch_json(f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json")
-    maxres = f"https://i.ytimg.com/vi/{vid}/maxresdefault.jpg"
     v = dict(v)
+    maxres = f"https://i.ytimg.com/vi/{vid}/maxresdefault.jpg"
     v["thumb"] = maxres if head_ok(maxres) else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
-    v.setdefault("title", "") or v.update(title=oe["title"])
-    v.setdefault("src", "") or v.update(src=oe["author_name"])
-    v["yt_title"] = oe["title"]
+    try:
+        # Videos with embedding disabled return 401 here; overrides cover them.
+        oe = fetch_json(f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json")
+    except Exception:
+        oe = None
+    if oe:
+        v.setdefault("title", "") or v.update(title=oe["title"])
+        v.setdefault("src", "") or v.update(src=oe["author_name"])
+    assert v.get("title") and v.get("src"), (
+        f"{vid}: oEmbed unavailable (embedding disabled?); set title and src manually")
     return v
 
 

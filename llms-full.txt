@@ -1223,7 +1223,7 @@ AI Flix · The screening room
 
 Video only, and only what we would put in front of a client: watched end to end before it earns a place on the shelf. The library grows as the frontier does.
 
-7 videos · chosen by hand · updated July 2026
+9 videos · chosen by hand · updated July 2026
 
 ### Now screening
 
@@ -1240,6 +1240,10 @@ Video only, and only what we would put in front of a client: watched end to end 
 - 21 min How AI is Replacing the Private Equity Analyst Francis Huang · Apers @ Harvard
 
 - 30 min The New AI Playbook for Private Equity Amrit Saxena · Proof of Work
+
+- 1 h 45 min Building Large Language Models Stanford CS229 · Stanford Online
+
+- 1 h 24 min The Thinking Game Google DeepMind · Documentary
 
 The honest caveat
 
