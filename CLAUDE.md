@@ -17,9 +17,10 @@ member of the Anthropic Partner Network.
 - `vercel.json`: `cleanUrls` on, `trailingSlash` off, `/blog.html` redirect,
   security and asset-cache headers. Internal links are extensionless
   (`/about`, `/contact#book`); assets use absolute paths (`/assets/...`).
-- `.vercelignore` keeps `legacy/` (old Astro site), `BRAND.md`,
-  `articlesforblog/`, and `tools/` out of production. They were once publicly
-  served; keep it that way.
+- `.vercelignore` keeps `BRAND.md` and `tools/` out of production (they were
+  once publicly served; keep it that way). The old Astro site (`legacy/`) was
+  deleted from the tree in July 2026; it survives in git history if ever
+  needed.
 - Canonical origin: `https://solvenadvisory.ai` (apex, no www, no trailing
   slash; the PT page is `/pt`). Every page carries canonical + OG + Twitter
   meta and shares `assets/og.png` (1200x630, generated from brand SVGs).
