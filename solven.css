@@ -406,6 +406,11 @@ h1, h2, h3, h4 {
   html { scroll-behavior: auto; }
   .reveal.pending, .draw-rule.pending { opacity: 1; transform: none; filter: none; transition: none; }
 }
+@media print {
+  .reveal.pending, .draw-rule.pending { opacity: 1; transform: none; filter: none; }
+  html.anim [data-stagger].pending > * { opacity: 1; transform: none; filter: none; }
+  .band-curtain.pending::after { display: none; }
+}
 
 /* ============================================================
    CINEMATIC MOTION LAYER

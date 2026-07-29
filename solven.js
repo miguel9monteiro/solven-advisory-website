@@ -183,11 +183,42 @@
     check();
   }
 
-  // Safety net: never leave anything hidden.
+  // Safety net, two layers. At 2500ms, rescue only what the viewer can
+  // already see; content still below the fold keeps its observer so its
+  // reveal actually plays on arrival (the drawn chart, the signature, the
+  // cascades). A throttled scroll belt then catches anything the observer
+  // somehow missed once it is well inside the viewport, so nothing can
+  // strand hidden even if IntersectionObserver misbehaves.
   window.setTimeout(function () {
-    pending.slice().forEach(fire);
-    pending.length = 0;
+    var vhNow = window.innerHeight || de.clientHeight;
+    for (var i = pending.length - 1; i >= 0; i--) {
+      var el = pending[i];
+      if (el.classList.contains("in")) { pending.splice(i, 1); continue; }
+      if (el.getBoundingClientRect().top < vhNow + 120) {
+        fire(el);
+        pending.splice(i, 1);
+      }
+    }
   }, 2500);
+  (function () {
+    var belt = false;
+    window.addEventListener("scroll", function () {
+      if (belt || !pending.length) return;
+      belt = true;
+      window.requestAnimationFrame(function () {
+        var vhNow = window.innerHeight || de.clientHeight;
+        for (var i = pending.length - 1; i >= 0; i--) {
+          var el = pending[i];
+          if (el.classList.contains("in")) { pending.splice(i, 1); continue; }
+          if (el.getBoundingClientRect().top < vhNow * 0.6) {
+            fire(el);
+            pending.splice(i, 1);
+          }
+        }
+        belt = false;
+      });
+    }, { passive: true });
+  })();
 
   /* ---- Cadence cascade (home frontier timeline) ----
      Sequences ticks/dots/diamonds left→right by their left% so the
