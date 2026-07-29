@@ -61,6 +61,14 @@ VIDEOS = [
         "src": "Francis Huang · Apers @ Harvard",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=2UigwwWcl6g",
+        "len": "30 min",
+        "title": "The New AI Playbook for Private Equity",
+        "src": "Amrit Saxena · Proof of Work",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
