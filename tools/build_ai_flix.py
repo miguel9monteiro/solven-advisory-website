@@ -53,6 +53,14 @@ VIDEOS = [
         "src": "3Blue1Brown",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=v7cTQfeUICY",
+        "len": "21 min",
+        "title": "How AI is Replacing the Private Equity Analyst",
+        "src": "Francis Huang · Apers @ Harvard",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]

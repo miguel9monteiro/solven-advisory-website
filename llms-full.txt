@@ -1223,7 +1223,7 @@ AI Flix · The screening room
 
 Video only, and only what we would put in front of a client: watched end to end before it earns a place on the shelf. The library grows as the frontier does.
 
-5 videos · chosen by hand · updated July 2026
+6 videos · chosen by hand · updated July 2026
 
 ### Now screening
 
@@ -1236,6 +1236,8 @@ Video only, and only what we would put in front of a client: watched end to end 
 - 18 min What Happens When All Training Data is AI Generated? Mutual Information
 
 - 27 min Transformers, the tech behind LLMs 3Blue1Brown
+
+- 21 min How AI is Replacing the Private Equity Analyst Francis Huang · Apers @ Harvard
 
 The honest caveat
 
