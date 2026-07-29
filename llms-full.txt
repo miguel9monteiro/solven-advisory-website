@@ -707,13 +707,509 @@ Uma leitura independente sobre se a IA de uma empresa-alvo é capacidade genuín
 
 Onde vai o orçamento de compute, o que devolve, e como fazê-lo durar o ano inteiro. O resultado é um P&L de tokens que os partners conseguem ler.
 
-As sessões decorrem em português ou inglês, conforme a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são, tal como o resto deste site, disponível em solvenadvisory.ai.
+As sessões decorrem em português ou inglês, conforme a sala preferir. Os materiais escritos e o nosso journal são em inglês, porque as ferramentas e a fronteira o são.
 
 Membro da Anthropic Partner Network
 
 ### Trinta minutos, com o escrutínio a correr na vossa direção.
 
 Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up, e com a resposta direta, incluindo «não somos a casa certa para isto».
+
+---
+
+# Português: Programas
+
+<https://solvenadvisory.ai/pt/programas>
+
+Formação · Os programas
+
+## Fluência genuína em IA a todos os níveis da casa, do analista ao partner.
+
+Sessões práticas com Claude que levam uma casa inteira dos primeiros princípios à construção com as ferramentas mais avançadas da suite.
+
+Uma equipa formada uma vez é uma equipa a ficar para trás. A tecnologia por baixo deste trabalho muda a uma cadência semanal, pelo que uma casa que se formou há seis meses já está a operar sobre conhecimento desatualizado.
+
+Os nossos programas são mensais precisamente porque a tecnologia é semanal. Cada pessoa aprende a reconhecer onde o Claude pertence no seu próprio trabalho, e mantém-se atual enquanto o mercado continua a mover-se.
+
+Sempre na fronteira
+
+### A fronteira move-se semanalmente. Mantemos a vossa equipa nela.
+
+Novos modelos, ferramentas e capacidades chegam a uma cadência semanal. As nossas sessões chegam a um ritmo constante, para que a equipa nunca fique a mais de um passo da fronteira.
+
+Como funciona
+
+### Sobre os vossos fluxos de trabalho, não demonstrações genéricas.
+
+- i Prática, sobre o trabalho real.As sessões correm sobre os negócios, modelos, memorandos e relatórios reais da casa, para que cada pessoa saia a saber onde o Claude encaixa no seu dia.
+
+- ii O primeiro mês é amplitude.Orientação por toda a suite Claude, dos primeiros princípios à construção, para que toda a equipa partilhe um mapa do que é possível.
+
+- iii A partir do segundo mês, aprofundamos.As sessões seguintes concentram-se nas áreas que a equipa considera mais valiosas. O arco da sessão mantém-se; o caminho adapta-se.
+
+- iv Os formadores leem a sala.Os temas abaixo são orientação, não um guião. O ritmo e a ênfase seguem as pessoas na sala, do analista ao partner.
+
+O que cobrimos
+
+### A suite Claude completa.
+
+Cada pessoa aprende que ferramenta serve que parte do seu trabalho, para que toda a suite esteja em jogo, não apenas a janela de chat.
+
+#### Claude.ai
+
+Pesquisa, redação e análise no browser, com Projects, ficheiros e pesquisa web num só lugar.
+
+#### Claude Code
+
+A ferramenta mais capaz da suite, e muito mais do que uma ferramenta para programadores: organizar ficheiros, automatizar trabalho recorrente, construir sistemas reais.
+
+#### Claude for Chrome
+
+O Claude a trabalhar ao lado das páginas e ferramentas que a vossa equipa já usa, sem sair do browser.
+
+#### Claude Cowork
+
+Um Claude que executa ações por todo o desktop, correndo um fluxo de trabalho de ponta a ponta em vez de apenas gerar texto.
+
+#### Claude for Excel
+
+Geração e auditoria de fórmulas, limpeza de dados e construção de modelos, com o Claude a raciocinar sobre o livro de Excel completo.
+
+#### Claude for PowerPoint
+
+Decks, gráficos e memorandos prontos para comité a partir de esboços, notas ou documentos de origem, alinhados com o formato da casa.
+
+### O arco de quatro sessões.
+
+De como um modelo realmente pensa, passando pela conversa e pela produção, até à construção de sistemas agênticos com Claude Code.
+
+Primeira sessão · Fundamentos
+
+#### Como a IA pensa.
+
+Compreender o que um modelo está a fazer, o suficiente para saber quando confiar nele, e quando o contestar.
+
+- A história da IA até ao avanço do transformer
+
+- Tokens, embeddings, vetores e atenção
+
+- Como funciona a geração: probabilidade, amostragem, variância entre execuções
+
+- Onde o Claude é mais afiado, onde falha, e porque acontecem as alucinações
+
+- O princípio do analista primeiro e o hábito da verificação
+
+Como um modelo transforma texto em resultado
+
+Segunda sessão · Conversa
+
+#### Claude.ai.
+
+O ofício de prompting que separa o resultado competente do convincente, e o padrão do advogado do diabo no seu centro.
+
+- A interface: chat, Projects, Memory, ficheiros, pesquisa web, Artifacts
+
+- Prompting estruturado: etiquetas XML, definição de papéis, especificações de resultado
+
+- Few-shot prompting, chain-of-thought e metaprompting
+
+- O padrão do advogado do diabo: o Claude como crítico, não como autor
+
+- Gestão da janela de contexto, economia de tokens, saber quando parar
+
+Anatomia de um prompt estruturado
+
+Terceira sessão · Produção
+
+#### O Claude nas ferramentas que já usam.
+
+Onde os entregáveis da equipa realmente vivem: o livro de Excel, o deck e o desktop.
+
+- Claude for Excel: geração de fórmulas, trilhos de auditoria, modelos financeiros, raciocínio entre folhas
+
+- Claude for PowerPoint: decks a partir de esboços, alinhamento com a marca, memorandos prontos para comité
+
+- Claude Cowork: automação no desktop e fluxos de trabalho entre aplicações
+
+- A ideia maior: ferramentas e function calling
+
+- Porque é que o Claude com ferramentas é fundamentalmente mais capaz do que o Claude sozinho
+
+Ferramentas em torno do modelo
+
+Quarta sessão · Construção
+
+#### Construir com Claude Code.
+
+A ferramenta mais capaz da suite, muito além de uma ferramenta para programadores: onde os fluxos de trabalho nativos de IA se acumulam mês após mês.
+
+- O ciclo agêntico, prompts com controlo de versões e fluência em markdown
+
+- Skills & SKILL.md: empacotar a especialidade da equipa como capacidade implementável
+
+- MCP: ligar o Claude a bases de dados, APIs e sistemas internos
+
+- O problema do horizonte infinito e condições de conclusão explícitas
+
+- Padrões de automação: extração estruturada, processamento em lote, geração de relatórios
+
+O ciclo agêntico
+
+O fio condutor
+
+### Cada sessão carrega o princípio do analista primeiro.
+
+Os analistas produzem primeiro o trabalho formativo, e só depois trazem o Claude como crítico, red-teamer e verificador.
+
+O risco de qualquer rollout é que pessoas talentosas se tornem editoras de rascunhos que não conseguem defender por inteiro. Desenhamos cada sessão ao contrário. Hábitos de verificação, o padrão do advogado do diabo, a IA como crítico e não como autora: as competências que o uso sem critério corrói são exatamente as que construímos.
+
+É isso que queremos dizer com augmentation without cognitive atrophy, e atravessa as quatro sessões e tudo o que se segue a elas.
+
+Estrutura do programa
+
+### Construído para se ajustar à casa.
+
+#### Mês a mês
+
+Os programas são mensais e sem compromisso mínimo. Fiquem enquanto a fronteira continuar a mover-se, o que é o mesmo que dizer, enquanto for útil.
+
+#### Sessões mais horas de construção
+
+A formação combina-se com horas opcionais de construção e consultoria, para que a confiança ganha na sala se torne sistemas reais sobre fluxos de trabalho reais.
+
+#### Presencial ou remoto
+
+Nos vossos escritórios em Lisboa, remotamente, ou uma combinação. O formato segue a equipa, não o contrário.
+
+#### Aberto a toda a casa
+
+Do analista ao managing partner. A fluência é uma capacidade de toda a casa, não uma especialidade de poucos. Cada colaboração é dimensionada e orçamentada à medida.
+
+### As perguntas que as casas fazem antes de marcar.
+
+Respostas diretas às perguntas que normalmente antecedem a primeira chamada. O que ficar por responder aqui é uma boa abertura para a própria chamada.
+
+**Q: Como é definido o preço?**
+
+Cada colaboração é dimensionada e orçamentada individualmente: uma equipa de seis pessoas e uma casa com quarenta não são o mesmo programa. Os programas são mensais e sem compromisso mínimo, pelo que a decisão que estão a tomar é a de um mês, não a de um ano.
+
+**Q: Quanto tempo da equipa exige o programa?**
+
+O primeiro mês são quatro sessões que cobrem o arco completo, de como um modelo pensa até à construção com Claude Code. A partir do segundo mês, a cadência é mensal, aprofundando as áreas que a equipa considera mais valiosas. As sessões correm sobre os vossos próprios negócios, modelos e memorandos, pelo que o tempo é investido no trabalho real e não ao lado dele.
+
+**Q: O que acontece aos dados da nossa casa durante as sessões?**
+
+As sessões correm sobre os vossos negócios, modelos e memorandos reais, pelo que esta pergunta merece uma resposta precisa e não apenas tranquilizadora. O tratamento de dados é definido durante o scoping, antes de qualquer material ser aberto: por que contas passa o trabalho, em que termos, e o que é retido depois, se alguma coisa for. As respostas ficam por escrito antes da primeira sessão.
+
+**Q: Em que ferramentas de IA formam, e estamos a prender-nos a um único fornecedor?**
+
+Formamos na suite Claude: Claude.ai, Claude Code, e Claude no Excel, no PowerPoint, no Chrome e no Cowork. A Solven é membro da Anthropic Partner Network. É uma posição deliberada, não um acidente. Quanto ao lock-in: a primeira sessão ensina como funciona qualquer modelo de grande dimensão, dos tokens, atenção e probabilidade à origem das alucinações, e os hábitos de verificação que construímos são independentes do modelo. Se o mercado mudar, a fluência viaja com a vossa equipa.
+
+**Q: As sessões são em português ou em inglês?**
+
+Uma das duas, ou ambas. Estamos sediados em Lisboa e trabalhamos com casas de Lisboa a Londres, pelo que as sessões decorrem na língua que a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são.
+
+**Q: Como sabemos que o programa resultou?**
+
+Três formas que a casa pode ver em vez de aceitar de confiança. O próprio trabalho: resultados defensáveis em comité de investimento, com a contribuição humana legível para os revisores seniores. O P&L de tokens do nosso trabalho de economia de tokens: o que cada fluxo de trabalho custa e o que devolve, num formato que os partners conseguem ler. E as revisões de calibração integradas na metodologia, que detetam a deriva antes de ela se acumular.
+
+**Q: Porquê a Solven e não uma grande consultora, ou fazer isto internamente?**
+
+Três razões honestas. O trabalho é específico: fazemos uma coisa, para casas de investimento, e as sessões correm sobre os vossos negócios e memorandos, não sobre um currículo genérico. A cadência é o produto: a tecnologia muda semanalmente, e um projeto de formação pontual, interno ou externo, fica desatualizado num trimestre; a nossa colaboração é mensal porque a fronteira o é. E a tese é diferente: a maior parte da formação mede a adoção; nós desenhamos contra o offloading cognitivo, para que o critério fique mais afiado e não mais fino. Se o que uma casa precisa sobretudo é de gestão da mudança em mil postos, uma grande consultora é a escolha certa, e di-lo-emos.
+
+**Q: O que acontece quando o programa termina?**
+
+A colaboração é mensal e sem compromisso mínimo, pelo que terminar é uma decisão que podem tomar em qualquer mês. O que a casa guarda: os hábitos de verificação; os prompts e as skills construídos na quarta sessão, ficheiros com controlo de versões que vivem nos vossos sistemas; e tudo o que for produzido nas horas de construção. Nada está desenhado para tornar a saída difícil.
+
+**Q: Isto vai tornar os nossos analistas dependentes da IA?**
+
+Esse risco é a razão de a Solven existir. O modo de falha da maioria dos rollouts não é a adoção falhar; é os analistas tornarem-se editores de rascunhos que não conseguem defender. Cada sessão é construída ao contrário: o analista produz primeiro uma análise defensável, e só depois traz o Claude como crítico, red-teamer e verificador. Usado assim, o modelo afia exatamente as competências que o uso sem critério corrói. Chamamos-lhe augmentation without cognitive atrophy.
+
+**Q: Os partners podem participar, ou isto é para analistas?**
+
+A casa inteira, do analista ao managing partner. A fluência é uma capacidade de toda a casa, não uma especialidade de poucos, e cada sessão é ritmada para as pessoas na sala. As sessões dos partners são as que mais importam: a revisão liderada pelos seniores é o que sustenta a disciplina de verificação.
+
+Membro da Anthropic Partner Network · Phase 1
+
+### Uma conversa para afinar o programa às prioridades da vossa casa.
+
+Digam-nos onde a vossa equipa está hoje e como se desenha o próximo trimestre. Moldamos o arco à volta disso.
+
+---
+
+# Português: Abordagem
+
+<https://solvenadvisory.ai/pt/abordagem>
+
+A abordagem
+
+## Augmentation without cognitive atrophy.
+
+O risco na IA empresarial não é a adoção falhar. É o que acontece ao critério analítico quando a adoção resulta.
+
+O risco
+
+### Delegação cognitiva.
+
+Quando um analista consegue produzir um rascunho polido num único prompt, o trabalho formativo deixa discretamente de acontecer: sentar-se com os dados, construir uma posição a partir de primeiros princípios, defender um número sob pressão.
+
+O analista torna-se um editor passivo do output do modelo. Na página, a qualidade parece a mesma; por baixo, o critério vai-se adelgaçando. É contra este modo de falha que uma casa séria deve estar a desenhar.
+
+O risco de qualquer rollout de IA é que pessoas talentosas se tornem editoras de rascunhos que não conseguem defender por inteiro.
+
+O princípio
+
+### IA como adversário, não como autor.
+
+Tratamos o modelo como um testador do raciocínio do analista, não como um gerador desse raciocínio. O analista forma primeiro uma posição; o modelo desafia-a. O analista defende o trabalho; o modelo procura-lhe as fraquezas.
+
+Usada assim, a IA afia precisamente as competências que o uso sem restrições corrói. O resultado é melhor e o critério por trás dele é mais forte, não mais fraco.
+
+Os analistas produzem primeiro o trabalho formativo e só depois trazem o Claude como crítico, red-teamer e verificador.
+
+A prática
+
+### Restrições que aguentam sob pressão.
+
+O princípio torna-se real na forma como o trabalho é sequenciado e revisto. A forma varia de casa para casa; a disciplina não.
+
+- Analista primeiroO analista produz uma primeira versão defensável antes de recorrer ao modelo.
+
+- Trabalho à vistaApêndices tornam a contribuição humana legível para os revisores seniores.
+
+- VerificaçãoO padrão do advogado do diabo está integrado no fluxo de trabalho, não acrescentado no fim.
+
+- CalibraçãoRevisões conduzidas por seniores detetam o desvio antes de ele se acumular pela equipa.
+
+Uma tese, os dois lados do trabalho
+
+### A abordagem governa como formamos e o que construímos.
+
+Não é um diapositivo no início de um deck. É o princípio operativo por trás de cada sessão que damos e de cada sistema que entregamos.
+
+#### Como formamos
+
+Cada sessão é desenhada com o adversário primeiro, para que a equipa construa hábitos de verificação ao mesmo tempo que constrói fluência.
+
+#### O que construímos
+
+Agentes e fluxos de trabalho são desenhados para desafiar e verificar o raciocínio humano, nunca para o substituir em silêncio.
+
+Ver na prática
+
+### Os programas põem o princípio a trabalhar.
+
+O arco de quatro sessões leva o princípio do analista primeiro desde os primeiros princípios até à construção com Claude Code.
+
+---
+
+# Português: Trabalho
+
+<https://solvenadvisory.ai/pt/trabalho>
+
+Trabalho selecionado
+
+## Formação e construção, sobre fluxos de trabalho reais.
+
+Um olhar sobre como os dois lados do trabalho se articulam nos fluxos que preenchem a semana de uma equipa de investimento.
+
+Descrito pelo próprio trabalho, por fluxo e por estrutura, sem métricas que não possamos sustentar.
+
+Capacidade 01
+
+Due diligence · financiamento · comité de investimento
+
+### Formação para toda a casa, com agentes sobre as revisões mais pesadas.
+
+#### Contexto
+
+Os fluxos de trabalho de due diligence, financiamento e comité de investimento são repetitivos e exigentes em critério: exatamente o trabalho em que uma equipa quer fluência genuína e não uma demonstração pontual.
+
+#### Abordagem
+
+Um programa mensal de formação para toda a casa, do analista ao partner, a correr em paralelo com uma linha de construção que transforma as revisões mais repetitivas e exigentes em critério em agentes supervisionados.
+
+#### O que construímos
+
+- Agente de revisão de contratos Agente Extração e comparação de termos de arrendamento e financiamento entre documentos, evidenciando desvios para um revisor humano decidir.
+
+- Agente de interrogação de memorandos de CI Agente Teste adversarial dos memorandos de comité de investimento antes da apresentação: o padrão do advogado do diabo, operacionalizado.
+
+Capacidade 02
+
+Operações de portefólio
+
+### Reporting de portefólio, agregado onde os fundadores já estão.
+
+#### Contexto
+
+Os fundos com portefólios grandes recolhem o reporting pelo canal que cada fundador prefere. A agregação trimestral é manual, lenta e frágil.
+
+#### Abordagem
+
+Uma camada de IA de ingestão, normalização e verificação que vai ao encontro dos fundadores nos canais que já usam, e depois reconcilia tudo numa visão de portefólio consistente, com a fonte de cada número preservada.
+
+#### O essencial
+
+A nenhum fundador se pede que mude a forma como reporta. O fundo fica com uma imagem única e verificável do portefólio, e o tempo da equipa passa de montar os dados a interrogá-los.
+
+Capacidade 03
+
+Descoberta & scoping
+
+### Scoping sobre avaliação de negócios e fluxos de memorandos.
+
+#### Contexto
+
+Antes de qualquer construção, mapear onde a IA pertence nos fluxos de avaliação de negócios e de memorandos de investimento, e, tão importante quanto isso, onde não pertence.
+
+#### Abordagem
+
+Um trabalho de scoping: mapear os fluxos que vale a pena automatizar, o critério que tem de continuar humano, e a formação de que a equipa precisa para operar com confiança em qualquer dos casos.
+
+De Lisboa a Londres
+
+### Há provavelmente um fluxo de trabalho na vossa secretária que encaixa.
+
+Se vos vier à cabeça um processo recorrente e exigente em critério, é normalmente aí que faz sentido começar.
+
+---
+
+# Português: Sobre
+
+<https://solvenadvisory.ai/pt/sobre>
+
+Sobre a Solven
+
+## Nativa em finanças e nativa em IA, em igual medida.
+
+A casa
+
+A Solven Advisory é uma consultora boutique de formação e implementação de IA, fundada em Lisboa em 2025, que trabalha com casas de private equity, imobiliário e venture capital na Península Ibérica e, cada vez mais, na Europa.
+
+A casa junta experiência de operação e de saída, construída e escalada dentro do mundo da consultoria, com implementação prática de IA vinda de mesas de trading, investigação em investimento e IA aplicada. Essa combinação é deliberada. Quem decide onde a IA pertence numa casa de investimento deve compreender tanto o trabalho de investimento como a tecnologia por baixo dele.
+
+Somos guiados por uma tese. Tudo o que ensinamos e construímos passa por uma única ideia, augmentation without cognitive atrophy, e pela recusa de deixar pessoas capazes tornarem-se editoras de rascunhos que não conseguem defender. A Solven é membro da Anthropic Partner Network.
+
+De onde vem a equipa
+
+### A credibilidade está no percurso, não no pitch.
+
+Os percursos da equipa atravessam a finança institucional e a IA aplicada. Deixamos a experiência falar com simplicidade.
+
+- TradingMesas de trading não linear e de ETFs num banco de investimento global
+
+- M&AFusões e aquisições em banca corporativa e de investimento
+
+- InvestimentoAnálise em search funds e investimento em venture capital
+
+- Investigação em IAInvestigação aplicada em IA em institutos nacionais de investigação
+
+- Implementação de IADesenvolvimento de agentes e consultoria de estratégia de IA
+
+- EnsinoEnsino premiado em programação e ciência da computação
+
+Em que acreditamos
+
+### Três convicções que moldam o trabalho.
+
+#### O critério é o produto.
+
+Numa casa de investimento, o que se entrega é uma decisão defensável. A IA deve tornar esse critério mais afiado, nunca mais fino.
+
+#### A fluência é de toda a casa.
+
+Do analista mais recente ao managing partner, todos devem saber onde o Claude pertence no seu próprio trabalho.
+
+#### A fronteira é o trabalho.
+
+Manter-se atual não é um projeto pontual. É uma disciplina permanente, e é por isso que o nosso trabalho é mensal.
+
+Fale connosco
+
+### Preferimos ter uma conversa a enviar uma brochura.
+
+Falem-nos da vossa casa e de onde a vossa equipa está hoje. Seremos diretos sobre se podemos ajudar.
+
+---
+
+# Português: Contacto
+
+<https://solvenadvisory.ai/pt/contacto>
+
+Contacto
+
+## Vamos começar uma conversa.
+
+Digam-nos onde está a vossa equipa hoje e como se desenha o próximo trimestre. Seremos diretos sobre se podemos ajudar.
+
+### Façam a vossa due diligence sobre nós.
+
+Todas as casas com que trabalhamos vivem do escrutínio, por isso não vos vamos pedir que aceitem um pitch de fé. Trinta minutos, com o escrutínio a correr na vossa direção: apertem-nos sobre a metodologia, o pedigree, e onde o Claude não tem lugar na vossa casa. Os termos estão abaixo. Nós já assinámos.
+
+#### A contrapartida.
+
+Trinta minutos com o Miguel. Por vídeo ou telefone, hora de Lisboa. Sem deck, sem número de abertura, sem sequência de follow-up.
+
+#### O objeto.
+
+Tragam o fluxo de trabalho que enche a semana da vossa equipa: o memorando, o modelo, o ciclo de reporting. Dir-vos-emos onde a IA o afia, e onde não deve sequer aproximar-se.
+
+#### Declarações e garantias.
+
+Garantimos uma resposta direta, incluindo a resposta «não somos a casa certa para isto». Da vossa parte, nenhuma garantia. Façam as perguntas que fariam a qualquer empresa-alvo.
+
+#### Sem obrigações adicionais.
+
+Sem tracking, sem lista, sem retainer implícito. Se os trinta minutos não devolverem nada, o instrumento caduca e a leitura fica convosco.
+
+Executado em duplicado
+
+Pela Solven Advisory
+
+Miguel Monteiro
+
+Co-founder · assinado antes de chegar
+
+Pela vossa casa
+
+Assine aqui: escolha os vossos trinta minutos →
+
+O calendário está já abaixo. Datado no dia que escolherem.
+
+Calendário de execução: escolha os vossos trinta minutos
+
+A marcação corre na infraestrutura europeia da Cal.com. Se o calendário não carregar, abra-o num novo separador.
+
+- Email miguelmonteiro@solvenadvisory.ai Programas, scoping, e tudo o resto.
+
+- Telefone +351 967 130 877
+
+- LinkedIn linkedin.com/company/solven-advisory
+
+### Enviar uma nota
+
+Enviada diretamente a partir da página. Preferem email? O endereço está à esquerda.
+
+Sem cookies, sem listas. Respondemos a pessoas, não a leads.
+
+Antes de marcar
+
+### Três respostas que vale a pena ter primeiro.
+
+O conjunto completo vive na página de programas. Estas são as três que costumam surgir antes de uma primeira chamada.
+
+**Q: Como é definido o preço?**
+
+Cada colaboração é dimensionada e orçamentada individualmente: uma equipa de seis pessoas e uma casa com quarenta não são o mesmo programa. Os programas são mensais e sem compromisso mínimo, pelo que a decisão que estão a tomar é a de um mês, não a de um ano.
+
+**Q: O que acontece aos dados da nossa casa durante as sessões?**
+
+As sessões correm sobre os vossos negócios, modelos e memorandos reais, pelo que esta pergunta merece uma resposta precisa e não apenas tranquilizadora. O tratamento de dados é definido durante o scoping, antes de qualquer material ser aberto: por que contas passa o trabalho, em que termos, e o que é retido depois, se alguma coisa for. As respostas ficam por escrito antes da primeira sessão.
+
+**Q: As sessões são em português ou em inglês?**
+
+Uma das duas, ou ambas. Estamos sediados em Lisboa e trabalhamos com casas de Lisboa a Londres, pelo que as sessões decorrem na língua que a sala preferir. Os materiais escritos são em inglês, porque as ferramentas e a fronteira o são.
 
 ---
 

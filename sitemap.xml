@@ -17,19 +17,59 @@
   </url>
   <url>
     <loc>https://solvenadvisory.ai/programmes</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/programmes" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/programas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/programmes" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/programas</loc>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/programmes" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/programas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/programmes" />
   </url>
   <url>
     <loc>https://solvenadvisory.ai/approach</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/approach" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/abordagem" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/approach" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/abordagem</loc>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/approach" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/abordagem" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/approach" />
   </url>
   <url>
     <loc>https://solvenadvisory.ai/work</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/work" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/trabalho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/work" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/trabalho</loc>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/work" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/trabalho" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/work" />
   </url>
   <url>
     <loc>https://solvenadvisory.ai/about</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/about" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/sobre" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/about" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/sobre</loc>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/about" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/sobre" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/about" />
   </url>
   <url>
     <loc>https://solvenadvisory.ai/blog</loc>
@@ -49,7 +89,17 @@
   </url>
   <url>
     <loc>https://solvenadvisory.ai/contact</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/contact" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/contacto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/contact" />
+  </url>
+  <url>
+    <loc>https://solvenadvisory.ai/pt/contacto</loc>
+    <lastmod>2026-07-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solvenadvisory.ai/contact" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solvenadvisory.ai/pt/contacto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solvenadvisory.ai/contact" />
   </url>
   <url>
     <loc>https://solvenadvisory.ai/privacy</loc>

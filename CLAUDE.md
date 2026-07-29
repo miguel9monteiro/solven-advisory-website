@@ -27,8 +27,16 @@ member of the Anthropic Partner Network.
 ## Layout
 
 - Pages: `index`, `programmes`, `approach`, `work`, `about`, `contact`,
-  `privacy`, `404`, `pt/index` (pt-PT landing), `blog/index` + three articles
-  (`blog/<slug>.html`, July 2026, author Miguel Monteiro).
+  `privacy`, `404`, `blog/index` + three articles (`blog/<slug>.html`,
+  July 2026, author Miguel Monteiro).
+- Portuguese mirror under `pt/`: `pt/index` plus full pt-PT versions of the
+  five core pages. The pairs (keep in sync when EN copy changes):
+  `/` ↔ `/pt`, `/programmes` ↔ `/pt/programas`, `/approach` ↔ `/pt/abordagem`,
+  `/work` ↔ `/pt/trabalho`, `/about` ↔ `/pt/sobre`,
+  `/contact` ↔ `/pt/contacto`. PT pages use the standard header with PT
+  labels (Blog links to the EN journal as "Blog · EN") and the compact
+  `.ptfooter`. The journal, privacy, and 404 are EN-only (their PT toggle
+  goes to `/pt`).
 - Shared: `solven.css` (design system + motion), `solven.js` (motion/interaction
   layer), `BRAND.md` (brand reference: palette, type, voice; not deployed).
 - Discovery: `robots.txt` (deliberately liberal; all crawlers and AI bots
@@ -78,8 +86,14 @@ member of the Anthropic Partner Network.
   `programmes.html` must exactly match the visible answer text.
 - title = og:title = twitter:title, and description = og:description =
   twitter:description, per page.
-- hreflang (en / pt-PT / x-default) lives only on `/` and `/pt`; annotating
-  unpaired pages is invalid.
+- hreflang (en / pt-PT / x-default) lives only on paired pages, reciprocally
+  on both sides of each EN ↔ PT pair (and in the sitemap); annotating
+  unpaired pages (journal, privacy, 404) is invalid.
+- The `.nav-lang` toggle always targets the page's own counterpart, never
+  the other language's home (except on unpaired pages, where PT → `/pt`).
+- The three shared FAQ answers exist in BOTH languages: EN on
+  `programmes`/`contact`, PT on `pt/programas`/`pt/contacto`; each language
+  pair must stay word-for-word identical internally.
 - Exactly one h1 per page; no internal link may end in `.html`.
 - Motion: content visible by default. Hidden states exist only behind
   JS-applied classes (`.pending`, `body.intro-armed`, `html.anim`) with timed
