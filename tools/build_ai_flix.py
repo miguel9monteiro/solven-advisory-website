@@ -93,6 +93,14 @@ VIDEOS = [
         "src": "Dario Amodei · Dwarkesh Podcast",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=v4F1gFy-hqg",
+        "len": "18 min",
+        "title": "Software Fundamentals Matter More Than Ever",
+        "src": "Matt Pocock · AI Engineer",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
