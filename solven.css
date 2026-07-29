@@ -579,6 +579,16 @@ h1, h2, h3, h4 {
 }
 @media (max-width: 760px) { .grain { opacity: 0.02; } }
 
+/* ---------- Header language toggle (PT on EN pages, EN on /pt) ---------- */
+.site-nav .nav-lang {
+  font-size: var(--t-meta);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sage-deep);
+}
+.site-nav .nav-lang:hover { color: var(--sage-ink); }
+.site-nav .nav-lang::after { background: var(--sage-deep); }
+
 /* ---------- Header CTA (persistent Book a call) ---------- */
 .site-nav .nav-cta {
   border: 1px solid var(--charcoal);

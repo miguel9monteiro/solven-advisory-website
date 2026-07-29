@@ -1,6 +1,6 @@
 # Solven Advisory: full site text
 
-This file is the complete text of https://solvenadvisory.ai for AI systems and their users. A shorter index lives at /llms.txt. Generated from the live pages on 2026-07-28.
+This file is the complete text of https://solvenadvisory.ai for AI systems and their users. A shorter index lives at /llms.txt. Generated from the live pages on 2026-07-29.
 
 
 ---
@@ -675,25 +675,25 @@ You can ask for access to the data we hold about you, have it corrected or delet
 
 <https://solvenadvisory.ai/pt>
 
-Capacitação e implementação de IA · Private Equity
+Formação e implementação de IA · Private Equity
 
-## Implementação de IA para firmas onde o critério é o produto.
+## Implementação de IA para casas de investimento onde o critério é o produto.
 
-Formamos equipas de investimento inteiras em IA e construímos sistemas sobre os fluxos de trabalho que realmente importam. A partir de Lisboa, para firmas de private equity, imobiliário e venture capital.
+Formamos equipas de investimento inteiras em IA e construímos sistemas sobre os fluxos de trabalho que realmente importam. A partir de Lisboa, para sociedades de private equity, imobiliário e venture capital.
 
 A tese
 
-O risco de um rollout de IA numa firma de investimento não é a adoção falhar. É o que acontece ao critério analítico quando a adoção resulta: analistas que se tornam editores de rascunhos que não conseguem defender em comité de investimento.
+O risco de um rollout de IA numa casa de investimento não é a adoção falhar. É o que acontece ao critério analítico quando a adoção resulta: analistas que se tornam editores de rascunhos que não conseguem defender em comité de investimento.
 
 Todo o nosso trabalho é desenhado contra esse risco. O analista produz primeiro a sua análise; o modelo entra depois, como crítico, adversário e verificador, nunca como autor. Chamamos-lhe augmentation without cognitive atrophy: a IA torna o critério mais afiado, nunca mais fino.
 
 O que fazemos
 
-### Quatro práticas, quatro portas de entrada na firma.
+### Quatro práticas, quatro portas de entrada.
 
-#### Programas de capacitação
+#### Programas de formação
 
-Sessões práticas com Claude para toda a firma, do analista ao managing partner, sobre os vossos próprios negócios, modelos e memorandos. Mensais, porque a fronteira é semanal.
+Sessões práticas com Claude para toda a equipa, do analista ao managing partner, sobre os vossos próprios negócios, modelos e memorandos. Mensais, porque a fronteira é semanal.
 
 #### Construção de sistemas
 
@@ -713,7 +713,7 @@ Membro da Anthropic Partner Network
 
 ### Trinta minutos, com o escrutínio a correr na vossa direção.
 
-Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up, e com a resposta direta, incluindo «não somos a firma certa para isto».
+Uma conversa com o Miguel, por vídeo ou telefone. Sem deck, sem sequência de follow-up, e com a resposta direta, incluindo «não somos a casa certa para isto».
 
 ---
 
