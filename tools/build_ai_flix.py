@@ -29,6 +29,14 @@ VIDEOS = [
         "src": "Andrej Karpathy · Sequoia Capital",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=EWvNQjAaOHw",
+        "len": "2 h 11 min",
+        "title": "How I use LLMs",
+        "src": "Andrej Karpathy",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
