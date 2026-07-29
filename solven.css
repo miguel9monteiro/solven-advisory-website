@@ -185,6 +185,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5em;
   border-bottom: 1px solid var(--charcoal);
+  padding-top: 4px; /* balances the 3px bottom padding + 1px rule so text centres level with .btn text in a .cta-row */
   padding-bottom: 3px;
   transition: gap var(--fast), color var(--fast), border-color var(--fast);
 }
@@ -257,6 +258,7 @@ h1, h2, h3, h4 {
   color: var(--text-2);
   position: relative;
   padding-block: 0.4rem;
+  white-space: nowrap;
   transition: color var(--fast);
 }
 .site-nav a::after {
@@ -754,6 +756,38 @@ h1, h2, h3, h4 {
   html.has-pointer .btn--dark:hover {
     transform: translate(var(--mx, 0px), var(--my, 0px)) scale(1.02);
   }
+}
+
+/* ---------- Responsive header: PT labels are longer, so Portuguese
+   pages hand the header to the menu earlier than English ones ---------- */
+@media (max-width: 1420px) and (min-width: 861px) {
+  html[lang="pt-PT"] .site-header__inner { position: relative; }
+  html[lang="pt-PT"] .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: none; border: 0; cursor: pointer;
+    font-family: var(--sans); font-size: var(--t-sm); color: var(--text);
+    padding: 0.4rem 0;
+  }
+  html[lang="pt-PT"] .site-nav {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bone);
+    border-bottom: var(--rule-thin);
+    padding: 0 var(--pad);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--fast);
+  }
+  html[lang="pt-PT"] .site-nav.open { max-height: 60vh; padding-block: 0.5rem 1rem; }
+  html[lang="pt-PT"] .site-nav a { width: 100%; padding: 0.75rem 0; border-bottom: var(--rule-thin); font-size: var(--t-base); }
+  html[lang="pt-PT"] .site-nav a::after { display: none; }
+  html[lang="pt-PT"] .site-nav .nav-cta { border: 0; border-bottom: var(--rule-thin); padding: 0.75rem 0; color: var(--sage-deep); font-weight: 700; }
+  html[lang="pt-PT"] .site-nav .nav-cta:hover { background: transparent; color: var(--sage-ink); }
 }
 
 /* ---------- Responsive header ---------- */

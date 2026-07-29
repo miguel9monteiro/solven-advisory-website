@@ -54,6 +54,10 @@
   .pedigree .k { font-family: var(--sans); font-size: var(--t-meta); font-weight: 700; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--sage); white-space: nowrap; }
   .pedigree .v { line-height: 1.4; }
   @media (max-width: 760px) { .texture__grid { grid-template-columns: 1fr; gap: 0; } }
+  @media (min-width: 761px) {
+    .texture__grid { grid-template-rows: repeat(3, auto); }
+    .pedigree { display: grid; grid-template-rows: subgrid; grid-row: span 3; }
+  }
 
   /* beliefs */
   .beliefs__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(2rem, 4vw, 3rem); }
@@ -63,6 +67,7 @@
   .belief h3 { font-family: var(--serif); font-size: var(--t-lg); font-weight: 400; text-transform: none; letter-spacing: normal; color: var(--text); margin: var(--s-3) 0 var(--s-3); max-width: 16ch; }
   .belief p { color: var(--text-2); margin: 0; line-height: 1.55; font-size: var(--t-base); }
   @media (max-width: 760px) { .beliefs__grid { grid-template-columns: 1fr; } .belief { padding-inline: 0; } }
+  @media (min-width: 761px) { .belief h3 { min-height: 2lh; } }
 
   .abcta { max-width: 44ch; }
   .abcta h2 { font-size: var(--t-xl); line-height: 1.1; }
@@ -214,7 +219,7 @@
     </div>
   </div>
   <div class="footer-meta">
-    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
+    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="/privacy#cookies" data-cookie-settings>Cookie settings</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
     <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
   </div>
 </footer>

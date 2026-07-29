@@ -171,13 +171,17 @@
     padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1rem, 2vw, 1.75rem);
     border-top: 1px solid var(--charcoal);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
+  .tool__top { width: 100%; }
   .tool:nth-child(3n+1) { padding-left: 0; }
   .tool__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-3); }
   .tool__num { font-family: var(--sans); font-size: var(--t-meta); letter-spacing: var(--track-label); color: var(--text-2); font-weight: 600; }
   .tool h3 { font-family: var(--serif); font-size: var(--t-lg); font-weight: 400; text-transform: none; letter-spacing: normal; color: var(--text); margin: 0; }
   .tool p { color: var(--text-2); margin: 0; line-height: 1.5; font-size: var(--t-sm); max-width: 34ch; }
-  .tool__tag { display: inline-block; margin-top: var(--s-3); font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--sage-deep); }
+  .tool__tag { display: inline-block; margin-top: auto; padding-top: var(--s-3); font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--sage-deep); }
   @media (max-width: 860px) { .kit__grid { grid-template-columns: repeat(2, 1fr); } .tool:nth-child(3n+1) { padding-left: clamp(1rem,2vw,1.75rem); } .tool:nth-child(2n+1) { padding-left: 0; } }
   @media (max-width: 560px) { .kit__head { grid-template-columns: 1fr; gap: var(--s-4); } .kit__grid { grid-template-columns: 1fr; } .tool { padding-inline: 0 !important; } }
 
@@ -750,7 +754,7 @@
     </div>
   </div>
   <div class="footer-meta">
-    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
+    <span>© 2026 Solven Advisory · Lisbon · <a href="/privacy">Privacy</a> · <a href="/privacy#cookies" data-cookie-settings>Cookie settings</a> · <a href="/pt" lang="pt-PT" hreflang="pt-PT">Português</a></span>
     <span class="partner-badge"><span class="dot"></span> Augmentation without cognitive atrophy.</span>
   </div>
 </footer>
