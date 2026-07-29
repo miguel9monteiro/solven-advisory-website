@@ -101,6 +101,14 @@ VIDEOS = [
         "src": "Matt Pocock · AI Engineer",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=BBl8bNJP6ds",
+        "len": "56 min",
+        "title": "The GPU Economy",
+        "src": "Stanford MS&E 435 · Economics of the AI Supercycle",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
