@@ -1223,7 +1223,7 @@ AI Flix · The screening room
 
 Video only, and only what we would put in front of a client: watched end to end before it earns a place on the shelf. The library grows as the frontier does.
 
-3 videos · chosen by hand · updated July 2026
+4 videos · chosen by hand · updated July 2026
 
 ### Now screening
 
@@ -1232,6 +1232,8 @@ Video only, and only what we would put in front of a client: watched end to end 
 - 30 min From Vibe Coding to Agentic Engineering Andrej Karpathy · Sequoia Capital
 
 - 2 h 11 min How I use LLMs Andrej Karpathy
+
+- 18 min What Happens When All Training Data is AI Generated? Mutual Information
 
 The honest caveat
 

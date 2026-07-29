@@ -37,6 +37,14 @@ VIDEOS = [
         "src": "Andrej Karpathy",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=Bs_VjCqyDfU",
+        "len": "18 min",
+        "title": "What Happens When All Training Data is AI Generated?",
+        "src": "Mutual Information",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
