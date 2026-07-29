@@ -45,6 +45,14 @@ VIDEOS = [
         "src": "Mutual Information",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "len": "27 min",
+        "title": "Transformers, the tech behind LLMs",
+        "src": "3Blue1Brown",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
