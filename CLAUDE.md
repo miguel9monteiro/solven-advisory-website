@@ -28,11 +28,17 @@ member of the Anthropic Partner Network.
 
 - Pages: `index`, `programmes`, `approach`, `work`, `about`, `contact`,
   `privacy`, `404`, `blog/index` + three articles (`blog/<slug>.html`,
-  July 2026, author Miguel Monteiro), and `ai-flix` (the AI Flix library:
-  hand-curated external resources on themed shelves; EN-only like the
-  journal, "AI Flix · EN" in the PT nav). Every AI Flix link was verified
-  live before publishing; verify any link you add, and note The Bitter
-  Lesson must stay http:// (its https certificate is broken).
+  July 2026, author Miguel Monteiro), and `ai-flix` (AI Flix, the Solven
+  screening room: Netflix-style dark shelves of YouTube videos with real
+  thumbnails; EN-only like the journal, "AI Flix · EN" in the PT nav).
+  **AI Flix is videos only and the owner curates it** — never add entries
+  on your own initiative. `ai-flix.html` is GENERATED: to add a video the
+  owner supplies a YouTube URL; append it to `VIDEOS` in
+  `tools/build_ai_flix.py` (url + len required; title/src/note optional
+  overrides) and run the tool, which fetches title, channel, and
+  thumbnail from YouTube oEmbed and rebuilds the page and its JSON-LD.
+  Bump the "updated" month in the tool's hero copy when the shelf
+  changes.
 - Portuguese mirror under `pt/`: `pt/index` plus full pt-PT versions of the
   five core pages. The pairs (keep in sync when EN copy changes):
   `/` ↔ `/pt`, `/programmes` ↔ `/pt/programas`, `/approach` ↔ `/pt/abordagem`,
