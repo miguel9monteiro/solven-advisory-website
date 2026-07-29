@@ -133,6 +133,14 @@ VIDEOS = [
         "src": "Tech With Tim · Python tutorial",
         "note": "",
     },
+    {
+        "shelf": "Now screening",
+        "url": "https://www.youtube.com/watch?v=ZaPbP9DwBOE",
+        "len": "57 min",
+        "title": "Don't Learn AI Agents Without These Fundamentals",
+        "src": "KodeKloud",
+        "note": "",
+    },
 ]
 
 SHELF_ORDER = ["Now screening"]
